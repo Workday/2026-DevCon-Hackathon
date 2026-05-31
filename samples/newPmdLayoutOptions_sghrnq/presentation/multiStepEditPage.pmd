@@ -1,0 +1,702 @@
+{
+  "id": "multiStepEditPage",
+  "endPoints": [ ],
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "label": "Workday Extend"
+    },
+    "body": {
+      "type": "multiStepLayout",
+      "id": "multiStepLayoutId",
+      "label": "Multi Step Layout Label",
+      "steps": [
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionId1",
+          "children": [
+            {
+              "type": "section",
+              "horizontal": false,
+              "children": [
+                {
+                  "type": "section",
+                  "horizontal": false,
+                  "children": [
+                    {
+                      "type": "section",
+                      "horizontal": false,
+                      "layout": {
+                        "alignment": "left",
+                        "density": "low",
+                        "horizontalSizing": "fixed",
+                        "labelPosition": "side_align_left"
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "label": "Name",
+                          "id": "textId1",
+                          "value": ""
+                        },
+                        {
+                          "type": "date",
+                          "dateDisplayPattern": "MM-dd-yyyy hh:mm a z",
+                          "label": "Date",
+                          "value": "<%  %>"
+                        },
+                        {
+                          "type": "number",
+                          "id": "nuberId1",
+                          "label": "Test Number",
+                          "fractionDigits": 2,
+                          "value": "0"
+                        },
+                        {
+                          "type": "number",
+                          "id": "nuberId2",
+                          "label": "Test Number2",
+                          "fractionDigits": 2,
+                          "value": "0"
+                        },
+                        {
+                          "type": "date",
+                          "label": "Start Date",
+                          "value": ""
+                        },
+                        {
+                          "type": "checkBox",
+                          "label": "Submit",
+                          "value": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "section",
+                      "id": "blahId",
+                      "horizontal": true,
+                      "layout": {
+                        "alignment": "left",
+                        "density": "low",
+                        "horizontalSizing": "fixed",
+                        "labelPosition": "side_align_right"
+                      },
+                      "children": [
+                        {
+                          "type": "section",
+                          "id": "blahId2",
+                          "horizontal": false,
+                          "children": [
+                            {
+                              "type": "checkBox",
+                              "label": "Test Boolean",
+                              "value": true
+                            },
+                            {
+                              "type": "checkBox",
+                              "label": "Test Boolean 2",
+                              "value": true
+                            },
+                            {
+                              "type": "checkBox",
+                              "label": "Test Boolean 3",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "section",
+                          "id": "blahId3",
+                          "horizontal": false,
+                          "children": [
+                            {
+                              "type": "text",
+                              "label": "Test Text",
+                              "value": ""
+                            },
+                            {
+                              "type": "text",
+                              "label": "Test Tex 2",
+                              "value": ""
+                            },
+                            {
+                              "type": "text",
+                              "label": "Test Text 3",
+                              "value": ""
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionId2",
+          "children": [
+            {
+              "type": "fieldSet",
+              "title": "Loop in a layoutSection",
+              "children": [
+                {
+                  "type": "loop",
+                  "label": "Loop",
+                  "on": "<% [1,2,3]%>",
+                  "as": "objectToLoopOn",
+                  "children": [
+                    {
+                      "type": "fieldSet",
+                      "title": "<% 'Form in a loop ' + objectToLoopOn %>",
+                      "layout": {
+                        "alignment": "CENTER",
+                        "density": "LOW",
+                        "horizontalSizing": "FIXED",
+                        "labelPosition": "side_align_left"
+                      },
+                      "children": [
+                        {
+                          "type": "fieldSet",
+                          "id": "info",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "scFirstName",
+                              "label": "First Name",
+                              "required": true,
+                              "value": ""
+                            },
+                            {
+                              "type": "text",
+                              "id": "lastName",
+                              "label": "Last Name",
+                              "_required": true,
+                              "value": ""
+                            },
+                            {
+                              "type": "text",
+                              "id": "email",
+                              "label": "Email",
+                              "_required": true,
+                              "value": ""
+                            },
+                            {
+                              "type": "instanceList",
+                              "id": "contactMethod",
+                              "label": "Contact Method",
+                              "instanceList": [
+                                {
+                                  "id": "1",
+                                  "descriptor": "Email"
+                                },
+                                {
+                                  "id": "2",
+                                  "descriptor": "Phone"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "dropdown",
+                              "id": "contactMethod2",
+                              "selectedValues": "<% ['descriptor'] %>",
+                              "label": "Alternative Contact Method",
+                              "instanceList": [
+                                {
+                                  "id": "1",
+                                  "descriptor": "Phone"
+                                },
+                                {
+                                  "id": "2",
+                                  "descriptor": "Email"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "date",
+                              "id": "scStartDate",
+                              "label": "Date",
+                              "value": "<% %>"
+                            },
+                            {
+                              "type": "richText",
+                              "id": "address",
+                              "label": "Full Addresss",
+                              "required": true,
+                              "value": ""
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionId3",
+          "label": "Layout Section Labe3",
+          "children": [
+            {
+              "type": "section",
+              "id": "sectionID3",
+              "horizontal": false,
+              "children": [
+                {
+                  "type": "instanceList",
+                  "id": "scCol1CalendarQrtr",
+                  "label": "Calendar Quarter",
+                  "instanceList": [
+                    {
+                      "id": "scQ1",
+                      "descriptor": "Quarter 1"
+                    },
+                    {
+                      "id": "scQ2",
+                      "descriptor": "Quarter 2"
+                    },
+                    {
+                      "id": "scQ3",
+                      "descriptor": "Quarter 3"
+                    },
+                    {
+                      "id": "scQ4",
+                      "descriptor": "Quarter 4"
+                    }
+                  ]
+                },
+                {
+                  "type": "instanceList",
+                  "id": "scCol1CalendarQrt2r",
+                  "label": "Test Instance List",
+                  "instanceList": [
+                    {
+                      "id": "1",
+                      "descriptor": "Test 1"
+                    },
+                    {
+                      "id": "2",
+                      "descriptor": "Test 2"
+                    },
+                    {
+                      "id": "3",
+                      "descriptor": "Test 3"
+                    },
+                    {
+                      "id": "4",
+                      "descriptor": "Test 4"
+                    }
+                  ]
+                },
+                {
+                  "type": "grid",
+                  "label": "Test Grid",
+                  "id": "myGrid",
+                  "rows": "<% [] %>",
+                  "rowVariableName": "thisRow",
+                  "columns": [
+                    {
+                      "type": "column",
+                      "columnId": "col1",
+                      "label": "Column 1",
+                      "cellTemplate": {
+                        "type": "instanceList",
+                        "id": "myInstanceList1",
+                        "instanceList": [
+                          {
+                            "id": "1",
+                            "descriptor": "IL 1"
+                          },
+                          {
+                            "id": "2",
+                            "descriptor": "IL 2"
+                          },
+                          {
+                            "id": "3",
+                            "descriptor": "IL 3"
+                          },
+                          {
+                            "id": "4",
+                            "descriptor": "IL 4"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "column",
+                      "columnId": "col2",
+                      "label": "WCPUI Numerica 1",
+                      "cellTemplate": {
+                        "type": "number",
+                        "id": "myNumber2",
+                        "value": "<% 1 %>"
+                      }
+                    },
+                    {
+                      "type": "column",
+                      "columnId": "col3",
+                      "label": "WCPUI Text ",
+                      "cellTemplate": {
+                        "type": "text",
+                        "id": "myNumber2",
+                        "value": "<% 'Hello' %>"
+                      }
+                    },
+                    {
+                      "type": "column",
+                      "columnId": "col4",
+                      "label": "WCPUI Numerica 2",
+                      "cellTemplate": {
+                        "type": "number",
+                        "id": "myNumber2",
+                        "value": "<% 2 %>"
+                      }
+                    },
+                    {
+                      "type": "column",
+                      "columnId": "col5",
+                      "label": "Column 5",
+                      "cellTemplate": {
+                        "type": "instanceList",
+                        "id": "myInstanceList2",
+                        "instanceList": [
+                          {
+                            "id": "1",
+                            "descriptor": "IL 1"
+                          },
+                          {
+                            "id": "2",
+                            "descriptor": "IL 2"
+                          },
+                          {
+                            "id": "3",
+                            "descriptor": "IL 3"
+                          },
+                          {
+                            "id": "4",
+                            "descriptor": "IL 4"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "column",
+                      "columnId": "col6",
+                      "label": "WCPUI Text 2",
+                      "cellTemplate": {
+                        "type": "text",
+                        "id": "myNumber3",
+                        "value": "<% 'Hello again!' %>"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "instanceList",
+              "id": "scCol1Currency",
+              "label": "Currency",
+              "instanceList": [
+                {
+                  "id": "scCurUSD",
+                  "descriptor": "USD"
+                },
+                {
+                  "id": "scCurGBP",
+                  "descriptor": "GBP"
+                },
+                {
+                  "id": "scCurMXN",
+                  "descriptor": "MXN"
+                },
+                {
+                  "id": "scCurJPY",
+                  "descriptor": "JPY"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionId4",
+          "label": "Layout Section Labe 4",
+          "children": [
+            {
+              "type": "section",
+              "id": "sectionID4",
+              "horizontal": false,
+              "layout": {
+                "alignment": "left",
+                "density": "low",
+                "horizontalSizing": "fixed",
+                "labelPosition": "side_align_left"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "textId4",
+                  "label": "Text Label 4",
+                  "value": ""
+                },
+                {
+                  "type": "date",
+                  "dateDisplayPattern": "yyyy-MM-dd hh:mm:ss a z",
+                  "label": "Date",
+                  "value": "<% %>"
+                },
+                {
+                  "type": "dropdown",
+                  "id": "sc1stColMonthDropdown",
+                  "selectedValues": "<% ['descriptor'] %>",
+                  "label": "Month",
+                  "instanceList": [
+                    {
+                      "id": "scMonthJan",
+                      "descriptor": "January"
+                    },
+                    {
+                      "id": "scMonthFeb",
+                      "descriptor": "February"
+                    },
+                    {
+                      "id": "scMonthMar",
+                      "descriptor": "March"
+                    },
+                    {
+                      "id": "scMonthApr",
+                      "descriptor": "April"
+                    },
+                    {
+                      "id": "scMonthMay",
+                      "descriptor": "May"
+                    },
+                    {
+                      "id": "scMonthJun",
+                      "descriptor": "June"
+                    },
+                    {
+                      "id": "scMonthJul",
+                      "descriptor": "July"
+                    },
+                    {
+                      "id": "scMonthAug",
+                      "descriptor": "August"
+                    },
+                    {
+                      "id": "scMonthSep",
+                      "descriptor": "Septermber"
+                    },
+                    {
+                      "id": "scMonthOct",
+                      "descriptor": "October"
+                    },
+                    {
+                      "id": "scMonthNov",
+                      "descriptor": "November"
+                    },
+                    {
+                      "id": "scMonthDec",
+                      "descriptor": "December"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionId5",
+          "children": [
+            {
+              "type": "section",
+              "id": "sectionI5",
+              "horizontal": false,
+              "layout": {
+                "alignment": "left",
+                "density": "MEDIUM",
+                "horizontalSizing": "fixed",
+                "labelPosition": "side_align_right"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "textId4",
+                  "label": "Text Label 4",
+                  "value": ""
+                },
+                {
+                  "type": "date",
+                  "dateDisplayPattern": "yyyy-MM-dd hh:mm:ss a z",
+                  "label": "Date",
+                  "value": "<% %>"
+                },
+                {
+                  "type": "dropdown",
+                  "id": "sc1stColMonthDropdown",
+                  "selectedValues": "<% ['descriptor'] %>",
+                  "label": "Month",
+                  "instanceList": [
+                    {
+                      "id": "scMonthJan",
+                      "descriptor": "January"
+                    },
+                    {
+                      "id": "scMonthFeb",
+                      "descriptor": "February"
+                    },
+                    {
+                      "id": "scMonthMar",
+                      "descriptor": "March"
+                    },
+                    {
+                      "id": "scMonthApr",
+                      "descriptor": "April"
+                    },
+                    {
+                      "id": "scMonthMay",
+                      "descriptor": "May"
+                    },
+                    {
+                      "id": "scMonthJun",
+                      "descriptor": "June"
+                    },
+                    {
+                      "id": "scMonthJul",
+                      "descriptor": "July"
+                    },
+                    {
+                      "id": "scMonthAug",
+                      "descriptor": "August"
+                    },
+                    {
+                      "id": "scMonthSep",
+                      "descriptor": "Septermber"
+                    },
+                    {
+                      "id": "scMonthOct",
+                      "descriptor": "October"
+                    },
+                    {
+                      "id": "scMonthNov",
+                      "descriptor": "November"
+                    },
+                    {
+                      "id": "scMonthDec",
+                      "descriptor": "December"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionId6",
+          "children": [
+            {
+              "type": "section",
+              "id": "sectionI6",
+              "horizontal": false,
+              "layout": {
+                "alignment": "left",
+                "density": "MEDIUM",
+                "horizontalSizing": "fixed",
+                "labelPosition": "side_align_right"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "textId4",
+                  "label": "Text Label 4",
+                  "value": ""
+                },
+                {
+                  "type": "date",
+                  "dateDisplayPattern": "yyyy-MM-dd hh:mm:ss a z",
+                  "label": "Date",
+                  "value": "<% %>"
+                },
+                {
+                  "type": "dropdown",
+                  "id": "sc1stColMonthDropdown",
+                  "selectedValues": "<% ['descriptor'] %>",
+                  "label": "Month",
+                  "instanceList": [
+                    {
+                      "id": "scMonthJan",
+                      "descriptor": "January"
+                    },
+                    {
+                      "id": "scMonthFeb",
+                      "descriptor": "February"
+                    },
+                    {
+                      "id": "scMonthMar",
+                      "descriptor": "March"
+                    },
+                    {
+                      "id": "scMonthApr",
+                      "descriptor": "April"
+                    },
+                    {
+                      "id": "scMonthMay",
+                      "descriptor": "May"
+                    },
+                    {
+                      "id": "scMonthJun",
+                      "descriptor": "June"
+                    },
+                    {
+                      "id": "scMonthJul",
+                      "descriptor": "July"
+                    },
+                    {
+                      "id": "scMonthAug",
+                      "descriptor": "August"
+                    },
+                    {
+                      "id": "scMonthSep",
+                      "descriptor": "Septermber"
+                    },
+                    {
+                      "id": "scMonthOct",
+                      "descriptor": "October"
+                    },
+                    {
+                      "id": "scMonthNov",
+                      "descriptor": "November"
+                    },
+                    {
+                      "id": "scMonthDec",
+                      "descriptor": "December"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

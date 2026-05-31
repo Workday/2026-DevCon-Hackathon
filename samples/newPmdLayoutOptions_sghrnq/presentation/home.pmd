@@ -1,0 +1,198 @@
+{
+  "id": "home",
+  "endPoints": [ ],
+  "presentation": {
+    "pageType": "view",
+    "title": {
+      "type": "title",
+      "label": "NEW PMD Layout Options"
+    },
+    "body": {
+      "type": "columnLayout",
+      "id": "threeColumnEdit",
+      "columns": [
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionLeft",
+          "label": "Forum Layout",
+          "children": [
+            {
+              "type": "fieldSet",
+              "id": "leftSection1",
+              "title": "Forum Layout",
+              "columnWidthRatios": [
+                0.3,
+                0.3,
+                0.3
+              ],
+              "horizontal": true,
+              "children": [
+                {
+                  "type": "richText",
+                  "value": "Sample pages that illustrates form property layouts. It contains a PMD singleFormEditPage.pmd that illustrates a input fields in a single container that starts from top to bottom. doubleFormEditPage.pmd illustrates two container laid out horizontally  with its own input fields that use layout form properties within it. You can find its corresponding view page versions. "
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Double Form Edit Form",
+                  "taskReference": {
+                    "taskId": "doubleFormEditPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Single Form Edit Page",
+                  "taskReference": {
+                    "taskId": "singleFormEditPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Double Form View Form",
+                  "taskReference": {
+                    "taskId": "doubleFormViewPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Single Form View Page",
+                  "taskReference": {
+                    "taskId": "singleFormViewPage"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionMiddle",
+          "label": "MultiStep",
+          "children": [
+            {
+              "type": "fieldSet",
+              "id": "middleSection1",
+              "title": "MultiStep",
+              "horizontal": false,
+              "columnWidthRatios": [
+                0.3,
+                0.3,
+                0.3
+              ],
+              "children": [
+                {
+                  "type": "richText",
+                  "value": "Sample Pages that illustrates multiStepLayout tags in a view and edit page. Both View and Edit PMD pages have two layoutSection"
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "multiStepEditPage",
+                  "taskReference": {
+                    "taskId": "multiStepEditPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "multiStepViewPage",
+                  "taskReference": {
+                    "taskId": "multiStepViewPage"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionRight",
+          "label": "Column Layout",
+          "children": [
+            {
+              "type": "fieldSet",
+              "id": "rightSection",
+              "title": "Column Layout",
+              "horizontal": false,
+              "columnWidthRatios": [
+                0.3,
+                0.3,
+                0.3
+              ],
+              "children": [
+                {
+                  "type": "richText",
+                  "value": "Sample pages that illustrates columnLayout. Six PMDs, three for edit pages, and three for view pages. Pages below are broken into columnLayout tag with a single layoutSection, two layoutSection, and three layoutSection for view and edit pages.<br>
+For a single layoutSection, the column will occupy 2/3 of the width with even spacing on both sides.<br>
+For a double layoutSection, the two columns will occupy the entire with with two columns (evenly split among the two columns).<br>
+For a three layoutSection, the three columns will occupy the entire width (evenly split among the three columns)<br>"
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Single Column Layout Edit Page",
+                  "taskReference": {
+                    "taskId": "singleColumnLayoutEditPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Two Column Layout Edit Page",
+                  "taskReference": {
+                    "taskId": "twoColumnLayoutEditPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Three Column Layout Edit Page",
+                  "taskReference": {
+                    "taskId": "threeColumnLayoutEditPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Single Column Layout View Page",
+                  "taskReference": {
+                    "taskId": "singleColumnLayoutViewPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Two Column Layout View Page",
+                  "taskReference": {
+                    "taskId": "twoColumnLayoutViewPage"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": "PRIMARY",
+                  "label": "Three Column Layout View Page",
+                  "taskReference": {
+                    "taskId": "threeColumnLayoutViewPage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}
