@@ -1,0 +1,137 @@
+{
+  "id": "singleColumnLayoutEditPage",
+  "endPoints": [ ],
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "label": "Workday Extend Column Layout Single Column"
+    },
+    "body": {
+      "type": "columnLayout",
+      "id": "columnLayoutId",
+      "columns": [
+        {
+          "type": "layoutSection",
+          "children": [
+            {
+              "type": "fieldSet",
+              "id": "rightSection",
+              "title": "Column 3",
+              "horizontal": true,
+              "columnWidthRatios": [
+                0.3,
+                0.3,
+                0.3
+              ],
+              "children": [
+                {
+                  "type": "section",
+                  "id": "rightSubSection1",
+                  "horizaontal": false,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rightFirstName",
+                      "label": "First Name"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rightLastName",
+                      "label": "Last Name"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "id": "rightSubSection2",
+                  "horizaontal": false,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rightFirstName",
+                      "label": "First Name Blah"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rightLastName",
+                      "label": "Last Name Blah"
+                    },
+                    {
+                      "type": "dropdown",
+                      "id": "rightCurrency",
+                      "label": "Currency",
+                      "selectedValues": "<% ['USD'] %>",
+                      "instanceList": [
+                        {
+                          "id": "USD",
+                          "descriptor": "USD"
+                        },
+                        {
+                          "id": "GBP",
+                          "descriptor": "GBP"
+                        },
+                        {
+                          "id": "JPY",
+                          "descriptor": "JPY"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "fieldSet",
+                  "id": "rightSubSection3",
+                  "title": "I am a Sub Section 3",
+                  "horizaontal": false,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rightFirstName3",
+                      "label": "First Name Blah"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rightLastName",
+                      "label": "Last Name Blah"
+                    },
+                    {
+                      "type": "dropdown",
+                      "id": "rightCurrency3",
+                      "label": "Currency",
+                      "selectedValues": "<% ['USD'] %>",
+                      "instanceList": [
+                        {
+                          "id": "USD",
+                          "descriptor": "USD"
+                        },
+                        {
+                          "id": "GBP",
+                          "descriptor": "GBP"
+                        },
+                        {
+                          "id": "JPY",
+                          "descriptor": "JPY"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

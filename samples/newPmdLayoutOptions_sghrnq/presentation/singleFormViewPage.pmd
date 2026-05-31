@@ -1,0 +1,139 @@
+{
+  "id": "singleFormViewPage",
+  "endPoints": [ ],
+  "presentation": {
+    "pageType": "view",
+    "title": {
+      "type": "title",
+      "label": "Workday Extend Layout Properties With A Single Form"
+    },
+    "body": {
+      "type": "section",
+      "horizontal": true,
+      "layout": {
+        "density": "MEDIUM",
+        "_density_options": "this can be low, medium, or high. Density coveres how close or spread out each tag is spread out vertically",
+        "alignment": "CENTER",
+        "_alignment_comments": "alignment configures the container to left justified, or centere justified",
+        "horizontalSizing": "FIXED",
+        "_horizontalSizing_comment": "horizontalScaling can be stretch, or fied. Stretched stretches the tags to fix the entire container width, and fixed fixes it to certain width that's not stretched",
+        "labelPosition": "side_align_left",
+        "_labelPositon_comments": "label position aligns the label for input fields to top, flushed right, or flushed left of the input tags"
+      },
+      "children": [
+        {
+          "type": "section",
+          "id": "formsSection",
+          "horizontal": false,
+          "layout": {
+            "alignment": "CENTER"
+          },
+          "children": [
+            {
+              "type": "fieldSet",
+              "id": "dcCol2Tags",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dcLastName",
+                  "label": "Last Name",
+                  "value": ""
+                },
+                {
+                  "type": "instanceList",
+                  "id": "dcPymntTerms",
+                  "label": "Payment Terms",
+                  "instanceList": [
+                    {
+                      "id": "dcTerm1",
+                      "descriptor": "Quarter 1"
+                    },
+                    {
+                      "id": "dcTerm2",
+                      "descriptor": "Quarter 2"
+                    },
+                    {
+                      "id": "dcTerm3",
+                      "descriptor": "Quarter 3"
+                    },
+                    {
+                      "id": "dcTerm4",
+                      "descriptor": "Quarter 4"
+                    }
+                  ]
+                },
+                {
+                  "type": "instanceList",
+                  "id": "dcPymtType",
+                  "label": "Payment Type",
+                  "instanceList": [
+                    {
+                      "id": "dcTypeACH",
+                      "descriptor": "ACH"
+                    },
+                    {
+                      "id": "dcTypeCC",
+                      "descriptor": "Credit Card"
+                    },
+                    {
+                      "id": "dcTypeCash",
+                      "descriptor": "Cash"
+                    },
+                    {
+                      "id": "dcTypeCheck",
+                      "descriptor": "Check"
+                    }
+                  ]
+                },
+                {
+                  "type": "dropdown",
+                  "id": "dcDftTaxOptions",
+                  "selectedValues": "<% ['descriptor'] %>",
+                  "label": "Default Tax Options",
+                  "instanceList": [
+                    {
+                      "id": "dcTaxSole",
+                      "descriptor": "Sole Proprietorship"
+                    },
+                    {
+                      "id": "dcTaxPartner",
+                      "descriptor": "Partnership"
+                    },
+                    {
+                      "id": "dcTaxEntity",
+                      "descriptor": "Disregarded Entity"
+                    },
+                    {
+                      "id": "dcTaxCorp",
+                      "descriptor": "C Corporation"
+                    }
+                  ]
+                },
+                {
+                  "type": "number",
+                  "id": "dc1stColNumber2",
+                  "label": "Decimal Number",
+                  "fractionDigits": 1,
+                  "value": "<% 0 %>"
+                },
+                {
+                  "type": "date",
+                  "id": "dcStartDateCol2",
+                  "datePrecision": "SECOND",
+                  "label": "Today's Date",
+                  "value": "<% date:getTodaysDate(date:getDateTimeZone(userTimeZone)) %>"
+                },
+                {
+                  "type": "richText",
+                  "id": "dcComment2",
+                  "label": "More Comments",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

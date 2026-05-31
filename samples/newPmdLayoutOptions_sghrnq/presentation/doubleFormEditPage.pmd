@@ -1,0 +1,278 @@
+{
+  "id": "doubleFormEditPage",
+  "endPoints": [ ],
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "label": "Workday Extend Layout Properties With A Double Form"
+    },
+    "body": {
+      "type": "section",
+      "horizontal": false,
+      "layout": {
+        "density": "low",
+        "_density_options": "this can be low, medium, or high. Density coveres how close or spread out each tag is spread out vertically",
+        "alignment": "left",
+        "_alignment_comments": "alignment configures the container to left justified, or centere justified",
+        "horizontalSizing": "stretch",
+        "_horizontalSizing_comment": "horizontalScaling can be stretch, or fied. Stretched stretches the tags to fix the entire container width, and fixed fixes it to certain width that's not stretched",
+        "labelPosition": "side_align_left",
+        "_labelPositon_comments": "label position aligns the label for input fields to top, flushed right, or flushed left of the input tags"
+      },
+      "children": [
+        {
+          "type": "section",
+          "id": "formsSection",
+          "horizontal": true,
+          "columnWidthRatios": [
+            0.5,
+            0.5
+          ],
+          "children": [
+            {
+              "type": "section",
+              "id": "dcCol1Tags",
+              "layout": {
+                "labelPosition": "top",
+                "_comment": "If the remaining properties are not specified and the parent section/fieldSet has it, it'll will inherit it here"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dcFirstName",
+                  "label": "First Name",
+                  "value": ""
+                },
+                {
+                  "type": "instanceList",
+                  "id": "dcCol1CalendarQrtr",
+                  "label": "Calendar Quarter",
+                  "instanceList": [
+                    {
+                      "id": "dcQ1",
+                      "descriptor": "Quarter 1"
+                    },
+                    {
+                      "id": "dcQ2",
+                      "descriptor": "Quarter 2"
+                    },
+                    {
+                      "id": "dcQ3",
+                      "descriptor": "Quarter 3"
+                    },
+                    {
+                      "id": "dcQ4",
+                      "descriptor": "Quarter 4"
+                    }
+                  ]
+                },
+                {
+                  "type": "instanceList",
+                  "id": "dcCol1Currency",
+                  "label": "Currency",
+                  "instanceList": [
+                    {
+                      "id": "dcCurUSD",
+                      "descriptor": "USD"
+                    },
+                    {
+                      "id": "dcCurGBP",
+                      "descriptor": "GBP"
+                    },
+                    {
+                      "id": "dcCurMXN",
+                      "descriptor": "MXN"
+                    },
+                    {
+                      "id": "dcCurJPY",
+                      "descriptor": "JPY"
+                    }
+                  ]
+                },
+                {
+                  "type": "dropdown",
+                  "id": "dc1stColMonthDropdown",
+                  "selectedValues": "<% ['descriptor'] %>",
+                  "label": "Month",
+                  "instanceList": [
+                    {
+                      "id": "dcMonthJan",
+                      "descriptor": "January"
+                    },
+                    {
+                      "id": "dcMonthFeb",
+                      "descriptor": "February"
+                    },
+                    {
+                      "id": "dcMonthMar",
+                      "descriptor": "March"
+                    },
+                    {
+                      "id": "dcMonthApr",
+                      "descriptor": "April"
+                    },
+                    {
+                      "id": "dcMonthMay",
+                      "descriptor": "May"
+                    },
+                    {
+                      "id": "dcMonthJun",
+                      "descriptor": "June"
+                    },
+                    {
+                      "id": "dcMonthJul",
+                      "descriptor": "July"
+                    },
+                    {
+                      "id": "dcMonthAug",
+                      "descriptor": "August"
+                    },
+                    {
+                      "id": "dcMonthSep",
+                      "descriptor": "Septermber"
+                    },
+                    {
+                      "id": "dcMonthOct",
+                      "descriptor": "October"
+                    },
+                    {
+                      "id": "dcMonthNov",
+                      "descriptor": "November"
+                    },
+                    {
+                      "id": "dcMonthDec",
+                      "descriptor": "December"
+                    }
+                  ]
+                },
+                {
+                  "type": "number",
+                  "id": "dc1stColNumber1",
+                  "label": "Numeric Attribute",
+                  "fractionDigits": 1,
+                  "value": "<% 0 %>"
+                },
+                {
+                  "type": "date",
+                  "id": "dcStartDateCol1",
+                  "datePrecision": "SECOND",
+                  "label": "Start Date",
+                  "value": "<% date:getTodaysDate(date:getDateTimeZone(userTimeZone)) %>"
+                },
+                {
+                  "type": "richText",
+                  "id": "dcComment1",
+                  "label": "Comment",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "type": "fieldSet",
+              "id": "dcCol2Tags",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dcLastName",
+                  "label": "Last Name",
+                  "value": ""
+                },
+                {
+                  "type": "instanceList",
+                  "id": "dcPymntTerms",
+                  "label": "Payment Terms",
+                  "instanceList": [
+                    {
+                      "id": "dcTerm1",
+                      "descriptor": "Quarter 1"
+                    },
+                    {
+                      "id": "dcTerm2",
+                      "descriptor": "Quarter 2"
+                    },
+                    {
+                      "id": "dcTerm3",
+                      "descriptor": "Quarter 3"
+                    },
+                    {
+                      "id": "dcTerm4",
+                      "descriptor": "Quarter 4"
+                    }
+                  ]
+                },
+                {
+                  "type": "instanceList",
+                  "id": "dcPymtType",
+                  "label": "Payment Type",
+                  "instanceList": [
+                    {
+                      "id": "dcTypeACH",
+                      "descriptor": "ACH"
+                    },
+                    {
+                      "id": "dcTypeCC",
+                      "descriptor": "Credit Card"
+                    },
+                    {
+                      "id": "dcTypeCash",
+                      "descriptor": "Cash"
+                    },
+                    {
+                      "id": "dcTypeCheck",
+                      "descriptor": "Check"
+                    }
+                  ]
+                },
+                {
+                  "type": "dropdown",
+                  "id": "dcDftTaxOptions",
+                  "selectedValues": "<% ['descriptor'] %>",
+                  "label": "Default Tax Options",
+                  "instanceList": [
+                    {
+                      "id": "dcTaxSole",
+                      "descriptor": "Sole Proprietorship"
+                    },
+                    {
+                      "id": "dcTaxPartner",
+                      "descriptor": "Partnership"
+                    },
+                    {
+                      "id": "dcTaxEntity",
+                      "descriptor": "Disregarded Entity"
+                    },
+                    {
+                      "id": "dcTaxCorp",
+                      "descriptor": "C Corporation"
+                    }
+                  ]
+                },
+                {
+                  "type": "number",
+                  "id": "dc1stColNumber2",
+                  "label": "Decimal Number",
+                  "fractionDigits": 1,
+                  "value": "<% 0 %>"
+                },
+                {
+                  "type": "date",
+                  "id": "dcStartDateCol2",
+                  "datePrecision": "SECOND",
+                  "label": "Today's Date",
+                  "value": "<% date:getTodaysDate(date:getDateTimeZone(userTimeZone)) %>"
+                },
+                {
+                  "type": "richText",
+                  "id": "dcComment2",
+                  "label": "More Comments",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

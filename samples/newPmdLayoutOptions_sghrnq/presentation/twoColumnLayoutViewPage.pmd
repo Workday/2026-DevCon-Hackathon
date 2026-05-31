@@ -1,0 +1,106 @@
+{
+  "id": "twoColumnLayoutViewPage",
+  "endPoints": [ ],
+  "presentation": {
+    "pageType": "view",
+    "title": {
+      "type": "title",
+      "label": "Workday Extend Column Layout View Page, Two Columns"
+    },
+    "body": {
+      "type": "columnLayout",
+      "id": "columnLayoutId",
+      "label": "Three Column Layout",
+      "columns": [
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionLeft",
+          "label": "Left Column",
+          "children": [
+            {
+              "type": "fieldSet",
+              "id": "leftSection1",
+              "title": "Column 1",
+              "horizontal": false,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "leftName",
+                  "label": "Name",
+                  "value": "<% 'John Doe' %>"
+                },
+                {
+                  "type": "date",
+                  "id": "leftDate",
+                  "dateDisplayPattern": "MM-dd-yyyy",
+                  "label": "Hire Date",
+                  "value": "<% '2026-04-20' %>"
+                },
+                {
+                  "type": "number",
+                  "id": "leftNumber",
+                  "label": "Years of Service",
+                  "fractionDigits": 0,
+                  "value": "5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "layoutSection",
+          "id": "layoutSectionMiddle",
+          "label": "Middle Column",
+          "children": [
+            {
+              "type": "fieldSet",
+              "id": "middleSection1",
+              "title": "Column 2",
+              "horizontal": false,
+              "children": [
+                {
+                  "type": "richText",
+                  "id": "middleAddress",
+                  "label": "Address",
+                  "value": "123 Main St. Anytown, USA"
+                },
+                {
+                  "type": "instanceList",
+                  "id": "middleContactMethod",
+                  "label": "Contact Method",
+                  "selectedValues": "<% ['email'] %>",
+                  "instanceList": [
+                    {
+                      "id": "email",
+                      "descriptor": "Email"
+                    },
+                    {
+                      "id": "phone",
+                      "descriptor": "Phone"
+                    }
+                  ]
+                },
+                {
+                  "type": "checkBox",
+                  "id": "middleSubscribe",
+                  "label": "Subscribe to updates",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

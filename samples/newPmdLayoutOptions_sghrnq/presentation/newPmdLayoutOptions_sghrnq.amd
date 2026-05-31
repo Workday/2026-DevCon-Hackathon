@@ -1,0 +1,97 @@
+{
+  "appProperties": [ ],
+  "tasks": [
+    {
+      "id": "home",
+      "routingPattern": "/",
+      "page": {
+        "id": "home"
+      }
+    },
+    {
+      "id": "singleColumnLayoutEditPage",
+      "routingPattern": "/singleColumnLayoutEditPage",
+      "page": {
+        "id": "singleColumnLayoutEditPage"
+      }
+    },
+    {
+      "id": "singleColumnLayoutViewPage",
+      "routingPattern": "/singleColumnLayoutViewPage",
+      "page": {
+        "id": "singleColumnLayoutViewPage"
+      }
+    },
+    {
+      "id": "threeColumnLayoutEditPage",
+      "routingPattern": "/threeColumnLayoutEditPage",
+      "page": {
+        "id": "threeColumnLayoutEditPage"
+      }
+    },
+    {
+      "id": "threeColumnLayoutViewPage",
+      "routingPattern": "/threeColumnLayoutViewPage",
+      "page": {
+        "id": "threeColumnLayoutViewPage"
+      }
+    },
+    {
+      "id": "twoColumnLayoutEditPage",
+      "routingPattern": "/twoColumnLayoutEditPage",
+      "page": {
+        "id": "twoColumnLayoutEditPage"
+      }
+    },
+    {
+      "id": "twoColumnLayoutViewPage",
+      "routingPattern": "/twoColumnLayoutViewPage",
+      "page": {
+        "id": "twoColumnLayoutViewPage"
+      }
+    },
+    {
+      "id": "multiStepEditPage",
+      "routingPattern": "/multiStepEditPage",
+      "page": {
+        "id": "multiStepEditPage"
+      }
+    },
+    {
+      "id": "multiStepViewPage",
+      "routingPattern": "/multiStepViewPage",
+      "page": {
+        "id": "multiStepViewPage"
+      }
+    },
+    {
+      "id": "doubleFormEditPage",
+      "routingPattern": "/doubleFormEditPage",
+      "page": {
+        "id": "doubleFormEditPage"
+      }
+    },
+    {
+      "id": "doubleFormViewPage",
+      "routingPattern": "/doubleFormViewPage",
+      "page": {
+        "id": "doubleFormViewPage"
+      }
+    },
+    {
+      "id": "singleFormEditPage",
+      "routingPattern": "/singleFormEditPage",
+      "page": {
+        "id": "singleFormEditPage"
+      }
+    },
+    {
+      "id": "singleFormViewPage",
+      "routingPattern": "/singleFormViewPage",
+      "page": {
+        "id": "singleFormViewPage"
+      }
+    }
+  ],
+  "applicationId": "newPmdLayoutOptions_sghrnq"
+}
