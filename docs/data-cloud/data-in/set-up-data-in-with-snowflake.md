@@ -47,12 +47,12 @@ This procedure enables Workday access to Snowflake table metadata without copyin
 
 These sample screenshots illustrate how to get the \<ACCOUNT\_LOCATOR\> value. 
 
-![image|518x391](upload://r1dAtTdyVMUl7cwL1uq1PFGcZz6.png)
+<img width="518" height="391" alt="image" src="https://github.com/user-attachments/assets/78fa016c-0069-44b2-b22b-c3c79b4b6df7" />
 
 
 In the **Account Details** window, get the **Account locator** value.
   
-![image|514x364](upload://rbsS4DnnB7FzwDqYdiFGdcjZeQy.png)
+<img width="514" height="364" alt="image" src="https://github.com/user-attachments/assets/6d219800-a75f-4305-82d3-15bd82860844" />
 
 
 6. **Save** the connection but do **not** test it yet. 
@@ -84,7 +84,7 @@ In the **Account Details** window, get the **Account locator** value.
 
    ALTER USER ICEFLOW\_PRISM\_USER   SET RSA\_PUBLIC\_KEY \= '\<Content of Downloaded PKCS\#8\>'; 
 
-   ●      If your environment uses a **second RSA key**, use RSA\_PUBLIC\_KEY\_2 instead:
+   * If your environment uses a **second RSA key**, use RSA\_PUBLIC\_KEY\_2 instead:
 
    ALTER USER ICEFLOW\_PRISM\_USER   SET RSA\_PUBLIC\_KEY\_2 \= '\<Content of Downloaded PKCS\#8\>';
 
@@ -94,8 +94,8 @@ In the **Account Details** window, get the **Account locator** value.
 
    e. In the result set, locate the value of either:
 
-   ○    RSA\_PUBLIC\_KEY\_FP  
-   ○    RSA\_PUBLIC\_KEY\_2\_FP (if you used the second key)
+   * RSA\_PUBLIC\_KEY\_FP  
+   * RSA\_PUBLIC\_KEY\_2\_FP (if you used the second key)
 
    The value will look similar to:
 
@@ -114,11 +114,11 @@ In the **Account Details** window, get the **Account locator** value.
 
    Where:
 
-   ●      \<ACCOUNT\_LOCATOR\> is your Snowflake account locator.
+   * \<ACCOUNT\_LOCATOR\> is your Snowflake account locator.
 
-   ●      \<SERVICE\_USER\> is the service user you altered above.
+   * \<SERVICE\_USER\> is the service user you altered above.
 
-   ●      \<PUBLIC\_KEY\_FP\> is the value copied from RSA\_PUBLIC\_KEY\_FP (or RSA\_PUBLIC\_KEY\_2\_FP).
+   * \<PUBLIC\_KEY\_FP\> is the value copied from RSA\_PUBLIC\_KEY\_FP (or RSA\_PUBLIC\_KEY\_2\_FP).
 
 	Example: `PSB02139.ICEFLOW_PRISM_USER.SHA256:kbbJ7tq0a4yusN9SbuS8GCeoW55/fnrm7hogC6/fo0Y=`
 
@@ -132,15 +132,15 @@ In the **Account Details** window, get the **Account locator** value.
 
    If the test fails, double-check:
 
-   ●      Catalog URL format.
+   * Catalog URL format.
 
-   ●      Token endpoint URL.
+   * Token endpoint URL.
 
-   ●      Service user and account locator values.
+   * Service user and account locator values.
 
-   ●      RSA public key correctly set on the user.
+   * RSA public key correctly set on the user.
 
-   ●      Issuer format including the public key fingerprint.
+   * Issuer format including the public key fingerprint.
 
 # Task 2: Create an External Catalog
 ## Context
@@ -172,11 +172,11 @@ In this next procedure, create an External Catalog in Workday that points to an 
 
 After you save the External Catalog, Workday automatically runs a **Schema Sync** to:
 
-●      Read the metadata of Iceberg tables in the specified external partner namespace.
+* Read the metadata of Iceberg tables in the specified external partner namespace.
 
-●      Register those tables as **External Tables** in Workday.
+* Register those tables as **External Tables** in Workday.
 
-●      Make table structures visible in the Data Catalog **without moving or copying data**.
+* Make table structures visible in the Data Catalog **without moving or copying data**.
 
 The duration of this sync depends on the number and complexity of tables in the namespace.
 
