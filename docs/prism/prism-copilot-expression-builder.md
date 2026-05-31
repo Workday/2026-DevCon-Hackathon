@@ -16,12 +16,12 @@ To access Prism Copilot Expression Builder:
 2. For a derived data set on which you’d like to add a Calculated Field, click on the ellipsis or related actions menu and select **Edit Transformations.**  
 3. Click **Add Field**.  
   
-   ![image|512x335](upload://1gMQRFyaqL4tRFKZwgJ6y3BYQRs.png)
+   <img width="512" height="335" alt="image" src="https://github.com/user-attachments/assets/8d3fc860-96f1-43f0-9112-57ef680eaa35" />
  
      
    The Prism Copilot Expression Builder Copilot opens a chat box where you can enter your prompt. After you type a prompt and the correct syntax is generated, click **Apply.**  
   
-   ![image|512x445](upload://nI9SsAUnmpf5yTOe0h0PGzGblLU.png)
+   <img width="512" height="445" alt="image" src="https://github.com/user-attachments/assets/4f4eb9f6-42bf-41e4-b006-6cd693fc1a7c" />
 
      
      
