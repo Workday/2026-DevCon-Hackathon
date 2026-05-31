@@ -106,6 +106,7 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 | Feature | 
 | ------- | 
 | [Configure Orchestrate Agent Actions](/docs/orchestrate/configure-orchestrate-agent-actions.md) | 
+| [Pipedream Connectors for Orchestrate](/docs/orchestrate/pipedream-connectors-for-orchestrate.md) | 
 | [SFTP File Transfer](/docs/orchestrate/sftp-file-transfer.md) | 
 
 </details>
