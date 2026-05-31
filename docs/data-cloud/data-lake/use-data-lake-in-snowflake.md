@@ -34,7 +34,7 @@ The **Databases** list includes **WORKDAY_ZERO_COPY_DB**, which is the Workday D
 7. Explore other tables per your interest.
 
    This example displays the campaign table data:
-![datalake1|682x500](upload://3SgYFkPzJMAqLkjICTg0DNB1z8t.png)
+<img width="998" height="731" alt="image" src="https://github.com/user-attachments/assets/ccc3d653-9bb5-4fe8-98c5-9c4d84018755" />
 
 
 
@@ -53,15 +53,15 @@ In Snowflake, you can run a pre-provisioned SQL file which includes both simple 
 
 1. On the left-hand navigation panel, select **Projects \> Legacy Notebooks.**
 
-![datalake2|585x387](upload://3ZAGnPKKndtkKrcojM5vKDiNNwG.png)
+<img width="585" height="387" alt="image" src="https://github.com/user-attachments/assets/f0d58047-64ce-42b7-bf26-08296acc8f76" />
 
 
 
 2. Select the **WORKDAY_EXPLORATION_SCRIPTS** file. This action opens the SQL examples in a python notebook in a separate Window. Review & execute the scripts to understand how data is organized in Workday’s Catalog and relationships between tables are established based on **Scalar FK (SQL’s 3,4)** and **Array FK (SQL’s 5, 10)** join types.
    
-![datalake3|424x324](upload://kFs0XMvYrB7ygOpyLgEwrbTvuOz.png)
-
-![datalake4|690x406](upload://oJiKRdKkkniGjyghr7g9VxeH0le.png)
+<img width="424" height="324" alt="image" src="https://github.com/user-attachments/assets/210a3b23-7af1-4f7c-adf3-950c374710fb" />
+<br>
+<img width="998" height="588" alt="image" src="https://github.com/user-attachments/assets/cd410fec-3569-4fae-acce-94a5173da098" />
 
 
 
@@ -81,14 +81,14 @@ You can use Cortex Code AI in Snowflake to create a SQL script that will get exa
 
 1. In the left-hand navigation panel, select **Projects \> Workspaces**.
 
-![datalake5|464x396](upload://iABA2u8B8XtVqMuMbDTGtXcGbcC.png)
+<img width="464" height="396" alt="image" src="https://github.com/user-attachments/assets/322ec51d-d6a2-4274-9b10-09fc4815caf7" />
 
 
 2. Select **\+ Add new \> SQL File**, and name the file MyScript-\<your first name and last name initial\>. 
 
    Example: MyScript-OscarB.
 
-![datalake6|496x353](upload://3yrbYUMLtKzKlhGXRGWUaBqcems.png)
+<img width="496" height="353" alt="image" src="https://github.com/user-attachments/assets/38782946-2f41-466e-afac-6d4fad4b8474" />
 
 
 3. Write a natural language prompt that will create a SQL script that will join two tables. For your convenience, copy the prompt below.
@@ -97,18 +97,18 @@ You can use Cortex Code AI in Snowflake to create a SQL script that will get exa
 
 4. In the lower-right corner of the page, select the blue **Cortex Code** icon and paste the prompt into the chat window. After a moment, Cortex Code will generate a SQL script. 
 
-![datalake7|354x394](upload://9D9zIGPmU8cMajwfDb7wGAzwObs.png)
-
-![datalake8|690x488](upload://vUsfjFcmtRDsCnWxDX1p6Etuncu.png)
+<img width="354" height="394" alt="image" src="https://github.com/user-attachments/assets/42928eb1-939f-4c69-821b-f18e281ad37f" />
+<br>
+<img width="999" height="707" alt="image" src="https://github.com/user-attachments/assets/35443d7c-ece2-4bd8-9763-afd53639fd43" />
 
 
 5. Accept / Modify the recommended SQL from AI (click on **Keep** in SQL editor, or **Keep all** on cortex code 
 
-![datalake9|608x500](upload://oQse47GwstZzgNG9BzZUrg6NZg6.png)
+<img width="1024" height="842" alt="image" src="https://github.com/user-attachments/assets/95d6b856-88ac-4403-ad03-855a66758323" />
 
 
 
 6. Run the script by clicking on the Play button.
 
 7. View the results.
-![datalake11|405x500](upload://t10lnt7fYqoqTORYVbcGvHegItb.jpeg)
+<img width="1127" height="1390" alt="image" src="https://github.com/user-attachments/assets/d478d76f-ca90-45e3-80fb-3787cbc5aaaa" />
