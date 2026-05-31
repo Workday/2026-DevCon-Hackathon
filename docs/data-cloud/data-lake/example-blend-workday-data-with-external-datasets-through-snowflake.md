@@ -10,7 +10,7 @@ Imagine you're a people analyst trying to answer one question: "Who in our organ
 
 We have created a sample script that an analyst can develop to answer this question. The script takes the relevant workday data sources, scores it for reliability, maps it against what each initiative actually needs, and hands creates a ranked, ready-to-load talent list. No manual spreadsheets. No guessing. No moving data. All data is accessed using Views and Temporary tables and only the final results are persisted.
 
-![image|451x368](upload://fyM6mj7OP8mpXp3fZ7d6DPKG15j.png)
+<img width="451" height="368" alt="image" src="https://github.com/user-attachments/assets/4dba7fca-3c1f-4392-82cd-f33d0a1c11a1" />
 
 ## Steps
 
@@ -18,14 +18,14 @@ We have created a sample script that an analyst can develop to answer this quest
      
    Navigation Bar \> Projects \> Legacy Notebooks \> “Use\_Case\_Implementation\_Skills”
 
-![datalake12|550x500](upload://vtGR91rQXa0ruhVZqFZE7Sh8znT.png)
+<img width="677" height="615" alt="image" src="https://github.com/user-attachments/assets/61dd7bd6-4cea-4b34-9df0-1a2c2b6dd1b1" />
 
 
 2. Select the **USE_CASE_IMPLEMENTATION_SKILLS** file. This action opens the SQLs in a python notebook in a separate Window. Review & execute all the SQL’s in the notebook.
  
 3. Click drop down next to Play button, select “**Run all**”.
 
-![datalake13|690x303](upload://ephduHl81WkbAymWeRvFhO1k2f4.png)
+<img width="1102" height="484" alt="image" src="https://github.com/user-attachments/assets/437ceed8-c2ba-48c4-965b-b73d11194caf" />
 
 
 > **Note**: This script uses Views and Temporary tables to generate the final data-set that blends both Live zero-copy Workday Tables and non Workday data sources. Any sensitive fields used in generating the final data-sets are never materialized in Snowflake.
@@ -54,4 +54,4 @@ The final data-set is stored exclusively in Snowflake.
 
 Zero-copy technology enables run-time access to your sensitive data, eliminating the need for materialization in Snowflake or the creation of ETL pipeline.
 
-![datalake14|680x500](upload://dYFayhwfYP7FEyub6yUt5kGB7xL.png)
+<img width="848" height="623" alt="image" src="https://github.com/user-attachments/assets/3d16e69c-dd9d-414c-9880-3cfd1f14b826" />
