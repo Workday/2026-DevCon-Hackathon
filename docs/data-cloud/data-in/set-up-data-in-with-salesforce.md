@@ -20,7 +20,7 @@ The source data must be formatted to meet Salesforce Data Cloud’s strict schem
    b. **Source:** Select **Uploaded File** .
 
    
-   ![image|690x238](upload://1HkgZBi3XwWPiG2qvEj9xtnS1e7.png)
+   <img width="1119" height="387" alt="image" src="https://github.com/user-attachments/assets/25bc7707-1981-4115-8a34-88e31873b544" />
 
 
    c. **Upload:** Drag and drop your prepared CSV.  
@@ -37,7 +37,7 @@ The source data must be formatted to meet Salesforce Data Cloud’s strict schem
   h. Make sure the Data Stream Status is **Active**.
 
 	
-![image|690x186](upload://3PBLd6EZpJhjVibMcbKPFWEcY1G.png)
+<img width="758" height="205" alt="image" src="https://github.com/user-attachments/assets/f385b96b-2d61-48a8-b5fc-af077d6f0573" />
 
 
 # Task 2: Prepare the Sharing Layer
@@ -52,13 +52,13 @@ The source data must be formatted to meet Salesforce Data Cloud’s strict schem
 
    d. Click **Next**.
 
-   ![image|690x180](upload://tUvR2X8aSVj3AujCHws6298sMzw.png)
+   <img width="1151" height="301" alt="image" src="https://github.com/user-attachments/assets/7cc6f74f-f31e-4dcc-8817-cbe053ed9f47" />
 
 
    e. Select the **Data Lake Object** created in **Step 1** to link it to your Data Share and click **Save**.
 
 	
-   ![image|690x388](upload://tMVFMVtWkd2eqasR5qS0OJ472Y1.png)
+   <img width="1154" height="650" alt="image" src="https://github.com/user-attachments/assets/5b200d25-718e-4ff5-bbf2-5662807e4ab9" />
 
 
 # Task 3: Create Zero Copy Connection to Salesforce
@@ -74,7 +74,7 @@ Before ingestion, the source data must be formatted to meet Salesforce Data Clou
    b. Select **Other Targets**.
 
  
-![datain1|690x302](upload://ceT8gwtNJtcmqvy91PZ7hbktNjU.png)
+<img width="1132" height="496" alt="image" src="https://github.com/user-attachments/assets/ec7f1a65-b7e6-4bc1-a24a-f4ca95e86b2a" />
 
 
 
@@ -90,23 +90,24 @@ Before ingestion, the source data must be formatted to meet Salesforce Data Clou
       * **Name:** Example: Hackathon\_Salesforce  
       * **Catalog URL: Add https://** to the **Tenant Endpoint** from Step 1 (Data Share Target screen in Salesforce) and paste that in Catalog URL.  
 
-![datain2|690x299](upload://9KsY7jgbbqyTXXSecPoXpDG100Q.png)
+<img width="1142" height="495" alt="image" src="https://github.com/user-attachments/assets/2ec03032-9cf8-4fd9-b28c-cc214c9d5495" />
+<br>
+<img width="1089" height="770" alt="image" src="https://github.com/user-attachments/assets/14f2035a-f509-48d3-8fe3-ef6736524e76" />
 
-![datain4|690x487](upload://6l9DmuBWZYVSXxeLpMzIo5kLsV2.png)
 
 
  
    * **Cloud Region:** Example: Canada (Central) - ca-central-1 (This must match the region of the Salesforce instance).  
    * **Core Tenant ID:** Paste **Core Tenant ID** from Step 1 (Data Share Target screen in Salesforce).  
 
-![datain9|690x295](upload://59xvUZur74wrjgogvW64vDKL6rK.png)
+<img width="715" height="306" alt="image" src="https://github.com/user-attachments/assets/ebfeca22-12b4-481f-bb1e-4bf73b401036" />
 
 
    * **Action:** Click **Save**. **Do NOT click Test yet.**  
    
    e. **Gather Keys:** On the **View Connection Details** page, locate and keep open the **Service Principal**, **Issuer**, and download the **PKCS\#8 certificate**.  
       
-   ![image|359x500](upload://kwXHyOv27PGy421fap053YZnQHH.png)
+   <img width="498" height="693" alt="image" src="https://github.com/user-attachments/assets/190cc237-ca2c-43d8-a5c8-1ceab76ecc5e" />
 
 
      
@@ -120,7 +121,7 @@ Before ingestion, the source data must be formatted to meet Salesforce Data Clou
 
    e. Click **Save**.
 
-![datain6|690x336](upload://iGcwhWjvIaXvbTEi85ZT6smBKQS.png)
+<img width="1047" height="510" alt="image" src="https://github.com/user-attachments/assets/9f7fe72b-2c8d-4616-bf21-fb4276f89f72" />
 
 
 4. Link Data Share Target:  
@@ -128,17 +129,17 @@ Before ingestion, the source data must be formatted to meet Salesforce Data Clou
    b. Select the Data Share created in Task 2.
     c. Click **Link/Unlink Data Share Target**.
 
-   ![image|689x241](upload://3zb25uG6kA8RivuBsMfF9cLQvx8.png)
+   <img width="1148" height="402" alt="image" src="https://github.com/user-attachments/assets/e9207240-c957-4a9f-a26d-8c6d6ae6ea44" />
 
 
   
    d. Select the **Data Share Target** created in Step 3\.  
    e. Click **Save**.
 
-   ![image|690x162](upload://y7lOaSB0SziOfU53qwsI85hCi1C.png)
+   <img width="1149" height="271" alt="image" src="https://github.com/user-attachments/assets/0a53c833-7111-40c7-97ce-1ff559b10871" />
 
 
-2. Test the Connection: 
+5. Test the Connection: 
    a. Return to the **Workday Data Catalog** Connection page.  
    b. Select **Test Connection**.  
    c. **Verification:** Confirm the status displays: *“Test connection succeeded.”*
