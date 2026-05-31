@@ -5,5 +5,5 @@ Use the Create Integration CredStore task in your tenant to configure SFTP crede
 
 Topics:
 
-[Create SFTP Credentials](/docs/orchestrate/create-sftp-credentials.md)
-[SFTP Transport File](/docs/orchestrate/sftp-transport-file.md)
+[Create SFTP Credentials](/docs/orchestrate/create-sftp-credentials.md)  
+[SFTP Transport File](/docs/orchestrate/sftp-transport-file.md)  

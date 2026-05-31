@@ -21,52 +21,52 @@ On the **Maintain Permissions for Security Group** task, configure  _View and Mo
 -   _Setup: Agents_: Access to setup tasks and activities for agents in ASOR.
 
 ## Steps
-1.  (Optional) Build a Flowise agent:
-**Note**: Step 1 and its substeps are optional if you have already imported an agent into your tenant. You can skip to step 2 in you've already imported an agent.
-    a.  Sign in to  https://developer.workday.com/.
-    b.  In the top-right corner, click your organization name to confirm that you're signed in to your desired organization. Example: **Go With The Flow** will display in the corner if that's the name of your desired organization.
-    c.  Click  **Create an Extend App** **>** **Start from Scratch**.
-    d.  Enter a name and description for your app.
-    e.  Click **Create and Edit**.
-    f.  In app builder, click **Add Component**.
+1.  (Optional) Build a Flowise agent:  
+**Note**: Step 1 and its substeps are optional if you have already imported an agent into your tenant. You can skip to step 2 in you've already imported an agent.  
+    a.  Sign in to  https://developer.workday.com/.  
+    b.  In the top-right corner, click your organization name to confirm that you're signed in to your desired organization. Example: **Go With The Flow** will display in the corner if that's the name of your desired organization.  
+    c.  Click  **Create an Extend App** **>** **Start from Scratch**.  
+    d.  Enter a name and description for your app.  
+    e.  Click **Create and Edit**.  
+    f.  In app builder, click **Add Component**.  
         
-        - **Type**: Agent
-        - **Name**: < Name of your agent>.
+        - **Type**: Agent  
+        - **Name**: < Name of your agent>.  
         
-    g.  Click the **Manage Tenant Connections** icon in the navigation bar.
-    h.  In the **App Builder > Tenant dropdown**, select your assigned tenant
-    i.  Click the  Connect button.
-    j.  Click the **+** button on the canvas. Drag in a **Start** node, drag in an **Agent** node and connect them together.
-    k.  Hover over the **Agent** node. Click the pencil icon and configure these settings:
+    g.  Click the **Manage Tenant Connections** icon in the navigation bar.  
+    h.  In the **App Builder > Tenant dropdown**, select your assigned tenant  
+    i.  Click the  Connect button.  
+    j.  Click the **+** button on the canvas. Drag in a **Start** node, drag in an **Agent** node and connect them together.  
+    k.  Hover over the **Agent** node. Click the pencil icon and configure these settings:  
         
-        -   Model:  Workday AgentGateway
-        -   Messages > Role: Assistant.
-        -   Messages > Content: Help me find workers.
-        -   Tools: Workday MCP
+        -   Model:  Workday AgentGateway  
+        -   Messages > Role: Assistant.  
+        -   Messages > Content: Help me find workers.  
+        -   Tools: Workday MCP  
         
-    l.  Click **Edit MCP Parameters > Select Actions** to enable the required capabilities.
-    m.  Click **Save and Deploy**.
-    n.  Select your tenant from the deployment dropdown.
-    o.  Click **Deploy to Tenant** and wait for the deployment to complete.
-    p.  After a successful deployment, click **View on Tenant**.
-    q.  Access **Agent Management Hub** (secured to the  _Agent Management Hub_  domain in the Agent System of Record functional area).
-    r.  Find your agent and click  Configure Agent.
-    s.  Under user access, select  All Users.
-    t.   Click  Save, then  Activate the agent.
-    u.   Log out of the tenant, then log back in.
-    v.   Once logged in, the chatbot icon should appear. This indicates the agent is live.
-    w.   Start a conversation to verify the agent responds correctly.
+    l.  Click **Edit MCP Parameters > Select Actions** to enable the required capabilities.  
+    m.  Click **Save and Deploy**.  
+    n.  Select your tenant from the deployment dropdown.  
+    o.  Click **Deploy to Tenant** and wait for the deployment to complete.  
+    p.  After a successful deployment, click **View on Tenant**.  
+    q.  Access **Agent Management Hub** (secured to the  _Agent Management Hub_  domain in the Agent System of Record functional area).  
+    r.  Find your agent and click  Configure Agent.  
+    s.  Under user access, select  All Users.  
+    t.   Click  Save, then  Activate the agent.  
+    u.   Log out of the tenant, then log back in.  
+    v.   Once logged in, the chatbot icon should appear. This indicates the agent is live.  
+    w.   Start a conversation to verify the agent responds correctly.  
     
-    **Note**: If the chatbot does not appear after logging back in, confirm the agent status is  Active in the Agent Management Hub.
+    **Note**: If the chatbot does not appear after logging back in, confirm the agent status is  Active in the Agent Management Hub.  
     
- 2. Access **Agent Management Hub**.
-    a. Click **Agent Registry**  to open the agent profile of the agent you imported.
-    b. Activate your agent.
-    c. Click the **Scan Agent** button. As the scan runs, the **Trust and Safety Passport** tab appears on your agent's profile and displays the stamps for your agent. When the scan completes, the **Scan Agent** button reappears and the stamp statuses detected by the scan display on the **Trust and Safety Passport** tab.
+ 2. Access **Agent Management Hub**.  
+    a. Click **Agent Registry**  to open the agent profile of the agent you imported.  
+    b. Activate your agent.  
+    c. Click the **Scan Agent** button. As the scan runs, the **Trust and Safety Passport** tab appears on your agent's profile and displays the stamps for your agent. When the scan completes, the **Scan Agent** button reappears and the stamp statuses detected by the scan display on the **Trust and Safety Passport** tab.  
     
-3. Click the **Trust and Safety Passport** tab:
+3. Click the **Trust and Safety Passport** tab:  
 
-    -   On the **Trust and Safety Passport** tab, you can view and edit the stamps that an agent needs to operate safely in Workday. It displays information related to the names, statuses and descriptions of the stamps.
+    -   On the **Trust and Safety Passport** tab, you can view and edit the stamps that an agent needs to operate safely in Workday. It displays information related to the names, statuses and descriptions of the stamps.  
 
 ## Test Cases
 

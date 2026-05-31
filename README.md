@@ -88,7 +88,7 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 | [A2A for Self-Service Agent and Gemini Enterprise](/docs/agentic/a2a-for-self-service-agent-and-gemini-enterprise.md) | 
 | [A2A: Connecting Your Workday Agent to an External Platform](/docs/agentic/a2a-connecting-your-workday-agent-to-an-external-platform.md) | 
 | [Access Agent Passport](/docs/agentic/access-agent-passport.md) | 
-| [Analytics Agent](/docs/data-cloud/analytics-agent.md) | 
+| [Analytics Agent](/docs/agentic/analytics-agent.md) | 
 | [Agent Credentials and Authentication Methods](/docs/agentic/agent-credentials-and-authentication-methods.md) | 
 | [ASOR Agent Resource Search API](/docs/agentic/asor-agent-resource-search-api.md) | 
 | [MCP Explorer](/docs/agentic/mcp-explorer.md) | 
