@@ -20,20 +20,20 @@ Builds the Extend edit task that will be embedded as a section.
 
 ## End to End Flow
 **Admin**: Run "Configure ConnectR" task  
-       └── Select a Workday-delivered wizard (e.g. Change Job)  
-           └── Add one or more Extend task sections  
-               └── Set section label, ordering, and context (optional)  
+* Select a Workday-delivered wizard (e.g. Change Job)  
+  * Add one or more Extend task sections  
+    * Set section label, ordering, and context (optional)  
 
 **Runtime**:  
-  User launches wizard (e.g. Start Job Change)  
-  └── Wizard renders each section in order  
-      ├── Workday-delivered sections render as normal  
-      └── Extend sections render inline via Extend's edit URI  
-          └── On "Submit": Task Wizard calls Extend's validate API for all Extend sections  
-              ├── Errors are surfaced in the unified error widget and section icons  
-              └── On success: Extend sections appear in the Review step as view-only  
+* User launches wizard (e.g. Start Job Change)  
+  * Wizard renders each section in order  
+    * Workday-delivered sections render as normal  
+      * Extend sections render inline via Extend's edit URI  
+        * On "Submit": Task Wizard calls Extend's validate API for all Extend sections  
+          * Errors are surfaced in the unified error widget and section icons  
+          * On success: Extend sections appear in the Review step as view-only  
 
 **Developer**: Build Extend task  
-- Create an edit page for the task (example: page for collecting related data for Change Job).  
--- Create a task with the associated edit page.  
----- Deploy the app to the tenant.  
+* Create an edit page for the task (example: page for collecting related data for Change Job).  
+  * Create a task with the associated edit page.  
+    * Deploy the app to the tenant.  
