@@ -1,0 +1,8 @@
+The Studio Builder interface is divided into 2 main panels and 2 sidebars:
+
+| **Interface Element** | **Description** |
+| :--- | :--- |
+| **Left sidebar** | Use the icons at the top of the sidebar to choose what's displayed in the left panel:<br><br>&bull; **Project Explorer**: Provides a view of the files contained within each Studio Builder project.<br><br>&bull; **Semantic View**: Provides a hierarchical overview of the order, nesting, and relationship of the steps in an assembly.xml file.<br><br>&bull; **Components**: Provides a searchable palette of the assembly components you use to maintain your integration, broken down by category.  <br><br>Use the icons at the bottom of the sidebar to view a reminder of keyboard shortcuts or to toggle dark mode.<br><br>|
+|**Left panel** | Displays the interface element selected in the left sidebar. <br><br>|
+|**Right panel** | The main work area. The **Visual/Code** toggle at the top of the panel determines the panel's contents:<br><br>&bull; **Visual mode**: Provides a visual representation of the assembly.xml file. A drag and drop interface enables you to add components, adjust their properties, and connect them together in a logical flow.<br><br>&bull; **Code mode**: Provides a text editor for the project's `assembly.xml` file.<br><br>|
+|**Right sidebar** | Provides a toggle for the properties panel that opens when you select an assembly component in Visual mode.<br><br>|
