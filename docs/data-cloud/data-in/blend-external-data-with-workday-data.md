@@ -51,11 +51,11 @@ This procedure applies to these external partners: Snowflake and Salesforce.
    a.  On the **Edit Dataset Transformations** page, select **Add Field**.  
    b.  Use the Prism Copilot Expression Builder to:
 
-   ○ Standardize numeric measures (for example, convert text to numeric, or normalize to a common currency or unit).
+   * Standardize numeric measures (for example, convert text to numeric, or normalize to a common currency or unit).
 
-   ○ Derive business metrics (such as totals, ratios, flags, or categories).
+   * Derive business metrics (such as totals, ratios, flags, or categories).
 
-   ○ Clean or format text and date fields into more report-friendly values.
+   * Clean or format text and date fields into more report-friendly values.
 
     c. Give each calculated field a clear, business-friendly name.
 
