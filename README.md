@@ -191,6 +191,7 @@ These samples have been built and curated to help hackers with some of the new f
 
 | App | Description | 
 | --- | ----------- | 
+| [mwAgentApp](/samples/mwAgentApp_sghrnq/) | Sample of Agent Actions in Orchestrate. | 
 | [sftpToPrismDemo](/samples/sftpToPrismDemo_mcwslt/) | Sample of an Orchestration using Dynamic SFTP and Trigger Prism Job. | 
 
 </details>
