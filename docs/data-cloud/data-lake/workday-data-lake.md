@@ -32,6 +32,5 @@ The only requirement is the Salesforce account for the Salesforce tenant login. 
 To use Data Lake in Salesforce, create a new Data Stream using Apache Iceberg.
 
 <img width="512" height="228" alt="image" src="https://github.com/user-attachments/assets/e5207081-87eb-4f64-9e30-ff1c2732588e" />  
-
-  
+<br>
 <img width="494" height="512" alt="image" src="https://github.com/user-attachments/assets/d7858c34-ad8f-4b7a-9c13-27f3f0d31aca" />  
