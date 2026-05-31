@@ -2,11 +2,11 @@
 
 | Container Tags | Editable Tags | Read-Only Tags | Invisible Tags |
 | :---- | :---- | :---- | :---- |
-| [chatCard](/docs/extend/a2ui/a2ui-chat-tags-for-custom-agents.md#chatcard) | [chatCheckBox](#chatcheckbox) | [chatButton](#chatbutton-12) | [chatHidden](#chathidden-18) |
-| [chatColumn](#chatcolumn-4) | [chatChoicePicker](#chatchoicepicker-8) | [chatDivider](#chatdivider-13) | [chatLoop](#chatloop-19) |
-| [chatRow](#chatrow-5) | [chatDateTimeInput](#chatdatetimeinput-9) | [chatIcon](#chaticon-14) |  |
-|  | [chatTextField](#chattextfield-10) | [chatImage](#chatimage-15) |  |
-|  |  | [chatText](#chattext-16) |  |
+| [chatCard](#chatcard) | [chatCheckBox](#chatcheckbox) | [chatButton](#chatbutton) | [chatHidden](#chathidden) |
+| [chatColumn](#chatcolumn) | [chatChoicePicker](#chatchoicepicker) | [chatDivider](#chatdivider) | [chatLoop](#chatloop) |
+| [chatRow](#chatrow) | [chatDateTimeInput](#chatdatetimeinput) | [chatIcon](#chaticon) |  |
+|  | [chatTextField](#chattextfield) | [chatImage](#chatimage) |  |
+|  |  | [chatText](#chattext) |  |
 
 # Container Tags
 
