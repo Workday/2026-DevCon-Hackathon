@@ -11,7 +11,7 @@ The Python wheel file is required when you set up:
 * Python client
 
 ### Data Service JDBC Jar File
-Download and extract the JDBC jar file from this zip file:
+Download and extract the JDBC jar file from this zip file:  
 [data-service-driver-0.9.5-all_AuthCode_JWT_Combined.zip](https://github.com/user-attachments/files/28437503/data-service-driver-0.9.5-all_AuthCode_JWT_Combined.zip)
 
 The JDBC jar file is required when you set up:
