@@ -32,11 +32,11 @@ You can use these steps to set up your development machine, configure local proj
   | name | <ul><li>On line 2 of the `package.json` file, edit the name of the plugin. The default value is `my-plugin`.</li><li>Set a unique name to avoid tenant collisions.</li><li>Users do not view this name.</li><li>You can enter any name that follows NPM package naming conventions. Permitted characters include lowercase letters, numbers, hyphens (-), underscores (\_), and dots (.). See [Naming Rules](https://github.com/npm/validate-npm-package-name#naming-rules).</li></ul> |
   | title | <ul><li>Set the user-facing title to define the human-readable name of your plugin.</li><li>Add a new line on line 3 written as `"title": "Your plugin name",`.</li><li>Keep the title to 20 characters or less to prevent the name from stretching across the screen.</li><li>Character restrictions do not apply to this field.</li><li>Users view this title in the Microsoft Teams simulator menu bar.</li></ul> |
 
-![WE_myplugin|690x204](upload://sJuCH9NRrilWaJJaCtoJW4XcsJP.png)
+<img width="1070" height="317" alt="image" src="https://github.com/user-attachments/assets/3fa53a33-14f5-4d6d-9d67-1e607f24e712" />
 
 3. Run `npx @workday/everywhere view` again and verify that the name in the upper-left corner updates to the new name you entered.
   > **Note:** You can view the title after you build and publish the plugin to the Microsoft Teams simulator in later steps.
-![WE_package_json|643x500](upload://haGpKsAatCNARo2EquzeS9gnJFA.png)
+<img width="916" height="712" alt="image" src="https://github.com/user-attachments/assets/a8c6b184-d482-413e-b7cc-378b18bdb004" />
   
 
 ### 4. Connect to App Builder
@@ -52,7 +52,7 @@ You can use these steps to set up your development machine, configure local proj
 5. In the Builder Service, get your CLI keys by accessing the ellipsis upper-right side and selecting **Get CLI Token**.
 6. Copy the Workday Everywhere CLI key to the clipboard.
 
-![WE_get_CLI_token|690x372](upload://tzyyhKQiaELBdcrSUg01tZBAbfs.png)
+<img width="1018" height="549" alt="image" src="https://github.com/user-attachments/assets/ede66101-71ca-4591-9fea-f59c9b5f7e10" />
 
 ### 5. Gateway Authentication
 1. Go back to the terminal.
@@ -77,12 +77,12 @@ You can use these steps to set up your development machine, configure local proj
 4. Walk through your Extend application in a web browser. Click **View in Tenant** from the deployment success window to open the application.
 5. Take screenshots (save them) and evaluate which user flows to bring over into the Microsoft Teams simulator. Depending on the complexity of your Extend application, some functions and user flows might not fit the Microsoft Teams environment - it’s your call. You'll use these user flows and screenshots in Step 8.a.
 
-![WE_deploy_successful|690x495](upload://j2SsOKu4CaGO2h3pZeIYeQI8XWR.png)
+<img width="730" height="524" alt="image" src="https://github.com/user-attachments/assets/11fa619b-fa26-4543-a3a5-86b4973f9b0e" />
 
 6. Go to **App Hub** > [https://developer.workday.com/console/apps](https://developer.workday.com/console/apps?page=1).
 7. Click the ellipsis following the application name and click Download Source. You will locate this application package later.
 
-![WE_downlod_source|526x287](upload://xYElmegApOIhwN2X4VW3bOlWWxv.png)
+<img width="526" height="287" alt="image" src="https://github.com/user-attachments/assets/fba26233-ab60-4b28-a0c7-f261ddc5bfdb" />
 
 8. **Bind** your application source code to your local project folder to pull your Extend application functions into the local folder structure. Run `npx @workday/everywhere bind ~/downloads/THE_NAME_OF_YOUR_APP_DOWNLOAD.zip.`
 
@@ -117,7 +117,7 @@ You can provide development feedback or register your interest in upcoming Early
 3. Enter your contact information and evaluation details.
 4. Click **Submit**.
 
-![WE_feedback|690x393](upload://dE5OPzEagN5yD7SSvadrKBOnr5J.png)
+<img width="1033" height="589" alt="image" src="https://github.com/user-attachments/assets/e760fefc-d4eb-4bda-8d4f-3c3f0a87f24d" />
 
 ## Remove registered tenants and Extend API Client
 When you remove your tenant registration and Extend API Client, Workday automatically removes all of your published applications. You can register your tenant and clients again by completing the configuration process.
@@ -125,7 +125,7 @@ When you remove your tenant registration and Extend API Client, Workday automati
   1. Access the Builder menu.
 2. Click **Forget Me**.
 
-![WE_forget_me|690x378](upload://ou3IHwKrmviCX5j7Jj4VkCw73hq.png)
+<img width="1010" height="554" alt="image" src="https://github.com/user-attachments/assets/aa378657-a216-4406-8354-d8f11c22bce1" />
 
 ## Remove your plugin from the Microsoft Teams Simulator
 To remove your plugin from the simulator, run `npx @workday/everywhere unpublish`. You can publish the application again at any time using the publish command in the terminal.
