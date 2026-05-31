@@ -3,16 +3,16 @@ These are the downloads required by the Workday Live Data Query setup. These dow
 ## Download Files
 
 ### Live Data Query Python Wheel File
-Download and extract the Python Wheel file from this zip file:
-[ldq_python_client-1.0.7-py3-none-any.zip|attachment](upload://yY0Y9zk74MbgEw2bclG2GvjTjZ.zip) (17.9 KB)
+Download and extract the Python Wheel file from this zip file:  
+[ldq_python_client-1.0.7-py3-none-any.zip](https://github.com/user-attachments/files/28437499/ldq_python_client-1.0.7-py3-none-any.zip)
 
 The Python wheel file is required when you set up:
 * Snowflake client
 * Python client
 
 ### Data Service JDBC Jar File
-Download and extract the JDBC jar file from this zip file:
-[data-service-driver-0.9.5-all_AuthCode_JWT_Combined.zip|attachment](upload://kjrgVk5mBOginhFgk3ExJquKeJh.zip) (22.4 MB)
+Download and extract the JDBC jar file from this zip file:  
+[data-service-driver-0.9.5-all_AuthCode_JWT_Combined.zip](https://github.com/user-attachments/files/28437503/data-service-driver-0.9.5-all_AuthCode_JWT_Combined.zip)
 
 The JDBC jar file is required when you set up:
 * Tableau with JDBC Driver
