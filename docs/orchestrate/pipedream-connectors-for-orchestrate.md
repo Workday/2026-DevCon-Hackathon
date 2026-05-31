@@ -1,7 +1,9 @@
 # DevCon 2026 Feature: Pipedream Connectors for Orchestrate
 
 ## Overview
-https://vimeo.com/1197158006/491bbf2840?share=copy&fl=sv&fe=ci
+
+https://github.com/user-attachments/assets/5da835b9-1bf5-45c5-8323-ed99fa2b8522
+
 
 Connectors for Orchestrate are preconfigured bridges that link your Extend Or Integration app's orchestrations to external services, without writing custom HTTP requests, parsing low level API responses by hand, or implementing OAuth flows yourself. Add a connector to your app, supply credentials once per environment, and a catalog of pre-built actions becomes available as drag-and-drop steps inside Orchestration Builder.
 
@@ -23,8 +25,9 @@ No client ID/secret to manage, no redirect URI to host, no app-verification subm
 ### 1. Add a connector to your app
 
 **Prerequisite:** an existing Extend or Integration app.
-![image|690x398](upload://jYq9dDG0IYpdMwMwmBdKawYlQLx.png)
-![image|690x397](upload://5NcqcC5Gs0AtID8gUbMYYwtfQj5.png)
+<img width="3378" height="1950" alt="image" src="https://github.com/user-attachments/assets/62f584cf-ee01-4e31-a3b7-33ee17ea249e" />
+<br>
+<img width="3374" height="1946" alt="image" src="https://github.com/user-attachments/assets/8ba979e7-6184-4e99-9b18-111a7adadafe" />
 
 1. On the app's home page, click the Connectors tab, then Add Connector.
 2. Pick a connector from the searchable Catalog of Connectors (sorted by category). Click **Continue**.
@@ -34,7 +37,7 @@ No client ID/secret to manage, no redirect URI to host, no app-verification subm
 > ⚠️ **Never use a personal account.** Use a dedicated service / integration account.
 
 **Result:** the connector — and all of its actions — is available to every orchestration in that app, in the configured environment.
-![image|690x396](upload://AsasYjFQD4y89H1sEwu4n5F8m45.png)
+<img width="3364" height="1934" alt="image" src="https://github.com/user-attachments/assets/d0864f01-5da8-448b-9b49-112d7755f74d" />
 
 ### 2. Add a connector action to an orchestration
 
@@ -50,7 +53,7 @@ No client ID/secret to manage, no redirect URI to host, no app-verification subm
 8. Click **Close** when properties are configured.
 
 **Result:** the action behaves like any other step — accepts upstream input, produces output, fits into loops, conditions, suborchestrations, and error handling exactly like the rest of the orchestration palette.
-![image|690x397](upload://sfZUoX2tkXHwcFBYxo0g6ZA8iab.png)
+<img width="3374" height="1944" alt="image" src="https://github.com/user-attachments/assets/8abed248-fd22-4e15-8508-4096f195df50" />
 
 
 ## Tips before you start
@@ -58,7 +61,7 @@ No client ID/secret to manage, no redirect URI to host, no app-verification subm
 * Connectors are scoped to the **app**, not the individual orchestration. Once added, every orchestration in the app can use the connector's actions
 * For hackathon you only have Development tenants so can skip production configurationl
 * Use **Action Explorer** to discover the JSON shape
-![image|690x389](upload://msF7S8FdOTPs2H0nSh7do1QqLII.jpeg)
+<img width="3856" height="2176" alt="image" src="https://github.com/user-attachments/assets/ccb22aa0-5ce8-415a-9793-edd9aea47b26" />
 
 
 ## Hackathon project ideas
