@@ -1,5 +1,6 @@
 ## Overview
 
+https://github.com/user-attachments/assets/80b971ae-5d39-4719-a8da-35226c529b2c
 
 We have developed Agent Actions for Workday Orchestrate, a new capability that lets you expose your synchronous orchestrations as AI-callable tools through the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). Any MCP-compatible External AI client — Claude Code, Cusor, or your own custom agent built with Developer Agent, will be able to discover and invoke your orchestrations through natural language.
 
