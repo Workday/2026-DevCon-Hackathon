@@ -177,6 +177,9 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 
 | Feature | Description | 
 | ------- | ----------- | 
+| [Enhanced Form Layout Properties](/docs/recently-released-features/enhanced-form-layout-properties.md) | Apply granular UX controls to container tags to perfectly tailor your page structure. | 
+| [Side-by-Side Views via columnLayout](/docs/recently-released-features/side-by-side-views-via-column-layout.md) | Use the new columnLayout tag to logically group independent but related information side-by-side by specifying how many columns to occupy within the body container. | 
+| [Step-by-Step Interactions with multiStepLayout](/docs/recently-released-features/step-by-step-interactions-with-multisteplayout.md) | The new multiStepLayout tag allows you to partition a single PMD page into sequential steps, creating a modern, carousel-style navigation experience. | 
 | [Workday Developer CLI](/docs/recently-released-features/wdcli.md) | WDCLI is your unified command line interface to build, test, validate, and deploy Workday Integration and Extend apps. | 
 | [Local Disk Sync](/docs/recently-released-features/local-disk-sync.md) | Enjoy seamless, automatic syncing between the builder tools in the browser and your local file system- enabling smoother integration with your preferred version control systems and CI/CD workflows while accelerating your development cycles. | 
 | [Orchestrate - Kill Orchestration](/docs/recently-released-features/orchestrate-kill-orchestration.md) | This new emergency operation gives developers the ability to forcefully and immediately terminate a running orchestration, thus bypassing all cancellation checkpoints when a critical incident demands it. | 
