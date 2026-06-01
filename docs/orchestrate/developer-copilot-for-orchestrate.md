@@ -1,7 +1,7 @@
 # Developer Copilot for Orchestrate
 
 ## Overview
-![image|690x396](upload://2hpXZSOC2arlUyREjg8yRE4PI8I.jpeg)
+<img width="1920" height="1104" alt="image" src="https://github.com/user-attachments/assets/95978273-1625-4426-bbd1-e8956b793f8d" />
 
 
 **[Workday Developer Copilot for Orchestrate](https://developer.workday.com/documentation/GUID-671bc6ea-7223-411c-867d-09b01d4ad6f6-enHYPHENus)** shifts how you build integrations — from manually selecting, placing, and configuring components step by step, to describing what you want in natural language and letting Copilot generate enterprise-ready orchestrations. It's purpose-built for Workday Orchestration Integrations (not a general-purpose code assistant) and it's intended to augment, not replace, the integration developer in the loop.
