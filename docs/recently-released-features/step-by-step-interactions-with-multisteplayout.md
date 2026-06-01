@@ -13,13 +13,13 @@ Unlike the `editWizard`, which requires separate PMD files for each step, this l
 - The `multiStepLayout` tag is strictly forbidden inside a `pod`.
 
 **Example:**
-![Screen Recording 2026-05-14 at 6.01.09 PM|680x500](upload://1p8lJzdNfG34o9tCJZHnjCsqao5.gif)
+<img width="1364" height="1002" alt="Screen Recording 2026-05-14 at 6 01 09 PM" src="https://github.com/user-attachments/assets/13602b0a-aa77-4dae-ae5a-6f4fdb8c75d0" />
 
 
-**When is This Happening?**
-This is available, [date=2026-05-15 timezone="America/Los_Angeles"].
+**When is This Happening?**  
+This is available, May 15, 2026.
 
-**What do I have to do?**
+**What do I have to do?**  
 If you would like to use this feature, `multiStepLayout` must be used as the top-level tag within the `body` container.
 
 For more information and example code, please see the [release notes](https://forum.developer.workday.com/c/news/release-notes/11) and [developer documentation](https://developer.workday.com/documentation).
