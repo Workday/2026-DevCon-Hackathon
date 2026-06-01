@@ -12,18 +12,20 @@ Make better use of horizontal desktop screen real estate with the new `columnLay
 
 - The `columnLayout` tag is strictly forbidden inside a `pod`.
 
-**Example:**
-3 Column:
-![3 Column|690x426, 75%](upload://3pfQEOs4RIc7lr2a3rXqiE1faTZ.jpeg)
-2 Column:
-![2 Column|690x415, 75%](upload://9lAxrAWc9XFzsImQEHNHycLvzuL.jpeg)
-1 Column:
-![1 Column|690x418, 75%](upload://aufr1RzA1n849JlTkH0qNtzlnPA.jpeg)
+**Example:**  
+3 Column:  
+<img width="1321" height="817" alt="image" src="https://github.com/user-attachments/assets/298b3b13-6674-42a7-a300-9769c92409f1" />
 
-**When is This Happening?**
-This is available, [date=2026-05-15 timezone="America/Los_Angeles"].
+2 Column:  
+<img width="1321" height="795" alt="image" src="https://github.com/user-attachments/assets/9676c81b-0615-4034-8598-ef9b1c9ec559" />
 
-**What do I have to do?**
+1 Column:  
+<img width="1321" height="802" alt="image" src="https://github.com/user-attachments/assets/e6c41b7b-215f-4b98-b8f3-0a7c6862a032" />
+
+**When is This Happening?**  
+This is available, May 15, 2026.
+
+**What do I have to do?**  
 If you would like to use this feature, `columnLayout` must be used as the top-level tag within the `body` container.
 
 For more information and example code, please see the [release notes](https://forum.developer.workday.com/c/news/release-notes/11) and [developer documentation](https://developer.workday.com/documentation).
