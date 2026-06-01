@@ -15,21 +15,22 @@ Note: Form layout properties are **not allowed** within `grid` tags.
 
 **Example:**
 
-Density:
-![density-386353630f775b9860e62bf1c9f28f8f|690x465, 50%](upload://ceREl2JHoTHWmLI8RU3pF1FVKRi.gif)
+Density:  
+<img width="824" height="556" alt="density-386353630f775b9860e62bf1c9f28f8f" src="https://github.com/user-attachments/assets/b999c23d-0e87-400d-ac72-af71060ab8f7" />
 
-Alignment:
-![Screenshot 2026-05-14 at 6.25.38 PM|690x303, 50%](upload://ncqva7ACvJw9oCwFuR7Naeu032t.png)
+Alignment:  
+<img width="1412" height="622" alt="image" src="https://github.com/user-attachments/assets/8fa74917-e87b-4bc3-964f-4367ca935f60" />
 
-Horizontal Sizing:
-![Screenshot 2026-05-14 at 6.26.27 PM|690x265, 75%](upload://iSmLUdi6mh7QloWUiS9dS9a8HGi.png)
-Label Position:
-![Screenshot 2026-05-14 at 6.27.40 PM|690x237, 75%](upload://33arU1VrleffzJjJsgs1zScaZOi.png)
+Horizontal Sizing:  
+<img width="2368" height="910" alt="image" src="https://github.com/user-attachments/assets/ee805ce0-47e1-483d-a685-6405ce1efbcf" />
 
-**When is This Happening?**
-This is available, [date=2026-05-15 timezone="America/Los_Angeles"].
+Label Position:  
+<img width="1966" height="676" alt="image" src="https://github.com/user-attachments/assets/ed83d924-d751-4240-be90-54c1eb84208b" />
 
-**What do I have to do?**
+**When is This Happening?**  
+This is available, May 15, 2026.
+
+**What do I have to do?**  
 To add these layout properties to an app, you need to include the new `layout` attribute within a `section` or `fieldSet` container tag in your PMD file.
 
 For more information and example code, please see the [release notes](https://forum.developer.workday.com/c/news/release-notes/11) and [developer documentation](https://developer.workday.com/documentation).
