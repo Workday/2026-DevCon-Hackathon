@@ -107,6 +107,7 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 | ------- | 
 | [Configure Orchestrate Agent Actions](/docs/orchestrate/configure-orchestrate-agent-actions.md) | 
 | [Pipedream Connectors for Orchestrate](/docs/orchestrate/pipedream-connectors-for-orchestrate.md) | 
+| [Performance Metrics in Orchestration Builder](/docs/orchestrate/performance-metrics-in-orchestration-builder.md) | 
 | [SFTP File Transfer](/docs/orchestrate/sftp-file-transfer.md) | 
 | [Developer Copilot for Orchestrate](/docs/orchestrate/developer-copilot-for-orchestrate.md) | 
 | [AWS Signature v4 Credential](/docs/orchestrate/aws-signature-v4-credential.md) | 
