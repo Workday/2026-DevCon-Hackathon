@@ -197,12 +197,14 @@ These samples have been built and curated to help hackers with some of the new f
 <details>
 <summary>View 2026 Hackathon Samples</summary>
 
-| App | Description | 
+| Sample | Description | 
 | --- | ----------- | 
 | [ttSecretSanta](/samples/ttsecretsanta_ynzjmg/) | A Secret Santa Gift Exchange application built on Extend with Custom Agent functionality. Demonstrated in the Agentic Innovation session at DevCon 2026.  | 
 | [mwAgentApp](/samples/mwAgentApp_sghrnq/) | Sample of Agent Actions in Orchestrate. | 
 | [sftpToPrismDemo](/samples/sftpToPrismDemo_mcwslt/) | Sample of an Orchestration using Dynamic SFTP and Trigger Prism Job. |
 | [newPmdLayoutOptions](/samples/newPmdLayoutOptions_sghrnq/) | Sample app showcasing new PMD layout options: Enhanced Form Layout Properties, Side-by-Side Views via columnLayout, and Step-by-Step Interactions with multiStepLayout. |  
+| [Live Data Query Sample Queries](/docs/data-cloud/live-data-query/live-data-query-sample-queries.md) | Some sample queries to reference for Live Data Query. | 
+| [Developer Agent Sample Prompts](/docs/developer-agent/developer-agent-sample-prompts.md) | Sample prompts to get started with in Developer Agent. | 
 
 </details>
 
