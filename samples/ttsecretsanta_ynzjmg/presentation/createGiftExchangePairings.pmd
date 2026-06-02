@@ -1,0 +1,138 @@
+{
+  "id": "createGiftExchangePairings",
+  "_generationNote": "This page creates a single instance of the GiftExchangePairings object. You can use this page as a starting template for building an end-user page, or used as an administration page to create new instances.",
+  "endPoints": [
+    {
+      "name": "getGiftExchangeEvents",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of GiftExchangeEvent business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `/giftExchangeEvents` %>",
+      "baseUrlType": "workday-app"
+    },
+    {
+      "name": "getGiftExchangeParticipants",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of GiftExchangeParticipant business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `giftExchangeParticipants` %>",
+      "baseUrlType": "workday-app"
+    }
+  ],
+  "securityDomains": [ ],
+  "script": "",
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "id": "title",
+      "label": "Create Gift Exchange Pairings"
+    },
+    "body": {
+      "type": "section",
+      "id": "bodySection",
+      "children": [
+        {
+          "type": "dropdown",
+          "id": "giftExchangeEvent",
+          "label": "Gift Exchange Event",
+          "idKey": "id",
+          "displayKey": "descriptor",
+          "_generationNote": "The values, used to create the selectable options, conforms to a Workday collection resource.",
+          "_generationNote2": "In particular, the response contains 'data' with an array of objects with both 'id' and 'descriptor'.",
+          "values": "<% getGiftExchangeEvents.data %>",
+          "valuesOut": [
+            {
+              "value": "<% self.value[0] ?? null %>",
+              "valueOutBinding": "createGiftExchangePairings.giftExchangeEvent.id"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "id": "giftGiver",
+          "label": "Gift Giver",
+          "idKey": "id",
+          "displayKey": "descriptor",
+          "_generationNote": "The values, used to create the selectable options, conforms to a Workday collection resource.",
+          "_generationNote2": "In particular, the response contains 'data' with an array of objects with both 'id' and 'descriptor'.",
+          "values": "<% getGiftExchangeParticipants.data %>",
+          "valuesOut": [
+            {
+              "value": "<% self.value[0] ?? null %>",
+              "valueOutBinding": "createGiftExchangePairings.giftGiver.id"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "id": "giftRecipient",
+          "label": "Gift Recipient",
+          "idKey": "id",
+          "displayKey": "descriptor",
+          "_generationNote": "The values, used to create the selectable options, conforms to a Workday collection resource.",
+          "_generationNote2": "In particular, the response contains 'data' with an array of objects with both 'id' and 'descriptor'.",
+          "values": "<% getGiftExchangeParticipants.data %>",
+          "valuesOut": [
+            {
+              "value": "<% self.value[0] ?? null %>",
+              "valueOutBinding": "createGiftExchangePairings.giftRecipient.id"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "giftStatus",
+          "label": "Gift Status",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangePairings.giftStatus"
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "id": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "id": "footerText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  },
+  "outboundData": {
+    "outboundEndPoints": [
+      {
+        "_generationNote": "Creates a single instance, as specified by of the GiftExchangePairings business object resource.",
+        "name": "createGiftExchangePairings",
+        "url": "<% 'giftExchangePairings' %>",
+        "authType": "sso",
+        "httpMethod": "POST",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      }
+    ],
+    "responseErrorDetail": {
+      "_generationNote": "This responseErrorDetail works with the Workday API error structure.",
+      "_generationNote2": "If there is only a single error, the errorSummary will be shown.",
+      "errorSummary": "<% error %>",
+      "_generationNote3": "For multiple errors, append the top-level error to provide context.",
+      "errors": "<% empty errors ? [] : [error].join(errors.map(err => { err.error } )) %>"
+    }
+  }
+}

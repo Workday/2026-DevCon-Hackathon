@@ -1,0 +1,179 @@
+{
+  "id": "createGiftExchangeEvent",
+  "_generationNote": "This page creates a single instance of the GiftExchangeEvent object. You can use this page as a starting template for building an end-user page, or used as an administration page to create new instances.",
+  "endPoints": [
+    {
+      "name": "searchWorkers",
+      "url": "workers?search=<% instanceListQuery %>",
+      "deferred": true,
+      "exclude": "<% empty(instanceListQuery) %>",
+      "authType": "sso",
+      "baseUrlType": "workday-common",
+      "failOnStatusCodes": [
+        {
+          "code": 400
+        },
+        {
+          "code": 403
+        }
+      ]
+    }
+  ],
+  "securityDomains": [ ],
+  "script": "",
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "id": "title",
+      "label": "Create Gift Exchange Event"
+    },
+    "body": {
+      "type": "section",
+      "id": "bodySection",
+      "children": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangeEvent.name"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangeEvent.description"
+            }
+          ]
+        },
+        {
+          "type": "instanceList",
+          "label": "Organizer",
+          "id": "organizer",
+          "required": "true",
+          "values": "<% !empty(workerMe.id) ? [].add(workerMe) : [] %>",
+          "selectedValuesAndDescriptors": "<% !empty(workerMe.id) ? [].add(workerMe) : [] %>",
+          "multiSelect": "false",
+          "searchEndPoint": "<% endpoints.searchWorkers %>",
+          "searchResultValues": "<% searchWorkers.data %>",
+          "valuesOut": [
+            {
+              "value": "<% self.value[0] ?? null %>",
+              "valueOutBinding": "createGiftExchangeEvent.organizer.id"
+            }
+          ]
+        },
+        {
+          "type": "date",
+          "datePrecision": "DAY",
+          "dateFormat": "yyyy-MM-dd",
+          "id": "registrationDeadline",
+          "label": "Registration Deadline",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangeEvent.registrationDeadline"
+            }
+          ]
+        },
+        {
+          "type": "date",
+          "datePrecision": "DAY",
+          "dateFormat": "yyyy-MM-dd",
+          "id": "giftExchangeDate",
+          "label": "Gift Exchange Date",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangeEvent.giftExchangeDate"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "fractionDigits": 2,
+          "id": "budgetMinimum",
+          "label": "Budget Minimum",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangeEvent.budgetMinimum"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "fractionDigits": 2,
+          "id": "budgetMaximum",
+          "label": "Budget Maximum",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangeEvent.budgetMaximum"
+            }
+          ]
+        },
+        {
+          "type": "checkBox",
+          "trueLabel": "yes",
+          "falseLabel": "no",
+          "id": "isActive",
+          "label": "Is Active",
+          "valuesOut": [
+            {
+              "value": "<% self.value %>",
+              "valueOutBinding": "createGiftExchangeEvent.isActive"
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "id": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "id": "footerText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  },
+  "outboundData": {
+    "outboundEndPoints": [
+      {
+        "_generationNote": "Creates a single instance, as specified by of the GiftExchangeEvent business object resource.",
+        "name": "createGiftExchangeEvent",
+        "url": "<% 'giftExchangeEvents' %>",
+        "authType": "sso",
+        "httpMethod": "POST",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      }
+    ],
+    "responseErrorDetail": {
+      "_generationNote": "This responseErrorDetail works with the Workday API error structure.",
+      "_generationNote2": "If there is only a single error, the errorSummary will be shown.",
+      "errorSummary": "<% error %>",
+      "_generationNote3": "For multiple errors, append the top-level error to provide context.",
+      "errors": "<% empty errors ? [] : [error].join(errors.map(err => { err.error } )) %>"
+    }
+  }
+}

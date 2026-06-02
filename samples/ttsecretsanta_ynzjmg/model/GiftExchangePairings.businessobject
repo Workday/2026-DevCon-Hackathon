@@ -1,0 +1,54 @@
+{
+  "id": 3,
+  "name": "GiftExchangePairings",
+  "label": "Gift Exchange Pairings",
+  "defaultSecurityDomains": [
+    "SecretSantaAdmin"
+  ],
+  "defaultCollection": {
+    "name": "giftExchangePairings",
+    "label": "Gift Exchange Pairings"
+  },
+  "fields": [
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": false,
+      "target": "GiftExchangeEvent",
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "type": "SINGLE_INSTANCE",
+      "name": "giftExchangeEvent",
+      "id": 1
+    },
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": false,
+      "target": "GiftExchangeParticipant",
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "type": "SINGLE_INSTANCE",
+      "name": "giftGiver",
+      "id": 2
+    },
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": false,
+      "target": "GiftExchangeParticipant",
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "type": "SINGLE_INSTANCE",
+      "name": "giftRecipient",
+      "id": 3
+    },
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "giftStatus",
+      "id": 4
+    }
+  ]
+}

@@ -199,6 +199,7 @@ These samples have been built and curated to help hackers with some of the new f
 
 | App | Description | 
 | --- | ----------- | 
+| [ttSecretSanta](/samples/ttsecretsanta_ynzjmg/) | A Secret Santa Gift Exchange application built on Extend with Custom Agent functionality. Demonstrated in the Agentic Innovation session at DevCon 2026.  | 
 | [mwAgentApp](/samples/mwAgentApp_sghrnq/) | Sample of Agent Actions in Orchestrate. | 
 | [sftpToPrismDemo](/samples/sftpToPrismDemo_mcwslt/) | Sample of an Orchestration using Dynamic SFTP and Trigger Prism Job. |
 | [newPmdLayoutOptions](/samples/newPmdLayoutOptions_sghrnq/) | Sample app showcasing new PMD layout options: Enhanced Form Layout Properties, Side-by-Side Views via columnLayout, and Step-by-Step Interactions with multiStepLayout. |  

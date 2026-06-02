@@ -1,0 +1,344 @@
+{
+  "id": "manageGiftExchangeEvent",
+  "_generationNote": "This page is designed for app administrators to quickly manage GiftExchangeEvent business object data for the app. ",
+  "_generationNote2": "It is strongly advised to configure the `securityDomains` for this page to allow only the appropriate personas to access it.",
+  "securityDomains": [ ],
+  "script": "",
+  "endPoints": [
+    {
+      "name": "searchWorkers",
+      "url": "workers?search=<% instanceListQuery %>",
+      "deferred": true,
+      "exclude": "<% empty(instanceListQuery) %>",
+      "authType": "sso",
+      "baseUrlType": "workday-common",
+      "failOnStatusCodes": [
+        {
+          "code": 400
+        },
+        {
+          "code": 403
+        }
+      ]
+    },
+    {
+      "name": "getGiftExchangeEvents",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of GiftExchangeEvent business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `giftExchangeEvents` %>",
+      "baseUrlType": "workday-app"
+    }
+  ],
+  "outboundData": {
+    "_generationNote": "All of the outboundEndPoints will be invoked for every row of the grid upon the submission of the page.",
+    "_generationNote2": "This is because the cellTemplate valueOutBinding attributes reference the corresponding endpoint for create and update. The grid deleteEndPoint references the delete.",
+    "outboundEndPoints": [
+      {
+        "_generationNote": "Creates a single instance, as specified by the GiftExchangeEvent data from the valueOutBinding attributes in the grid cellTemplates.",
+        "name": "createGiftExchangeEvent",
+        "url": "<% 'giftExchangeEvents' %>",
+        "_generationNote2": "To ensure it is only invoked for rows the user has added, the exclude condition checks that the `id` cell is not populated.",
+        "exclude": "<% ! (empty giftExchangeEventId.value) %>",
+        "authType": "sso",
+        "httpMethod": "POST",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Updates a single instance, as specified by `giftExchangeEventId.value` from the business object id field in the cellTemplate.",
+        "name": "updateGiftExchangeEvent",
+        "url": "<% `giftExchangeEvents/{{giftExchangeEventId.value}}` %>",
+        "_generationNote2": "To ensure it is only invoked for existing rows, the exclude condition checks that the `id` cell value is already present.",
+        "exclude": "<% empty giftExchangeEventId.value %>",
+        "authType": "sso",
+        "httpMethod": "PUT",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Deletes a single instance, as specified by `giftExchangeEventId.value` from the business object id field in the cellTemplate.",
+        "_generationNote2": "The deleteEndPoint attribute of the grid references this endpoint, which will be invoked for each deleted row upon the submission of the page.",
+        "name": "deleteGiftExchangeEvent",
+        "url": "<% `giftExchangeEvents/{{giftExchangeEventId.value}}` %>",
+        "authType": "sso",
+        "httpMethod": "DELETE",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      }
+    ],
+    "responseErrorDetail": {
+      "_generationNote": "This responseErrorDetail works with the Workday API error structure.",
+      "_generationNote2": "If there is only a single error, the errorSummary will be shown.",
+      "errorSummary": "<% error %>",
+      "_generationNote3": "For multiple errors, append the top-level error to provide context.",
+      "errors": "<% empty errors ? [] : [error].join(errors.map(err => { err.error } )) %>"
+    }
+  },
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "id": "title",
+      "label": "Manage Gift Exchange Event"
+    },
+    "body": {
+      "id": "bodySection",
+      "type": "section",
+      "children": [
+        {
+          "_generationNote": "This grid is populated via the `rows` property with all of the data retrieved from the Businessobject API.",
+          "_generationNote2": "Upon submission, each row will be individually checked to either create, update, or delete the specified instance. The corresponding endpoint will be invoked for each row.",
+          "type": "grid",
+          "gridType": "LIST",
+          "id": "giftExchangeEventGrid",
+          "rows": "<% getGiftExchangeEvents.data %>",
+          "rowVariableName": "giftExchangeEvent",
+          "deleteEndPoint": "deleteGiftExchangeEvent",
+          "columns": [
+            {
+              "type": "column",
+              "columnId": "giftExchangeEventIdColumn",
+              "label": "Id",
+              "cellTemplate": {
+                "type": "text",
+                "id": "giftExchangeEventId",
+                "_generationNote": "The `id` is the primary way Workday manages instances. This value will only be populated for existing instances.",
+                "value": "<% giftExchangeEvent.id %>",
+                "enabled": false,
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.id",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.id",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "nameColumn",
+              "label": "Name",
+              "cellTemplate": {
+                "type": "text",
+                "id": "name",
+                "value": "<% giftExchangeEvent.name %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.name",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.name",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "descriptionColumn",
+              "label": "Description",
+              "cellTemplate": {
+                "type": "text",
+                "id": "description",
+                "value": "<% giftExchangeEvent.description %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.description",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.description",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "organizerColumn",
+              "label": "Organizer",
+              "cellTemplate": {
+                "type": "instanceList",
+                "label": "Organizer",
+                "id": "organizer",
+                "required": "true",
+                "values": "<% 
+                                var tmpList = [];
+                                if (!empty(giftExchangeEvent.organizer)) {
+                                  tmpList.add({'id':giftExchangeEvent.organizer.id, 'descriptor':giftExchangeEvent.organizer.descriptor});
+                                }
+                                return tmpList;
+                                %>",
+                "selectedValuesAndDescriptors": "<% 
+                                                var tmpList = [];
+                                if (!empty(giftExchangeEvent.organizer)) {
+                                  tmpList.add({'id':giftExchangeEvent.organizer.id, 'descriptor':giftExchangeEvent.organizer.descriptor});
+                                }
+                                return tmpList;
+                %>",
+                "multiSelect": "false",
+                "searchEndPoint": "<% endpoints.searchWorkers %>",
+                "searchResultValues": "<% searchWorkers.data %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.organizer",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.organizer",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "registrationDeadlineColumn",
+              "label": "Registration Deadline",
+              "cellTemplate": {
+                "type": "date",
+                "datePrecision": "DAY",
+                "dateFormat": "yyyy-MM-dd",
+                "id": "registrationDeadline",
+                "value": "<% giftExchangeEvent.registrationDeadline %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.registrationDeadline",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.registrationDeadline",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "giftExchangeDateColumn",
+              "label": "Gift Exchange Date",
+              "cellTemplate": {
+                "type": "date",
+                "datePrecision": "DAY",
+                "dateFormat": "yyyy-MM-dd",
+                "id": "giftExchangeDate",
+                "value": "<% giftExchangeEvent.giftExchangeDate %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.giftExchangeDate",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.giftExchangeDate",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "budgetMinimumColumn",
+              "label": "Budget Minimum",
+              "cellTemplate": {
+                "type": "number",
+                "fractionDigits": 2,
+                "id": "budgetMinimum",
+                "value": "<% giftExchangeEvent.budgetMinimum %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.budgetMinimum",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.budgetMinimum",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "budgetMaximumColumn",
+              "label": "Budget Maximum",
+              "cellTemplate": {
+                "type": "number",
+                "fractionDigits": 2,
+                "id": "budgetMaximum",
+                "value": "<% giftExchangeEvent.budgetMaximum %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.budgetMaximum",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.budgetMaximum",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "isActiveColumn",
+              "label": "Is Active",
+              "cellTemplate": {
+                "type": "checkBox",
+                "id": "isActive",
+                "value": "<% giftExchangeEvent.isActive %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangeEvent.isActive",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangeEvent.isActive",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "id": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "id": "footerText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "id": "manageGiftExchangePairings",
+  "_generationNote": "This page is designed for app administrators to quickly manage GiftExchangePairings business object data for the app. ",
+  "_generationNote2": "It is strongly advised to configure the `securityDomains` for this page to allow only the appropriate personas to access it.",
+  "securityDomains": [ ],
+  "script": "",
+  "endPoints": [
+    {
+      "name": "getGiftExchangeEvents",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of GiftExchangeEvent business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `giftExchangeEvents` %>",
+      "baseUrlType": "workday-app"
+    },
+    {
+      "name": "getGiftExchangeParticipants",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of GiftExchangeParticipant business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `giftExchangeParticipants` %>",
+      "baseUrlType": "workday-app"
+    },
+    {
+      "name": "getGiftExchangePairings",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of GiftExchangePairings business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `giftExchangePairings` %>",
+      "baseUrlType": "workday-app"
+    }
+  ],
+  "outboundData": {
+    "_generationNote": "All of the outboundEndPoints will be invoked for every row of the grid upon the submission of the page.",
+    "_generationNote2": "This is because the cellTemplate valueOutBinding attributes reference the corresponding endpoint for create and update. The grid deleteEndPoint references the delete.",
+    "outboundEndPoints": [
+      {
+        "_generationNote": "Creates a single instance, as specified by the GiftExchangePairings data from the valueOutBinding attributes in the grid cellTemplates.",
+        "name": "createGiftExchangePairings",
+        "url": "<% 'giftExchangePairings' %>",
+        "_generationNote2": "To ensure it is only invoked for rows the user has added, the exclude condition checks that the `id` cell is not populated.",
+        "exclude": "<% ! (empty giftExchangePairingsId.value) %>",
+        "authType": "sso",
+        "httpMethod": "POST",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Updates a single instance, as specified by `giftExchangePairingsId.value` from the business object id field in the cellTemplate.",
+        "name": "updateGiftExchangePairings",
+        "url": "<% `giftExchangePairings/{{giftExchangePairingsId.value}}` %>",
+        "_generationNote2": "To ensure it is only invoked for existing rows, the exclude condition checks that the `id` cell value is already present.",
+        "exclude": "<% empty giftExchangePairingsId.value %>",
+        "authType": "sso",
+        "httpMethod": "PUT",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Deletes a single instance, as specified by `giftExchangePairingsId.value` from the business object id field in the cellTemplate.",
+        "_generationNote2": "The deleteEndPoint attribute of the grid references this endpoint, which will be invoked for each deleted row upon the submission of the page.",
+        "name": "deleteGiftExchangePairings",
+        "url": "<% `giftExchangePairings/{{giftExchangePairingsId.value}}` %>",
+        "authType": "sso",
+        "httpMethod": "DELETE",
+        "baseUrlType": "workday-app",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      }
+    ],
+    "responseErrorDetail": {
+      "_generationNote": "This responseErrorDetail works with the Workday API error structure.",
+      "_generationNote2": "If there is only a single error, the errorSummary will be shown.",
+      "errorSummary": "<% error %>",
+      "_generationNote3": "For multiple errors, append the top-level error to provide context.",
+      "errors": "<% empty errors ? [] : [error].join(errors.map(err => { err.error } )) %>"
+    }
+  },
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "id": "title",
+      "label": "Manage Gift Exchange Pairings"
+    },
+    "body": {
+      "id": "bodySection",
+      "type": "section",
+      "children": [
+        {
+          "_generationNote": "This grid is populated via the `rows` property with all of the data retrieved from the Businessobject API.",
+          "_generationNote2": "Upon submission, each row will be individually checked to either create, update, or delete the specified instance. The corresponding endpoint will be invoked for each row.",
+          "type": "grid",
+          "gridType": "LIST",
+          "id": "giftExchangePairingsGrid",
+          "rows": "<% getGiftExchangePairings.data %>",
+          "rowVariableName": "giftExchangePairings",
+          "deleteEndPoint": "deleteGiftExchangePairings",
+          "columns": [
+            {
+              "type": "column",
+              "columnId": "giftExchangePairingsIdColumn",
+              "label": "Id",
+              "cellTemplate": {
+                "type": "text",
+                "id": "giftExchangePairingsId",
+                "_generationNote": "The `id` is the primary way Workday manages instances. This value will only be populated for existing instances.",
+                "value": "<% giftExchangePairings.id %>",
+                "enabled": false,
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangePairings.id",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangePairings.id",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "giftExchangeEventColumn",
+              "label": "Gift Exchange Event",
+              "cellTemplate": {
+                "type": "dropdown",
+                "id": "giftExchangeEvent",
+                "values": "<% getGiftExchangeEvents.data %>",
+                "selectedValues": "<% empty giftExchangePairings.giftExchangeEvent ? [] : [giftExchangePairings.giftExchangeEvent.id] %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangePairings.giftExchangeEvent",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangePairings.giftExchangeEvent",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "giftGiverColumn",
+              "label": "Gift Giver",
+              "cellTemplate": {
+                "type": "dropdown",
+                "id": "giftGiver",
+                "values": "<% getGiftExchangeParticipants.data %>",
+                "selectedValues": "<% empty giftExchangePairings.giftGiver ? [] : [giftExchangePairings.giftGiver.id] %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangePairings.giftGiver",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangePairings.giftGiver",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "giftRecipientColumn",
+              "label": "Gift Recipient",
+              "cellTemplate": {
+                "type": "dropdown",
+                "id": "giftRecipient",
+                "values": "<% getGiftExchangeParticipants.data %>",
+                "selectedValues": "<% empty giftExchangePairings.giftRecipient ? [] : [giftExchangePairings.giftRecipient.id] %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangePairings.giftRecipient",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangePairings.giftRecipient",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "giftStatusColumn",
+              "label": "Gift Status",
+              "cellTemplate": {
+                "type": "text",
+                "id": "giftStatus",
+                "value": "<% giftExchangePairings.giftStatus %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createGiftExchangePairings.giftStatus",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updateGiftExchangePairings.giftStatus",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "id": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "id": "footerText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

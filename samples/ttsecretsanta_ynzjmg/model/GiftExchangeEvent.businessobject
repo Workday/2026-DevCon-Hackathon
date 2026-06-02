@@ -1,0 +1,83 @@
+{
+  "id": 1,
+  "name": "GiftExchangeEvent",
+  "label": "Gift Exchange Event",
+  "defaultSecurityDomains": [
+    "SecretSantaAdmin"
+  ],
+  "defaultCollection": {
+    "name": "giftExchangeEvents",
+    "label": "Gift Exchange Events"
+  },
+  "fields": [
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": true,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "name",
+      "id": 1
+    },
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "description",
+      "id": 2
+    },
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": false,
+      "target": "WORKER",
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "type": "SINGLE_INSTANCE",
+      "name": "organizer",
+      "id": 3
+    },
+    {
+      "precision": "DAY",
+      "enableIndex": false,
+      "isPurgeable": false,
+      "type": "DATE",
+      "name": "registrationDeadline",
+      "id": 4
+    },
+    {
+      "precision": "DAY",
+      "enableIndex": false,
+      "isPurgeable": false,
+      "type": "DATE",
+      "name": "giftExchangeDate",
+      "id": 5
+    },
+    {
+      "decimals": 2,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "type": "DECIMAL",
+      "name": "budgetMinimum",
+      "id": 6
+    },
+    {
+      "decimals": 2,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "type": "DECIMAL",
+      "name": "budgetMaximum",
+      "id": 7
+    },
+    {
+      "enableIndex": false,
+      "isPurgeable": false,
+      "type": "BOOLEAN",
+      "name": "isActive",
+      "id": 8
+    }
+  ]
+}

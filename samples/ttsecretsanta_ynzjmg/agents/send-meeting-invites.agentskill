@@ -1,0 +1,46 @@
+---
+name: send-meeting-invites
+description: >
+  Sends Secret Santa meeting invites to all participants of a gift exchange event
+  by running the CreateInvites orchestration. Use this skill when a user requests
+  that meeting invites be sent out for an event.
+allowed-tools:
+  - Create Invites
+tool-wids:
+  - name: Create Invites
+    wid: ttsecretsanta_ynzjmg/CreateInvites
+    type: AGENT_ACTION
+---
+
+# Send Meeting Invites
+
+This skill sends Secret Santa meeting invites to all participants of a given gift
+exchange event. The user must provide (or confirm) the event ID before invites are sent,
+since this action triggers outbound calendar invitations to every participant.
+
+## Steps
+
+1. Ask the user which gift exchange event they want to send meeting invites for.
+   - If the user already provided the event name or ID, confirm it before proceeding.
+   - If the user is unsure of the event ID, let them know they may need to look it up
+     from the event management skill first.
+
+2. **Before sending**: Present a clear summary to the user:
+   - The event ID that will be used
+   - That meeting invites will be sent to **all participants** of that event
+   - This action cannot be undone
+
+   Ask the user to explicitly confirm with "yes" before proceeding.
+
+3. Once confirmed, call `Create Invites` with the `eventId` parameter set to the
+   confirmed event ID.
+
+4. Report the outcome back to the user — confirm that invites have been sent, or
+   relay any error details if the action fails.
+
+## Error Handling
+
+- If the `eventId` is missing or the user is unsure, prompt them to provide it before
+  continuing. Do not proceed without a valid event ID.
+- If the `Create Invites` call fails, inform the user of the error and suggest they
+  verify the event ID and try again.

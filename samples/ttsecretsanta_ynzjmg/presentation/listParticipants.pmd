@@ -1,0 +1,44 @@
+{
+  "id": "listParticipants",
+  "a2ui": true,
+  "endPoints": [
+    {
+      "name": "getGiftExchangeParticipants",
+      "url": "<% 'giftExchangeParticipants' %>",
+      "baseUrlType": "workday-app",
+      "authType": "sso"
+    }
+  ],
+  "presentation": {
+    "body": {
+      "type": "chatCard",
+      "children": [
+        {
+          "type": "chatText",
+          "text": "Gift Exchange Participants A2UI",
+          "variant": "h3"
+        },
+        {
+          "type": "chatDivider"
+        },
+        {
+          "type": "chatLoop",
+          "as": "participant",
+          "on": "<% getGiftExchangeParticipants.data %>",
+          "children": [
+            {
+              "type": "chatRow",
+              "justify": "START",
+              "children": [
+                {
+                  "type": "chatText",
+                  "text": "<% participant.worker.descriptor %>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

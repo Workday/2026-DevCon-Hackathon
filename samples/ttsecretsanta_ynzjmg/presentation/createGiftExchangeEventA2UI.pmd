@@ -1,0 +1,113 @@
+{
+  "id": "createGiftExchangeEventA2UI",
+  "a2ui": true,
+  "endPoints": [ ],
+  "presentation": {
+    "body": {
+      "type": "chatCard",
+      "children": [
+        {
+          "type": "chatText",
+          "text": "Create your Secret Santa Gift Exchange",
+          "variant": "h3"
+        },
+        {
+          "type": "chatDivider"
+        },
+        {
+          "type": "chatRow",
+          "justify": "START",
+          "children": [
+            {
+              "type": "chatTextField",
+              "label": "Event Name:",
+              "value": "<% queryParams.eventName ?? 'Enter Event Name' %>",
+              "valuePath": "/eventName"
+            }
+          ]
+        },
+        {
+          "type": "chatRow",
+          "justify": "START",
+          "children": [
+            {
+              "type": "chatTextField",
+              "label": "Description:",
+              "value": "<% queryParams.eventDescription ?? 'Enter Event Description' %>",
+              "valuePath": "/eventDescription"
+            }
+          ]
+        },
+        {
+          "type": "chatRow",
+          "justify": "START",
+          "children": [
+            {
+              "type": "chatDateTimeInput",
+              "label": "Registration Deadline:",
+              "value": "<% queryParams.registrationDeadline ?? '01/01/2026' %>",
+              "valuePath": "/registrationDeadline",
+              "enableDate": true
+            }
+          ]
+        },
+        {
+          "type": "chatRow",
+          "justify": "START",
+          "children": [
+            {
+              "type": "chatDateTimeInput",
+              "label": "Exchange Date:",
+              "value": "<% queryParams.exchangeDate ?? '01/01/2026' %>",
+              "valuePath": "/exchangeDate",
+              "enableDate": true
+            }
+          ]
+        },
+        {
+          "type": "chatRow",
+          "justify": "START",
+          "children": [
+            {
+              "type": "chatTextField",
+              "label": "Budget Minimum:",
+              "value": "<% queryParams.budgetMinimum ?? '0.00' %>",
+              "valuePath": "/budgetMinimum"
+            }
+          ]
+        },
+        {
+          "type": "chatRow",
+          "justify": "START",
+          "children": [
+            {
+              "type": "chatTextField",
+              "label": "Budget Maximum:",
+              "value": "<% queryParams.budgetMaximum ?? '0.00' %>",
+              "valuePath": "/budgetMaximum"
+            }
+          ]
+        },
+        {
+          "type": "chatRow",
+          "children": [
+            {
+              "type": "chatButton",
+              "label": "Submit",
+              "action": "add",
+              "variant": "PRIMARY",
+              "submitDataModel": true
+            },
+            {
+              "type": "chatButton",
+              "label": "Cancel",
+              "action": "cancel",
+              "variant": "PRIMARY",
+              "submitDataModel": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

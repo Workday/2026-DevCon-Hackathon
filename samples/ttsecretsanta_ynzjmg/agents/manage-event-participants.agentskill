@@ -1,0 +1,169 @@
+---
+name: manage-event-participants
+description: >
+  Helps both event organizers and participants manage gift exchange participation.
+  Organizers can add workers as participants, update participant preferences, and
+  view the full participant roster with details. Participants can opt in or out,
+  update their own gift preferences and avoidances, and view their own record.
+  This skill interacts directly with the GiftExchangeParticipant business object.
+metadata:
+  tags:
+    - secret-santa
+    - participants
+    - organizer
+    - preferences
+allowed-tools:
+  - get_ttsecretsanta_ynzjmg_giftExchangeParticipants
+  - post_ttsecretsanta_ynzjmg_giftExchangeParticipants
+  - put_ttsecretsanta_ynzjmg_giftExchangeParticipants
+  - patch_ttsecretsanta_ynzjmg_giftExchangeParticipants
+  - delete_ttsecretsanta_ynzjmg_giftExchangeParticipants
+  - get_ttsecretsanta_ynzjmg_giftExchangeEvents
+  - view_staffing_workers
+tool-wids:
+  - name: get_ttsecretsanta_ynzjmg_giftExchangeParticipants
+    wid: "c8a525969df752318b127df0b764f51c"
+  - name: post_ttsecretsanta_ynzjmg_giftExchangeParticipants
+    wid: "dac82e99074e5238b9f7aa60499aa6a0"
+  - name: put_ttsecretsanta_ynzjmg_giftExchangeParticipants
+    wid: "2d0b8d5cd7ba5dad98d94fd93c496f60"
+  - name: patch_ttsecretsanta_ynzjmg_giftExchangeParticipants
+    wid: "08607f98f50953b79382e6ce9992e2a7"
+  - name: delete_ttsecretsanta_ynzjmg_giftExchangeParticipants
+    wid: "d7881adf68f1510caebe8cb3b3c702d7"
+  - name: get_ttsecretsanta_ynzjmg_giftExchangeEvents
+    wid: "ff3d1e441017518ea7c85756a86a5fab"
+  - name: view_staffing_workers
+    wid: "c2466b0778c610000cdf9abc4fbc000c"
+---
+
+# Manage Event Participants 🎁
+
+This skill helps both **event organizers** and **participants** manage involvement
+in a Secret Santa gift exchange. It works with the **GiftExchangeParticipant**
+business object, which links a Workday worker to a gift exchange event and stores
+their preferences.
+
+A Gift Exchange Participant record has the following fields:
+- **worker** (worker reference) — The Workday worker participating in the exchange
+- **giftExchangeEvent** (event reference) — The event they are enrolled in
+- **optInStatus** (boolean) — Whether the worker has opted in (`true`) or out (`false`)
+- **giftPreferences** (text) — What the participant would like to receive (e.g., hobbies, interests, wish list)
+- **giftAvoidance** (text) — What the participant does NOT want (e.g., "no candles", "not into sports gear")
+- **allergies** (text) — Any allergies or sensitivities the gift giver should know about
+
+---
+
+## Steps
+
+### Organizer: Adding a Participant to an Event
+
+1. Ask the organizer which event they'd like to add a participant to. If the event is
+   not specified, call `get_ttsecretsanta_ynzjmg_giftExchangeEvents` to list available
+   active events and ask them to choose.
+2. Ask for the name or identifier of the worker to add. Call `view_staffing_workers`
+   to look up the worker and confirm their identity before proceeding.
+3. Optionally collect the participant's gift preferences, gift avoidances, and allergies
+   on the organizer's behalf (these can also be updated later by the participant directly).
+4. Set `optInStatus` to `true` by default when an organizer adds a participant.
+5. Present a summary before saving:
+   > "I'll add **[Worker Name]** to **[Event Name]** as an opted-in participant. 🎄
+   > Gift preferences: [preferences or 'not provided'].
+   > Shall I go ahead?"
+6. Only after confirmation, call `post_ttsecretsanta_ynzjmg_giftExchangeParticipants`
+   to create the participant record.
+
+### Organizer: Viewing All Participants
+
+1. Ask which event the organizer wants to view participants for, or retrieve the list
+   of active events if not specified.
+2. Call `get_ttsecretsanta_ynzjmg_giftExchangeParticipants` filtering by the chosen
+   event's ID.
+3. Present a clear roster showing for each participant:
+   - Worker name
+   - Opt-in status (✅ In / ❌ Out)
+   - Gift preferences
+   - Gift avoidances
+   - Allergies
+4. If there are no participants yet, encourage the organizer to start adding people.
+
+### Organizer: Updating a Participant's Preferences
+
+1. Confirm the event and identify the participant record. Call
+   `get_ttsecretsanta_ynzjmg_giftExchangeParticipants` to retrieve the current record.
+2. Ask which field(s) to update (preferences, avoidances, allergies, or opt-in status).
+3. Collect new values.
+4. Present a before/after summary and ask for confirmation before saving.
+5. Call `patch_ttsecretsanta_ynzjmg_giftExchangeParticipants` with only the changed fields.
+
+### Participant: Opting In or Out of an Exchange
+
+1. Identify the current user by calling `view_staffing_workers` with `"me"` as the
+   `contextInstanceId`.
+2. Call `get_ttsecretsanta_ynzjmg_giftExchangeParticipants` to find the participant
+   record for this worker in the relevant event. If multiple events exist, ask the
+   participant to choose which one they mean.
+3. Confirm the intent:
+   - Opting **in**: "Great! I'll mark you as participating in **[Event Name]**. 🎁 Shall I confirm?"
+   - Opting **out**: "I'll mark you as opting out of **[Event Name]**. You can always rejoin later.
+     Want me to go ahead?"
+4. After confirmation, call `patch_ttsecretsanta_ynzjmg_giftExchangeParticipants` to
+   update `optInStatus`.
+
+### Participant: Updating Gift Preferences
+
+1. Identify the current user via `view_staffing_workers` with `"me"` as `contextInstanceId`.
+2. Retrieve their participant record using `get_ttsecretsanta_ynzjmg_giftExchangeParticipants`.
+   If they are enrolled in multiple events, ask which event they mean.
+3. Ask what they'd like to update: gift preferences, gift avoidances, or allergies.
+4. Collect the new information in a friendly, conversational way. For example:
+   > "What kinds of gifts would you love? Think hobbies, interests, a wish-list item — anything
+   > that would help your Secret Santa pick something special! 🎄"
+5. Present a summary and confirm before saving.
+6. Call `patch_ttsecretsanta_ynzjmg_giftExchangeParticipants` with the updated fields.
+
+### Participant: Viewing My Participant Details
+
+1. Identify the current user via `view_staffing_workers` with `"me"` as `contextInstanceId`.
+2. Call `get_ttsecretsanta_ynzjmg_giftExchangeParticipants` to find their record(s).
+3. Display their details in a friendly format:
+   - Event name
+   - Opt-in status
+   - Gift preferences
+   - Gift avoidances
+   - Allergies
+4. Remind them they can update these details at any time before the registration deadline.
+   Note: Only show the current user their own record — never surface another participant's
+   details to a non-organizer.
+
+---
+
+## Privacy & Access Rules
+
+- **Organizers** may view all participant records for their events, including preferences
+  and allergies, to help facilitate the exchange.
+- **Participants** may only view and update their own record.
+- If there is any ambiguity about whether the user is acting as an organizer or participant,
+  ask them to clarify before surfacing other participants' data.
+- Never reveal pairing assignments — that's a future capability handled separately.
+
+---
+
+## Error Handling
+
+- If the worker cannot be found, apologize and ask the user to try a different name or ID.
+- If no participant record exists for the current user in the chosen event, offer to opt them in.
+- If the event registration deadline has passed, gently flag it and let the organizer
+  decide whether to proceed.
+- If a required field is missing, ask for it — never assume.
+- If an API call fails, explain clearly and suggest next steps.
+
+---
+
+## Tone & Style
+
+- Warmly acknowledge both organizers (who are making the magic happen) and participants
+  (who are the heart of the exchange). 🎅
+- Be encouraging when collecting preferences — help people feel excited about participating.
+- Always confirm before any write action (add, update, remove).
+- Use light holiday flair (🎁🎄❄️🎅) without overdoing it.

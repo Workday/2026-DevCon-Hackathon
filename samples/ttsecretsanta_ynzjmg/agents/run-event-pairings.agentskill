@@ -1,0 +1,84 @@
+---
+name: run-event-pairings
+description: >
+  Allows event organizers to run the Secret Santa gift exchange pairings for a
+  specific event. When a user requests pairings for a gift exchange event, this
+  skill looks up the event, collects the event's Workday ID, and calls the
+  EventPairings orchestration to generate the gift exchange assignments.
+metadata:
+  tags:
+    - secret-santa
+    - pairings
+    - organizer
+allowed-tools:
+  - get_ttsecretsanta_ynzjmg_giftExchangeEvents
+  - Event Pairing Tools
+tool-wids:
+  - name: get_ttsecretsanta_ynzjmg_giftExchangeEvents
+    wid: "ff3d1e441017518ea7c85756a86a5fab"
+  - name: Event Pairing Tools
+    wid: "ttsecretsanta_ynzjmg/EventPairings"
+    type: "AGENT_ACTION"
+---
+
+# Run Event Pairings 🎁
+
+This skill enables event organizers to generate the Secret Santa gift exchange
+pairings for a specific event. It calls the **EventPairings** orchestration using
+the Workday ID of the chosen gift exchange event to produce the gift assignments.
+
+A pairing run requires:
+- **eventId** ��� The Workday ID of the gift exchange event to run pairings for
+
+---
+
+## Steps
+
+### Running Pairings for an Event
+
+1. **Identify the event**: If the user has not specified which event to run pairings
+   for, call `get_ttsecretsanta_ynzjmg_giftExchangeEvents` to retrieve all available
+   events. Present them in a scannable list (event name, exchange date, active status)
+   and ask the organizer to select one.
+
+2. **Resolve the event ID**: Once the event is identified, use its Workday ID as the
+   `eventId` parameter. If the user has already provided enough context to identify
+   the event uniquely, retrieve it directly using `get_ttsecretsanta_ynzjmg_giftExchangeEvents`
+   filtered by the event's ID or name to confirm and obtain the exact Workday ID.
+
+3. **Confirm before running**: Before calling the orchestration, present a clear summary
+   and ask for explicit confirmation. For example:
+   > "I'm about to run the gift exchange pairings for **[Event Name]** (ID: [eventId]).
+   > Once generated, participants will be assigned their Secret Santa recipients.
+   > Shall I go ahead? 🎄"
+
+4. **Only after confirmation**, call `Event Pairing Tools` with the body:
+   ```
+   { "eventId": "<workday-id-of-the-event>" }
+   ```
+
+5. **Confirm success**: Let the organizer know the pairings have been generated. For example:
+   > "🎁 The pairings are in! Gift exchange assignments have been generated for
+   > **[Event Name]**. Participants can now be notified of their Secret Santa recipients."
+
+---
+
+## Error Handling
+
+- If no events are found, let the organizer know and suggest creating one first.
+- If the event cannot be uniquely identified from the user's input, list matching events
+  and ask for clarification.
+- If the EventPairings orchestration returns an error, explain what went wrong in plain
+  language and suggest the organizer verify that all participants have opted in before
+  trying again.
+- Never run pairings without explicit confirmation — pairing assignments may be difficult
+  to undo.
+
+---
+
+## Tone & Style
+
+- Be warm and celebratory — generating pairings is an exciting milestone for any gift
+  exchange! 🎉
+- Keep confirmations clear and easy to understand.
+- Use festive but professional language throughout. 🎄🎅🎁

@@ -1,0 +1,71 @@
+{
+  "id": 2,
+  "name": "GiftExchangeParticipant",
+  "label": "Gift Exchange Participant",
+  "defaultSecurityDomains": [
+    "SecretSantaAdmin"
+  ],
+  "defaultCollection": {
+    "name": "giftExchangeParticipants",
+    "label": "Gift Exchange Participants"
+  },
+  "fields": [
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": false,
+      "target": "WORKER",
+      "isPurgeable": false,
+      "useForDisplay": true,
+      "type": "SINGLE_INSTANCE",
+      "name": "worker",
+      "id": 1
+    },
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": false,
+      "target": "GiftExchangeEvent",
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "type": "SINGLE_INSTANCE",
+      "name": "giftExchangeEvent",
+      "id": 2
+    },
+    {
+      "enableIndex": false,
+      "isPurgeable": false,
+      "type": "BOOLEAN",
+      "name": "optInStatus",
+      "id": 3
+    },
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "giftPreferences",
+      "id": 4
+    },
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "giftAvoidance",
+      "id": 5
+    },
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "allergies",
+      "id": 6
+    }
+  ]
+}
