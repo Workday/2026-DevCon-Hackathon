@@ -1,0 +1,9 @@
+{
+  "id": 2,
+  "name": "PeerRecognitionPointsToRedeemSettings",
+  "label": "Peer Recognition Points To Redeem Settings",
+  "securityDomains": [
+    "PeerRecognition"
+  ],
+  "routePath": "/PeerRecognitionPointsToRedeem"
+}

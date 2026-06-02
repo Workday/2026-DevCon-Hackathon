@@ -1,0 +1,79 @@
+---
+name: recognition-drafting-awarding
+description: >
+  Enables workers to draft recognition messages and award Kudos points to their peers, with validation of point balances before sending. Integrates with balance-tracking and recognition-discovery skills to check sufficient balance and help identify workers.
+  Supports peer-to-peer recognition across the organization.
+metadata:
+  tags:
+    - recognition
+    - kudos
+    - points
+    - peer-recognition
+allowed-tools:
+  - givePeerRecognitions
+tool-wids:
+  - name: givePeerRecognitions
+    wid:  givePeerRecognitions
+    type: AGENT_ACTION
+    appReferenceId: peerRecognition_vfjgnm
+---
+
+# Recognition Drafting and Awarding
+
+This skill enables workers to recognize their peers with personalized messages and award Kudos points. It integrates with the **balance tracking** skill to validate sufficient point balance before awarding, and the **recognition-discovery** skill to help identify workers or get the current worker context.
+
+**Expected inputs:** Recognition requests such as:
+- "I want to recognize Beth for her work on the benefits webinar. It was one of our most well-received sessions yet, thanks to her thorough preparation and clear communication style. Draft a recognition and award Beth 500 Kudos points."
+- "Recognize [Name] for [reason] and award [X] points"
+- "Send kudos to [Name] for [accomplishment]"
+- "I'd like to give 300 points to Sarah for helping me troubleshoot that production issue last week"
+
+## Steps
+
+1. **Identify the current user (sender)**: Use recognition-discovery skill to identify the current user.
+
+2. **Look up the recipient**: Use the recognition-discovery  skill to look up recipients
+
+3. **Check sender's point balance (using balance-tracking capability)**: Before proceeding, verify the sender has sufficient points to award:
+   - Check if the balance is sufficient for the requested award amount.
+   - If insufficient points are available, inform the user of their current balance and ask
+     if they'd like to award a different amount. Do not proceed without sufficient balance.
+
+4. **Draft or refine the recognition message**:
+   - If the user provided a recognition message, use it as-is or offer to enhance it.
+   - If no message was provided, draft a thoughtful recognition message based on the reason
+     or accomplishment mentioned.
+   - Ensure the message is professional, specific, and highlights the impact of the
+     recipient's work.
+
+5. **Present summary for confirmation**: Before submitting, show the user:
+   - Recipient name and Employee ID
+   - Points to be awarded
+   - Full recognition message
+   - Sender's current balance and remaining balance after the award
+   - **Ask the user to explicitly confirm they want to proceed with sending this recognition.**
+
+6. **Send the recognition**: After user confirmation, call `givePeerRecogntions` with:
+   - `recipient`: The recipient's Employee ID as a string. Note this is note the WID. An employee id looks like`21001` or `21008`.
+   - `points`: The award amount as an integer
+   - `recognition`: The final recognition message as a string.
+   - `sender` : The sender's Employee ID as a string. Note this is note the WID. An employee id looks like`21001` or `21008`.
+
+7. **Confirm completion**: Inform the user that:
+   - The recognition has been sent successfully
+   - Points have been awarded to the recipient and deducted from the sender's balance
+   - The recipient will be notified of their recognition
+
+## Error Handling
+
+- If the recipient cannot be found or multiple matches exist, ask for clarification before
+  proceeding.
+- If the sender has insufficient points, clearly state the current balance and the shortfall, then ask if they'd like to award fewer points. Do not proceed with the recognition until sufficient balance is confirmed.
+- If `givePeerRecogntions` fails, inform the user that the recognition could not be sent and
+  suggest retrying or contacting support.
+- Validate that the points amount is a positive integer before attempting to send.
+- If no recognition reason is provided by the user, prompt them to provide context for the
+  recognition before drafting a message.
+- If the user attempts to recognize themselves, politely inform them that self-recognition
+  is not supported.
+- If balance checking fails, inform the user that the balance could not be verified and suggest trying again.

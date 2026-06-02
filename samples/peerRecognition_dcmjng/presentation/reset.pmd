@@ -1,0 +1,47 @@
+{
+  "id": "reset",
+  "endPoints": [],
+  "presentation": {
+    "title": {
+      "type": "title",
+      "label": "Reset Peer Recognition Balances"
+    },
+    "body": {
+      "type": "section",
+      "horizontal": false,
+      "children": [
+        {
+          "type": "richText",
+          "id": "hello",
+          "enabled": false,
+          "value": "Click 'OK' to reset Peer Recognition Balances."
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    },
+    "pageType": "EDIT"
+  },
+  "outboundData": {
+    "outboundEndPoints": [
+    {
+      "name": "resetLab",
+      "authType": "sso",
+      "httpMethod": "POST",
+      "url": "reset/launch",
+      "baseUrlType": "ORCHESTRATE",
+      "onSend": "<% 
+          return {}; 
+      %>"
+    }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "PeerRecognitionPointsToAwardSettings",
+  "label": "Peer Recognition Points To Award Settings",
+  "securityDomains": [
+    "PeerRecognition"
+  ],
+  "routePath": "/PeerRecognitionPointsToAward"
+}

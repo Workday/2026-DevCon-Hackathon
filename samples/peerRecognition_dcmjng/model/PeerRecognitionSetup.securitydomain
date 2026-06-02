@@ -1,0 +1,6 @@
+{
+  "id": 2,
+  "name": "PeerRecognitionSetup",
+  "enabledForPageSecurity": false,
+  "enabledForOrchestrationSecurity": false
+}

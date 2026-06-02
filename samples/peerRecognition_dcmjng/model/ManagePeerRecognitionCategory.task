@@ -1,0 +1,9 @@
+{
+  "id": 3,
+  "name": "ManagePeerRecognitionCategory",
+  "label": "Peer Recognition: Categories",
+  "securityDomains": [
+    "PeerRecognitionAdminTasks"
+  ],
+  "routePath": "/"
+}

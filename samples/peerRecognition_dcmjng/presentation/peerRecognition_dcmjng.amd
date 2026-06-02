@@ -1,0 +1,204 @@
+{
+  "appProperties": [],
+  "flowDefinitions": [
+    {
+      "id": "setupBalanceChangeReasonsFlow",
+      "name": "setupBalanceChangeReasonsFlow",
+      "flowSteps": [
+        {
+          "id": "setupBalanceChangeReasonsFlowStep1",
+          "transitions": [
+            {
+              "order": "a",
+              "value": "setupBalanceChangeReasonsFlowStep2",
+              "condition": "true"
+            }
+          ],
+          "taskId": "managePeerRecognitionBalanceChangeReason"
+        },
+        {
+          "id": "setupBalanceChangeReasonsFlowStep2",
+          "taskId": "microConclusion"
+        }
+      ]
+    },
+    {
+      "id": "setupBalanceTypesFlow",
+      "name": "setupBalanceTypesFlow",
+      "flowSteps": [
+        {
+          "id": "setupBalanceTypesFlowStep1",
+          "transitions": [
+            {
+              "order": "a",
+              "value": "setupBalanceTypesFlowStep2",
+              "condition": "true"
+            }
+          ],
+          "taskId": "managePeerRecognitionBalanceType"
+        },
+        {
+          "id": "setupBalanceTypesFlowStep2",
+          "taskId": "microConclusion"
+        }
+      ]
+    },
+    {
+      "id": "setupCategoriesFlow",
+      "name": "setupCategoriesFlow",
+      "flowSteps": [
+        {
+          "id": "setupCategoriesFlowStep1",
+          "transitions": [
+            {
+              "order": "a",
+              "value": "setupCategoriesFlowStep2",
+              "condition": "true"
+            }
+          ],
+          "taskId": "managePeerRecognitionCategory"
+        },
+        {
+          "id": "setupCategoriesFlowStep2",
+          "taskId": "microConclusion"
+        }
+      ]
+    },
+    {
+      "id": "setupRewardsFlow",
+      "name": "setupRewardsFlow",
+      "flowSteps": [
+        {
+          "id": "setupRewardsFlowStep1",
+          "transitions": [
+            {
+              "order": "a",
+              "value": "setupRewardsFlowStep2",
+              "condition": "true"
+            }
+          ],
+          "taskId": "managePeerRecognitionReward"
+        },
+        {
+          "id": "setupRewardsFlowStep2",
+          "taskId": "microConclusion"
+        }
+      ]
+    },
+    {
+      "id": "resetFlow",
+      "name": "resetFlow",
+      "flowSteps": [
+        {
+          "id": "resetFlowStep1",
+          "transitions": [
+            {
+              "order": "a",
+              "value": "resetFlowStep2",
+              "condition": "true"
+            }
+          ],
+          "taskId": "reset"
+        },
+        {
+          "id": "resetFlowStep2",
+          "taskId": "microConclusion"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "managePeerRecognitionCategory",
+      "routingPattern": "/managePeerRecognitionCategory",
+      "page": {
+        "id": "managePeerRecognitionCategory"
+      }
+    },
+    {
+      "id": "managePeerRecognitionBalanceType",
+      "routingPattern": "/managePeerRecognitionBalanceType",
+      "page": {
+        "id": "managePeerRecognitionBalanceType"
+      }
+    },
+    {
+      "id": "managePeerRecognitionBalanceChangeReason",
+      "routingPattern": "/managePeerRecognitionBalanceChangeReason",
+      "page": {
+        "id": "managePeerRecognitionBalanceChangeReason"
+      }
+    },
+    {
+      "id": "managePeerRecognitionBalance",
+      "routingPattern": "/managePeerRecognitionBalance",
+      "page": {
+        "id": "managePeerRecognitionBalance"
+      }
+    },
+    {
+      "id": "managePeerRecognitionBalanceLog",
+      "routingPattern": "/managePeerRecognitionBalanceLog",
+      "page": {
+        "id": "managePeerRecognitionBalanceLog"
+      }
+    },
+    {
+      "id": "PeerRecognitionPointsToAward",
+      "routingPattern": "/PeerRecognitionPointsToAward",
+      "page": {
+        "id": "PeerRecognitionPointsToAward"
+      }
+    },
+    {
+      "id": "givePeerRecognition",
+      "routingPattern": "/givePeerRecognition",
+      "page": {
+        "id": "givePeerRecognition"
+      }
+    },
+    {
+      "id": "PeerRecognitionPointsToRedeem",
+      "routingPattern": "/PeerRecognitionPointsToRedeem",
+      "page": {
+        "id": "PeerRecognitionPointsToRedeem"
+      }
+    },
+    {
+      "id": "managePeerRecognitionReward",
+      "routingPattern": "/managePeerRecognitionReward",
+      "page": {
+        "id": "managePeerRecognitionReward"
+      }
+    },
+    {
+      "id": "microConclusion",
+      "routingPattern": "/microConclusion",
+      "page": {
+        "id": "microConclusion"
+      }
+    },
+    {
+      "id": "reset",
+      "routingPattern": "/",
+      "page": {
+        "id": "reset"
+      }
+    }
+  ],
+  "applicationId": "peerRecognition_dcmjng",
+  "dataProviders": [
+    {
+      "key": "APP",
+      "value": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/` %>"
+    },
+    {
+      "key": "COMMON",
+      "value": "<% apiGatewayEndpoint + '/common/v1/' %>"
+    },
+    {
+      "key": "ORCHESTRATE",
+      "value": "<% `{{apiGatewayEndpoint}}/orchestrate/v1/apps/{{site.applicationId}}/orchestrations/` %>"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 4,
+  "name": "PeerRecognitionBalanceChangeReasons",
+  "businessObject": "PeerRecognitionBalanceChangeReason",
+  "defaultSecurityDomains": [
+    "PeerRecognitionAdminTasks"
+  ],
+  "sortConfigs": [],
+  "columns": [
+    {
+      "id": 1,
+      "name": "PeerRecognitionBalanceChangeReason",
+      "order": "a",
+      "isSelfReferencing": true
+    },
+    {
+      "id": 2,
+      "name": "Name",
+      "order": "b",
+      "field": "name"
+    },
+    {
+      "id": 3,
+      "name": "Reference",
+      "order": "c",
+      "field": "reference"
+    }
+  ]
+}

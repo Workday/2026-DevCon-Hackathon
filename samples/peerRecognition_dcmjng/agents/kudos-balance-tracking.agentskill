@@ -1,0 +1,93 @@
+---
+name: kudos-balance-tracking
+description: >
+  Retrieves and presents the signed-in employee's Kudos point balances — both
+  Points to Award (available to give to colleagues) and Points to Redeem
+  (earned from received recognition). No user input is required; the skill
+  silently resolves the caller's identity before fetching their balance record.
+metadata:
+  tags:
+    - kudos
+    - recognition
+    - balance
+    - self-service
+allowed-tools:
+  - getWorkers
+  - get_peerRecognition_dcmjng_peerRecognitionBalances
+tool-wids:
+  - name: getWorkers
+    wid: "peerRecognition_dcmjng/getWorkers"
+    type: "AGENT_ACTION"
+  - name: get_peerRecognition_dcmjng_peerRecognitionBalances
+    wid: "3bcddeb633c5591e8c7dba48c31575d3"
+---
+
+# Kudos Balance Tracking
+
+This skill answers the question **"What are my Kudos balances?"** for the signed-in employee.
+It requires no input from the user — it silently resolves their Workday identity first, then
+retrieves and presents their personal balance snapshot in a clear, encouraging way.
+
+## Steps
+
+1. **Resolve the employee's identity** by calling `getWorkers` with no parameters (do not pass
+   `myDirectReports` or any other argument). This returns the current user's worker profile,
+   including their Workday ID (WID) and display name. Extract the `id` (WID) and `descriptor`
+   (full name) from the first record in the response. Store both for the next step and for
+   personalising the response.
+   - If this call fails or returns an empty result, stop and respond:
+     *"I wasn't able to look up your Workday profile right now. Please try again in a moment,
+     or contact your system administrator if the issue persists."*
+
+2. **Fetch the balance record** by calling `get_peerRecognition_dcmjng_peerRecognitionBalances`.
+   Scan the returned records to find the entry whose `worker.id` matches the WID resolved in
+   Step 1. Extract:
+   - `pointsToAward` — the points available to give to colleagues
+   - `pointsToRedeem` — the points earned from received recognition
+   - If no matching record is found, treat both balances as `0`.
+   - If the API call itself fails, stop and respond:
+     *"I ran into a problem retrieving your Kudos balances. Please try again shortly."*
+
+3. **Present the balance** in a warm, named, table-style summary. Use the employee's first name
+   from the `descriptor` resolved in Step 1. Format the response exactly as follows:
+
+   ---
+   **✨ Your Kudos Balance, [First Name]**
+
+   | | Points |
+   |---|---|
+   | 🎁 **Points to Award** | [pointsToAward] |
+   | 🏆 **Points to Redeem** | [pointsToRedeem] |
+
+   *[Contextual encouragement — see rules below]*
+
+   ---
+
+   **Contextual encouragement rules** (choose the single most appropriate line):
+   - `pointsToAward > 0` → *"You have points ready to go — is there a colleague who's made a
+     difference lately? A specific shout-out goes a long way! 🌟"*
+   - `pointsToAward == 0` and `pointsToRedeem > 0` → *"You've been recognised by your peers —
+     that's something to celebrate! New points to award are allocated periodically, so check
+     back soon. 🎉"*
+   - `pointsToAward == 0` and `pointsToRedeem == 0` → *"Every recognition journey starts
+     somewhere. Points to award are allocated periodically — once yours arrive, I'll help you
+     make someone's day! 💪"*
+   - `pointsToRedeem > 50` → *"Wow — your colleagues clearly appreciate you! You've built up
+     a great recognition balance. 🏆"* (override the award message if this threshold is met)
+
+4. **Stay available** — after delivering the balance, add a brief, natural closing prompt such as:
+   *"Is there anything else I can help you with today?"*
+   This keeps the conversation open for follow-up requests and naturally bridges to upcoming
+   skills like awarding points or viewing recognition history.
+
+## Error Handling
+
+- **Identity failure** (Step 1): Respond with a plain-language message — never expose raw API
+  errors or stack traces to the employee.
+- **Balance API failure** (Step 2): Same as above — use the canned error message in Step 2.
+- **No balance record found**: Gracefully default both balances to `0` and present the
+  "zero balance" encouragement message from Step 3.
+- **Out-of-scope follow-up** (e.g. "Can you award points for me?"): Acknowledge warmly and
+  let the user know that capability is coming soon:
+  *"Awarding points directly from our conversation is on the way — stay tuned! For now, I can
+  help you check your balances. Is there anything else I can do?"*

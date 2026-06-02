@@ -1,0 +1,180 @@
+{
+  "id": "managePeerRecognitionBalanceType",
+  "_generationNote": "This page is designed for app administrators to quickly manage PeerRecognitionBalanceType business object data for the app. ",
+  "_generationNote2": "It is strongly advised to configure the `securityDomains` for this page to allow only the appropriate personas to access it.",
+  "securityDomains": [],
+  "script": "",
+  "endPoints": [
+    {
+      "name": "getPeerRecognitionBalanceTypes",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of PeerRecognitionBalanceType business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalanceTypes` %>"
+    }
+  ],
+  "outboundData": {
+    "_generationNote": "All of the outboundEndPoints will be invoked for every row of the grid upon the submission of the page.",
+    "_generationNote2": "This is because the cellTemplate valueOutBinding attributes reference the corresponding endpoint for create and update. The grid deleteEndPoint references the delete.",
+    "outboundEndPoints": [
+      {
+        "_generationNote": "Creates a single instance, as specified by the PeerRecognitionBalanceType data from the valueOutBinding attributes in the grid cellTemplates.",
+        "name": "createPeerRecognitionBalanceType",
+        "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalanceTypes` %>",
+        "_generationNote2": "To ensure it is only invoked for rows the user has added, the exclude condition checks that the `id` cell is not populated.",
+        "exclude": "<% ! (empty peerRecognitionBalanceTypeId.value) %>",
+        "authType": "sso",
+        "httpMethod": "POST",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Updates a single instance, as specified by `peerRecognitionBalanceTypeId.value` from the business object id field in the cellTemplate.",
+        "name": "updatePeerRecognitionBalanceType",
+        "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalanceTypes/{{peerRecognitionBalanceTypeId.value}}` %>",
+        "_generationNote2": "To ensure it is only invoked for existing rows, the exclude condition checks that the `id` cell value is already present.",
+        "exclude": "<% empty peerRecognitionBalanceTypeId.value %>",
+        "authType": "sso",
+        "httpMethod": "PUT",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Deletes a single instance, as specified by `peerRecognitionBalanceTypeId.value` from the business object id field in the cellTemplate.",
+        "_generationNote2": "The deleteEndPoint attribute of the grid references this endpoint, which will be invoked for each deleted row upon the submission of the page.",
+        "name": "deletePeerRecognitionBalanceType",
+        "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalanceTypes/{{peerRecognitionBalanceTypeId.value}}` %>",
+        "authType": "sso",
+        "httpMethod": "DELETE",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      }
+    ],
+    "responseErrorDetail": {
+      "_generationNote": "This responseErrorDetail works with the Workday API error structure.",
+      "_generationNote2": "If there is only a single error, the errorSummary will be shown.",
+      "errorSummary": "<% error %>",
+      "_generationNote3": "For multiple errors, append the top-level error to provide context.",
+      "errors": "<% empty errors ? [] : [error].join(errors.map(err => { err.error } )) %>"
+    }
+  },
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "id": "title",
+      "label": "Manage Peer Recognition Balance Type"
+    },
+    "body": {
+      "id": "bodySection",
+      "type": "section",
+      "children": [
+        {
+          "_generationNote": "This grid is populated via the `rows` property with all of the data retrieved from the Businessobject API.",
+          "_generationNote2": "Upon submission, each row will be individually checked to either create, update, or delete the specified instance. The corresponding endpoint will be invoked for each row.",
+          "type": "grid",
+          "gridType": "LIST",
+          "id": "peerRecognitionBalanceTypeGrid",
+          "rows": "<% getPeerRecognitionBalanceTypes.data %>",
+          "rowVariableName": "peerRecognitionBalanceType",
+          "deleteEndPoint": "deletePeerRecognitionBalanceType",
+          "columns": [
+            {
+              "type": "column",
+              "columnId": "peerRecognitionBalanceTypeIdColumn",
+              "label": "Id",
+              "cellTemplate": {
+                "type": "text",
+                "id": "peerRecognitionBalanceTypeId",
+                "_generationNote": "The `id` is the primary way Workday manages instances. This value will only be populated for existing instances.",
+                "value": "<% peerRecognitionBalanceType.id %>",
+                "enabled": false,
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalanceType.id",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalanceType.id",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "nameColumn",
+              "label": "Name",
+              "cellTemplate": {
+                "type": "text",
+                "id": "name",
+                "value": "<% peerRecognitionBalanceType.name %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalanceType.name",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalanceType.name",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "referenceColumn",
+              "label": "Reference",
+              "cellTemplate": {
+                "type": "text",
+                "id": "reference",
+                "value": "<% peerRecognitionBalanceType.reference %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalanceType.reference",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalanceType.reference",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "id": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "id": "footerText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

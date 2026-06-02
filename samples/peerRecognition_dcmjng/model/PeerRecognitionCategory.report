@@ -1,0 +1,29 @@
+{
+  "id": 5,
+  "name": "PeerRecognitionCategory",
+  "businessObject": "PeerRecognitionCategory",
+  "defaultSecurityDomains": [
+    "PeerRecognitionAdminTasks"
+  ],
+  "sortConfigs": [],
+  "columns": [
+    {
+      "id": 1,
+      "name": "PeerRecognitionCategory",
+      "order": "a",
+      "isSelfReferencing": true
+    },
+    {
+      "id": 2,
+      "name": "Name",
+      "order": "b",
+      "field": "name"
+    },
+    {
+      "id": 3,
+      "name": "Reference",
+      "order": "c",
+      "field": "reference"
+    }
+  ]
+}

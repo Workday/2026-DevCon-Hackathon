@@ -1,0 +1,41 @@
+{
+  "id": 1,
+  "name": "PeerRecognitionBalances",
+  "businessObject": "PeerRecognitionBalance",
+  "defaultSecurityDomains": [
+    "PeerRecognition"
+  ],
+  "sortConfigs": [],
+  "columns": [
+    {
+      "id": 1,
+      "name": "PeerRecognitionBalance",
+      "order": "a",
+      "isSelfReferencing": true
+    },
+    {
+      "id": 2,
+      "name": "Worker",
+      "order": "b",
+      "field": "worker"
+    },
+    {
+      "id": 3,
+      "name": "Points To Redeem",
+      "order": "c",
+      "field": "pointsToRedeem"
+    },
+    {
+      "id": 4,
+      "name": "Points To Award",
+      "order": "d",
+      "field": "pointsToAward"
+    },
+    {
+      "id": 5,
+      "name": "Reference",
+      "order": "e",
+      "field": "reference"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": 8,
+  "name": "PeerRecognitionWorkerAward",
+  "label": "Peer Recognition Worker Award",
+  "defaultSecurityDomains": [
+    "PeerRecognition"
+  ],
+  "defaultCollection": {
+    "name": "peerRecognitionWorkerAwards",
+    "label": "Peer Recognition Worker Awards"
+  },
+  "fields": [
+    {
+      "id": 1,
+      "name": "worker",
+      "type": "SINGLE_INSTANCE",
+      "useForDisplay": false,
+      "isPurgeable": false,
+      "target": "WORKER",
+      "secureByTarget": true,
+      "enableReportingFromTarget": false
+    },
+    {
+      "id": 2,
+      "name": "quantity",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 3,
+      "name": "reward",
+      "type": "SINGLE_INSTANCE",
+      "useForDisplay": false,
+      "isPurgeable": false,
+      "target": "PeerRecognitionReward",
+      "secureByTarget": false,
+      "enableReportingFromTarget": false
+    },
+    {
+      "id": 4,
+      "name": "totalPoints",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 5,
+      "name": "fulfilled",
+      "type": "BOOLEAN",
+      "isPurgeable": false,
+      "enableIndex": false
+    }
+  ]
+}

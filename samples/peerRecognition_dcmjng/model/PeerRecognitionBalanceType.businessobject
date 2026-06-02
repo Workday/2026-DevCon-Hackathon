@@ -1,0 +1,34 @@
+{
+  "id": 5,
+  "name": "PeerRecognitionBalanceType",
+  "label": "Peer Recognition Balance Type",
+  "defaultSecurityDomains": [
+    "PeerRecognitionSetup"
+  ],
+  "defaultCollection": {
+    "name": "peerRecognitionBalanceTypes",
+    "label": "Peer Recognition Balance Types"
+  },
+  "fields": [
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": true,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "name",
+      "id": 1
+    },
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "isReferenceId": true,
+      "type": "TEXT",
+      "name": "reference",
+      "id": 2
+    }
+  ]
+}

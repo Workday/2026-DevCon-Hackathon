@@ -1,0 +1,9 @@
+{
+  "id": 5,
+  "name": "ResetPeerRecognitionLab",
+  "label": "Reset Peer Recognition Lab",
+  "securityDomains": [
+    "PeerRecognitionAdminTasks"
+  ],
+  "routePath": "/"
+}

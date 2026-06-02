@@ -1,0 +1,59 @@
+{
+  "id": 2,
+  "name": "PeerRecognitionBalanceLogs",
+  "businessObject": "PeerRecognitionBalanceLog",
+  "defaultSecurityDomains": [
+    "PeerRecognition"
+  ],
+  "sortConfigs": [],
+  "columns": [
+    {
+      "id": 1,
+      "name": "PeerRecognitionBalanceLog",
+      "order": "a",
+      "isSelfReferencing": true
+    },
+    {
+      "id": 2,
+      "name": "Worker",
+      "order": "b",
+      "field": "worker"
+    },
+    {
+      "id": 3,
+      "name": "Balance Type",
+      "order": "c",
+      "field": "balanceType"
+    },
+    {
+      "id": 4,
+      "name": "Reason",
+      "order": "d",
+      "field": "reason"
+    },
+    {
+      "id": 5,
+      "name": "Original Points",
+      "order": "e",
+      "field": "originalPoints"
+    },
+    {
+      "id": 6,
+      "name": "Change Amount",
+      "order": "f",
+      "field": "changeAmount"
+    },
+    {
+      "id": 7,
+      "name": "Points",
+      "order": "g",
+      "field": "points"
+    },
+    {
+      "id": 8,
+      "name": "Current",
+      "order": "h",
+      "field": "current"
+    }
+  ]
+}

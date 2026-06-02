@@ -1,0 +1,76 @@
+{
+  "id": 2,
+  "name": "PeerRecognition",
+  "label": "Peer Recognition",
+  "defaultSecurityDomains": [
+    "PeerRecognition"
+  ],
+  "defaultCollection": {
+    "name": "peerRecognitions",
+    "label": "Peer Recognitions"
+  },
+  "fields": [
+    {
+      "id": 1,
+      "name": "sender",
+      "type": "SINGLE_INSTANCE",
+      "useForDisplay": false,
+      "isPurgeable": false,
+      "target": "WORKER",
+      "secureByTarget": false,
+      "enableReportingFromTarget": false
+    },
+    {
+      "id": 2,
+      "name": "recipients",
+      "type": "MULTI_INSTANCE",
+      "isPurgeable": false,
+      "target": "WORKER"
+    },
+    {
+      "id": 3,
+      "name": "transactionDate",
+      "type": "DATE",
+      "isPurgeable": false,
+      "enableIndex": false,
+      "precision": "MILLISECOND"
+    },
+    {
+      "id": 4,
+      "name": "category",
+      "type": "SINGLE_INSTANCE",
+      "useForDisplay": false,
+      "isPurgeable": false,
+      "target": "PeerRecognitionCategory",
+      "secureByTarget": false,
+      "enableReportingFromTarget": false
+    },
+    {
+      "id": 5,
+      "name": "recognition",
+      "type": "RICH_TEXT",
+      "isPurgeable": false
+    },
+    {
+      "id": 6,
+      "name": "pointsAwarded",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 7,
+      "name": "totalPointsAwarded",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 8,
+      "name": "anytimeFeedback",
+      "type": "BOOLEAN",
+      "isPurgeable": false,
+      "enableIndex": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": 2,
+  "name": "ManagePeerRecognitionBalanceType",
+  "label": "Peer Recognition: Balance Types",
+  "securityDomains": [
+    "PeerRecognitionAdminTasks"
+  ],
+  "routePath": "/managePeerRecognitionBalanceType"
+}

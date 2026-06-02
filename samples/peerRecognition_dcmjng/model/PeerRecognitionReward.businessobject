@@ -1,0 +1,38 @@
+{
+  "id": 7,
+  "name": "PeerRecognitionReward",
+  "label": "Peer Recognition Reward",
+  "defaultSecurityDomains": [
+    "PeerRecognitionSetup"
+  ],
+  "defaultCollection": {
+    "name": "peerRecognitionRewards",
+    "label": "Peer Recognition Rewards"
+  },
+  "fields": [
+    {
+      "id": 1,
+      "name": "description",
+      "type": "TEXT",
+      "isReferenceId": true,
+      "useForDisplay": true,
+      "isPurgeable": false,
+      "enableIndex": false,
+      "enableSearch": false
+    },
+    {
+      "id": 2,
+      "name": "points",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 3,
+      "name": "inactive",
+      "type": "BOOLEAN",
+      "isPurgeable": false,
+      "enableIndex": false
+    }
+  ]
+}

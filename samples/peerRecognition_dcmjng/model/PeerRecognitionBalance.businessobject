@@ -1,0 +1,48 @@
+{
+  "id": 1,
+  "name": "PeerRecognitionBalance",
+  "label": "Peer Recognition Balance",
+  "defaultSecurityDomains": [
+    "PeerRecognition"
+  ],
+  "defaultCollection": {
+    "name": "peerRecognitionBalances",
+    "label": "Peer Recognition Balances"
+  },
+  "fields": [
+    {
+      "id": 1,
+      "name": "worker",
+      "type": "SINGLE_INSTANCE",
+      "useForDisplay": false,
+      "isPurgeable": false,
+      "target": "WORKER",
+      "secureByTarget": true,
+      "enableReportingFromTarget": false
+    },
+    {
+      "id": 2,
+      "name": "pointsToRedeem",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 3,
+      "name": "pointsToAward",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 4,
+      "name": "reference",
+      "type": "TEXT",
+      "isReferenceId": true,
+      "useForDisplay": false,
+      "isPurgeable": false,
+      "enableIndex": false,
+      "enableSearch": false
+    }
+  ]
+}

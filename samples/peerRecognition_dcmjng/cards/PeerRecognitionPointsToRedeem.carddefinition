@@ -1,0 +1,42 @@
+{
+  "id": "PeerRecognitionPointsToRedeem",
+  "presentation": {
+    "type": "inlineCard",
+    "header": {
+      "type": "cardHeader",
+      "title": "Redeem Your Kudos",
+      "subtitle": "Your hard work, rewarded",
+      "indicator": {
+        "label": "<% (workerPointBalance.data[0].pointsToRedeem ?? 0) +  ' Points' %>",
+        "color": "GREEN"
+      },
+      "icon": "wd-accent-award-medal"
+    },
+    "body": {
+      "type": "simpleCard",
+      "value": "Your peers have noticed your hard work! Trade your Kudos points for a cash bonus, your favorite gift card, or a meaningful charitable donation."
+    },
+    "footer": [
+      {
+        "label": "Redeem Points",
+        "taskReference": {
+          "taskId": "givePeerRecognition"
+        }
+      }
+    ]
+  },  
+  "endPoints": [
+    {
+      "name": "workerInfo",
+      "baseUrlType": "COMMON",
+      "url": "workers/me",
+      "authType": "sso"
+    },
+    {
+      "baseUrlType": "APP",
+      "url": "<% '/peerRecognitionBalances?worker=' + workerInfo.id %>",
+      "name": "workerPointBalance",
+      "authType": "sso"
+    }
+  ]
+}

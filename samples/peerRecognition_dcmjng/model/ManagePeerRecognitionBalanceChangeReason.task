@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "ManagePeerRecognitionBalanceChangeReason",
+  "label": "Peer Recognition: Balance Change Reasons",
+  "securityDomains": [
+    "PeerRecognitionAdminTasks"
+  ],
+  "routePath": "/managePeerRecognitionBalanceChangeReason"
+}

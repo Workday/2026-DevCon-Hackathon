@@ -1,0 +1,231 @@
+{
+  "id": "managePeerRecognitionBalance",
+  "_generationNote": "This page is designed for app administrators to quickly manage PeerRecognitionBalance business object data for the app. ",
+  "_generationNote2": "It is strongly advised to configure the `securityDomains` for this page to allow only the appropriate personas to access it.",
+  "securityDomains": [],
+  "script": "",
+  "endPoints": [
+    {
+      "name": "getWorkers",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "For data types with a large quantity of instances, it may be required to apply filtering.",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "{{apiGatewayEndpoint}}/common/v1/workers"
+    },
+    {
+      "name": "getPeerRecognitionBalances",
+      "httpMethod": "GET",
+      "authType": "sso",
+      "_generationNote": "Gets a collection of PeerRecognitionBalance business objects. By default, this endpoint returns 20 instances. To increase the page size, use the 'limit' query parameter (e.g. ?limit=100).",
+      "_generationNote2": "If there are more than 100 instances, consider using a search endpoint or another way for the user to filter the available selections.",
+      "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalances` %>"
+    }
+  ],
+  "outboundData": {
+    "_generationNote": "All of the outboundEndPoints will be invoked for every row of the grid upon the submission of the page.",
+    "_generationNote2": "This is because the cellTemplate valueOutBinding attributes reference the corresponding endpoint for create and update. The grid deleteEndPoint references the delete.",
+    "outboundEndPoints": [
+      {
+        "_generationNote": "Creates a single instance, as specified by the PeerRecognitionBalance data from the valueOutBinding attributes in the grid cellTemplates.",
+        "name": "createPeerRecognitionBalance",
+        "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalances` %>",
+        "_generationNote2": "To ensure it is only invoked for rows the user has added, the exclude condition checks that the `id` cell is not populated.",
+        "exclude": "<% ! (empty peerRecognitionBalanceId.value) %>",
+        "authType": "sso",
+        "httpMethod": "POST",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Updates a single instance, as specified by `peerRecognitionBalanceId.value` from the business object id field in the cellTemplate.",
+        "name": "updatePeerRecognitionBalance",
+        "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalances/{{peerRecognitionBalanceId.value}}` %>",
+        "_generationNote2": "To ensure it is only invoked for existing rows, the exclude condition checks that the `id` cell value is already present.",
+        "exclude": "<% empty peerRecognitionBalanceId.value %>",
+        "authType": "sso",
+        "httpMethod": "PUT",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      },
+      {
+        "_generationNote": "Deletes a single instance, as specified by `peerRecognitionBalanceId.value` from the business object id field in the cellTemplate.",
+        "_generationNote2": "The deleteEndPoint attribute of the grid references this endpoint, which will be invoked for each deleted row upon the submission of the page.",
+        "name": "deletePeerRecognitionBalance",
+        "url": "<% `{{apiGatewayEndpoint}}/apps/{{site.applicationId}}/v1/peerRecognitionBalances/{{peerRecognitionBalanceId.value}}` %>",
+        "authType": "sso",
+        "httpMethod": "DELETE",
+        "failOnStatusCodes": [
+          {
+            "code": 400
+          },
+          {
+            "code": 403
+          }
+        ]
+      }
+    ],
+    "responseErrorDetail": {
+      "_generationNote": "This responseErrorDetail works with the Workday API error structure.",
+      "_generationNote2": "If there is only a single error, the errorSummary will be shown.",
+      "errorSummary": "<% error %>",
+      "_generationNote3": "For multiple errors, append the top-level error to provide context.",
+      "errors": "<% empty errors ? [] : [error].join(errors.map(err => { err.error } )) %>"
+    }
+  },
+  "presentation": {
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "id": "title",
+      "label": "Manage Peer Recognition Balance"
+    },
+    "body": {
+      "id": "bodySection",
+      "type": "section",
+      "children": [
+        {
+          "_generationNote": "This grid is populated via the `rows` property with all of the data retrieved from the Businessobject API.",
+          "_generationNote2": "Upon submission, each row will be individually checked to either create, update, or delete the specified instance. The corresponding endpoint will be invoked for each row.",
+          "type": "grid",
+          "gridType": "LIST",
+          "id": "peerRecognitionBalanceGrid",
+          "rows": "<% getPeerRecognitionBalances.data %>",
+          "rowVariableName": "peerRecognitionBalance",
+          "deleteEndPoint": "deletePeerRecognitionBalance",
+          "columns": [
+            {
+              "type": "column",
+              "columnId": "peerRecognitionBalanceIdColumn",
+              "label": "Id",
+              "cellTemplate": {
+                "type": "text",
+                "id": "peerRecognitionBalanceId",
+                "_generationNote": "The `id` is the primary way Workday manages instances. This value will only be populated for existing instances.",
+                "value": "<% peerRecognitionBalance.id %>",
+                "enabled": false,
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalance.id",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalance.id",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "workerColumn",
+              "label": "Worker",
+              "cellTemplate": {
+                "type": "dropdown",
+                "id": "worker",
+                "values": "<% getWorkers.data %>",
+                "selectedValues": "<% empty peerRecognitionBalance.worker ? [] : [peerRecognitionBalance.worker.id] %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalance.worker",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalance.worker",
+                    "value": "<% empty self.value ? null : { 'id': self.value[0] } %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "pointsToRedeemColumn",
+              "label": "Points To Redeem",
+              "cellTemplate": {
+                "type": "number",
+                "fractionDigits": 0,
+                "id": "pointsToRedeem",
+                "value": "<% peerRecognitionBalance.pointsToRedeem %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalance.pointsToRedeem",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalance.pointsToRedeem",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "pointsToAwardColumn",
+              "label": "Points To Award",
+              "cellTemplate": {
+                "type": "number",
+                "fractionDigits": 0,
+                "id": "pointsToAward",
+                "value": "<% peerRecognitionBalance.pointsToAward %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalance.pointsToAward",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalance.pointsToAward",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "column",
+              "columnId": "referenceColumn",
+              "label": "Reference",
+              "cellTemplate": {
+                "type": "text",
+                "id": "reference",
+                "value": "<% peerRecognitionBalance.reference %>",
+                "valuesOut": [
+                  {
+                    "valueOutBinding": "createPeerRecognitionBalance.reference",
+                    "value": "<% self.value %>"
+                  },
+                  {
+                    "valueOutBinding": "updatePeerRecognitionBalance.reference",
+                    "value": "<% self.value %>"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "id": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "id": "footerText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

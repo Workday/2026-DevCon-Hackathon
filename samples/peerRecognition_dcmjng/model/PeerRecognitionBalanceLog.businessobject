@@ -1,0 +1,74 @@
+{
+  "id": 4,
+  "name": "PeerRecognitionBalanceLog",
+  "label": "Peer Recognition Balance Log",
+  "defaultSecurityDomains": [
+    "PeerRecognitionSetup"
+  ],
+  "defaultCollection": {
+    "name": "peerRecognitionBalanceLogs",
+    "label": "Peer Recognition Balance Logs"
+  },
+  "fields": [
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": true,
+      "target": "WORKER",
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "type": "SINGLE_INSTANCE",
+      "name": "worker",
+      "id": 1
+    },
+    {
+      "enableReportingFromTarget": false,
+      "secureByTarget": false,
+      "target": "PeerRecognitionBalanceType",
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "type": "SINGLE_INSTANCE",
+      "name": "balanceType",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "reason",
+      "type": "SINGLE_INSTANCE",
+      "useForDisplay": false,
+      "isPurgeable": false,
+      "target": "PeerRecognitionBalanceChangeReason",
+      "secureByTarget": false,
+      "enableReportingFromTarget": false
+    },
+    {
+      "id": 4,
+      "name": "originalPoints",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 5,
+      "name": "changeAmount",
+      "type": "INTEGER",
+      "isPurgeable": false,
+      "enableIndex": false
+    },
+    {
+      "id": 6,
+      "name": "current",
+      "type": "BOOLEAN",
+      "isPurgeable": false,
+      "enableIndex": true
+    }
+  ],
+  "derivedFields": [
+    {
+      "id": 1,
+      "name": "points",
+      "type": "INTEGER",
+      "expression": "originalPoints + changeAmount",
+      "securityDomains": []
+    }
+  ]
+}

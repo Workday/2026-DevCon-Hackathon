@@ -1,0 +1,21 @@
+{
+  "id": "peerRecognition_dcmjng",
+  "languages": [
+    {
+      "code": "en-US",
+      "description": "English"
+    }
+  ],
+  "siteAuth": {
+    "authTypes": [
+      {
+        "scheme": "SSO",
+        "id": "sso"
+      }
+    ]
+  },
+  "siteId": "peerRecognition_dcmjng",
+  "cdnEnabled": true,
+  "siteProperties": [ ],
+  "applicationId": "peerRecognition_dcmjng"
+}

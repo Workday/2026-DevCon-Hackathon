@@ -1,0 +1,42 @@
+{
+  "id": "PeerRecognitionPointsToAward",
+  "presentation": {
+    "type": "inlineCard",
+    "header": {
+      "type": "cardHeader",
+      "title": "Award Kudos Points",
+      "subtitle": "See great work? Say it with Kudos",
+      "indicator": {
+        "label": "<% (workerPointBalance.data[0].pointsToAward ?? 0) +  ' Points' %>",
+        "color": "GREEN"
+      },
+      "icon": "wd-accent-award-medal"
+    },
+    "body": {
+      "type": "simpleCard",
+      "value": "Use your monthly balance of Kudos to celebrate the coworkers who go above and beyond, offer a helping hand, or make your day a little brighter."
+    },
+    "footer": [
+      {
+        "label": "Give Recogntion",
+        "taskReference": {
+          "taskId": "givePeerRecognition"
+        }
+      }
+    ]
+  },
+  "endPoints": [
+    {
+      "name": "workerInfo",
+      "baseUrlType": "COMMON",
+      "url": "workers/me",
+      "authType": "sso"
+    },
+    {
+      "baseUrlType": "APP",
+      "url": "<% '/peerRecognitionBalances?worker=' + workerInfo.id %>",
+      "name": "workerPointBalance",
+      "authType": "sso"
+    }
+  ]
+}

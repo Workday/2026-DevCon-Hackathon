@@ -1,0 +1,9 @@
+{
+  "id": 4,
+  "name": "ManagePeerRecognitionAward",
+  "label": "Peer Recognition: Awards",
+  "securityDomains": [
+    "PeerRecognitionAdminTasks"
+  ],
+  "routePath": "/managePeerRecognitionReward"
+}

@@ -1,0 +1,34 @@
+{
+  "id": 3,
+  "name": "PeerRecognitionCategory",
+  "label": "Peer Recognition Category",
+  "defaultSecurityDomains": [
+    "PeerRecognitionSetup"
+  ],
+  "defaultCollection": {
+    "name": "peerRecognitionCategories",
+    "label": "Peer Recognition Categories"
+  },
+  "fields": [
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": true,
+      "isReferenceId": false,
+      "type": "TEXT",
+      "name": "name",
+      "id": 1
+    },
+    {
+      "enableSearch": false,
+      "enableIndex": false,
+      "isPurgeable": false,
+      "useForDisplay": false,
+      "isReferenceId": true,
+      "type": "TEXT",
+      "name": "reference",
+      "id": 2
+    }
+  ]
+}

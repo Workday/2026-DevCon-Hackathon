@@ -1,0 +1,70 @@
+---
+name: recognition-discovery
+description: >
+ Helps identify worker information and current worker information needed as inputs in other skills. 
+ Helps managers discover recognition opportunities by analyzing direct reports' recognition history and identifying team members who have not received recent shout-outs or kudos.
+metadata:
+  tags:
+    - recognition
+    - direct-reports
+    - analysis
+    - peer-recognition
+allowed-tools:
+  - getWorkers
+  - getRecognitions
+  - view_staffing_workers
+tool-wids:
+  - name: getWorkers
+    wid:  getWorkers
+    type: AGENT_ACTION
+    appReferenceId: peerRecognition_vfjgnm
+  - name: getRecognitions
+    wid: getRecognitions
+    type: AGENT_ACTION
+    appReferenceId: peerRecognition_vfjgnm
+  - name: view_staffing_workers
+    wid: "c2466b0778c610000cdf9abc4fbc000c"
+---
+
+# Recognition Discovery
+
+This skill helps managers identify recognition opportunities by analyzing their direct reports' recognition history. It discovers team members who haven't received kudos recently, enabling proactive appreciation and team morale management.
+
+**Expected inputs:** Manager requests such as:
+- "Analyze the recognition history for my direct reports and identify anyone who has not received a shout-out recently."
+- "Who on my team hasn't been recognized recently?"
+- "Show me which direct reports need recognition"
+
+## Steps
+
+1. **Identify the current manager**: Call `view_staffing_workers` to retrieve the current authenticated user's profile and Employee ID.
+
+2. **Retrieve direct reports**: Call `getWorkers` with `myDirectReports: true`  and `employeeContext` to the employee id of the current user context to get the complete list of workers who report to the current manager. Capture each direct report's name and Employee ID.
+
+3. **Analyze recognition history**:  call `getRecognitions` passing
+an array containing Employee IDs to retrieve their recognition history.
+Example: "workers" : ["21001", "21008"]
+ Note:
+- The date of their most recent recognition (if any)
+- The total number of recognitions received
+- Any workers with no recognition history
+
+4. **Identify recognition gaps**: Compare the recognition dates across all direct reports to identify:
+- Workers who have never been recognized
+- Workers whose last recognition was more than 30 days ago
+- Workers whose last recognition was more than 60 or 90 days ago (if applicable)
+
+5. **Present findings**: Provide a clear summary including:
+- List of direct reports who haven't been recognized recently, organized by priority (never recognized first, then by time since last recognition)
+- For each person, include their name and the time elapsed since their last recognition (or note if they've never been recognized)
+- The total number of direct reports analyzed
+
+6. **Suggest next steps**: Recommend that the manager consider recognizing the identified team members, and offer to help draft recognition messages if desired.
+
+## Error Handling
+
+- If `view_staffing_workers` or `getWorkers` fails to retrieve the current worker's context or direct reports, inform the user that their direct report list could not be accessed and suggest verifying their manager status.
+- If `getRecognitions` fails for a specific worker, note this in the results but continue analyzing other team members.
+- If no direct reports are found, inform the user that they may not be set up as a manager
+or have no direct reports in the system.
+- Handle cases where workers have extensive recognition history by focusing on the most recent recognition date.
