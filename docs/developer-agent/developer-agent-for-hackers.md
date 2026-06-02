@@ -2,9 +2,12 @@
 
 **Utilize your agentic tool of choice and build at the speed of innovation.**
 
+<video>
+  <source src="https://github.com/user-attachments/assets/29585bd8-2b2f-4874-8110-efd619d5b144" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 https://github.com/user-attachments/assets/29585bd8-2b2f-4874-8110-efd619d5b144
-
-
 
 Developer Agent lets you scaffold, validate, and ship Workday Extend apps end to end from the tool you already work in.
 
