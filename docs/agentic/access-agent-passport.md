@@ -25,14 +25,13 @@ On the **Maintain Permissions for Security Group** task, configure  _View and Mo
 
 **Note**: If you have already registered an external agent in your tenant, you can skip to step 2.
     
- 2. Access **Agent Management Hub**.
-    a. Click **Agent Registry**  to open the agent profile of the agent you imported.
-    b. Activate your agent.
-    c. Click the **Scan Agent** button. As the scan runs, the **Trust and Safety Passport** tab appears on your agent's profile and displays the stamps for your agent. When the scan completes, the **Scan Agent** button reappears and the stamp statuses detected by the scan display on the **Trust and Safety Passport** tab.
+ 2. Access **Agent Management Hub**.  
+    a. Click **Agent Registry**  to open the agent profile of the agent you imported.  
+    b. Activate your agent.  
+    c. Click the **Scan Agent** button. As the scan runs, the **Trust and Safety Passport** tab appears on your agent's profile and displays the stamps for your agent. When the scan completes, the **Scan Agent** button reappears and the stamp statuses detected by the scan display on the **Trust and Safety Passport** tab.  
     
-3. Click the **Trust and Safety Passport** tab:
-
-    -   On the **Trust and Safety Passport** tab, you can view and edit the stamps that an agent needs to operate safely in Workday. It displays information related to the names, statuses and descriptions of the stamps.
+3. Click the **Trust and Safety Passport** tab:  
+    -   On the **Trust and Safety Passport** tab, you can view and edit the stamps that an agent needs to operate safely in Workday. It displays information related to the names, statuses and descriptions of the stamps.  
 
 ## Test Cases
 
@@ -40,14 +39,14 @@ On the **Maintain Permissions for Security Group** task, configure  _View and Mo
 
 **Context:** The ASOR **Trust and Safety Passport** tab should only display after you activate an agent.
 
-**Steps:**
-1. Access **Agent Management Hub**.
-2. Select an inactive agent.
-3. View the agent profile of the inactive agent. The **Trust and Safety Passport** tab should not display.
-4. Activate the agent.
-a. For an external agent, ensure that the agent is available to *All Users*.
-5. Reopen the agent profile of the agent. The **Trust and Safety Passport** tab should now display.
-6. Browse the agent passport information on the agent.
+**Steps:**  
+1. Access **Agent Management Hub**.  
+2. Select an inactive agent.  
+3. View the agent profile of the inactive agent. The **Trust and Safety Passport** tab should not display.  
+4. Activate the agent.  
+a. For an external agent, ensure that the agent is available to *All Users*.  
+5. Reopen the agent profile of the agent. The **Trust and Safety Passport** tab should now display.  
+6. Browse the agent passport information on the agent.  
 ____
 **Scenario**: Check the stamp status of an external agent.
 
@@ -88,4 +87,4 @@ ____
 
 ## Troubleshooting: If a Stamp Fails
 
-See: [Addressing Successful Attacks from AI Validation.pdf|attachment](upload://aYlKD2XZH1gf8dzHA1iVhRLx36S.pdf) (80.8 KB)
+See: [Addressing Successful Attacks from AI Validation.pdf](https://github.com/user-attachments/files/28514453/Addressing.Successful.Attacks.from.AI.Validation.pdf)
