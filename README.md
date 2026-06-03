@@ -242,6 +242,24 @@ In addition to the samples listed above, we want to remind everyone that the [Ap
 
 </details>
 
+
+## Express Lab Activities :bulb:
+
+These are a selection of Express Lab activities from DevCon 2026 for hackathon reference.
+
+<details>
+<summary>View 2026 DevCon Express Labs</summary>
+
+| Sample | Description | 
+| --- | ----------- | 
+| [01-Build Agents with Extend](/express-labs/01-build-agents-with-extend/) |  | 
+| [02-Analyze with Data Cloud](/express-labs//02-analyze-with-data-cloud/) |  | 
+| [03-Integrate - Orchestrate](/express-labs/03-integrate-orchestrate/) |  | 
+| [04-Agentic with AWS](/express-labs/04-agentic-with-aws/) |  | 
+
+</details>
+
+
 ## Give Feedback :loudspeaker:
 
 We cannot be successful without our developer community. We'd love to hear your feedback anytime throughout the Hackathon, drop us a note in the Slack workspace. For general Extend / Dev Forum feedback, please share in the main [Feedback Category](https://forum.developer.workday.com/c/feedback/2).
