@@ -59,6 +59,7 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 | [A2UI Chat Tags for Custom Agents](/docs/extend/a2ui/a2ui-chat-tags-for-custom-agents.md) | 
 | [Configure Orchestrate Agent Actions](/docs/orchestrate/configure-orchestrate-agent-actions.md) | 
 | [Configure Business Processes with Agents](/docs/developer-agent/configure-business-processes-with-agents.md) | 
+| [Agent File Uploads](/docs/developer-agent/agent-file-uploads.md) | 
 
 </details>
 
