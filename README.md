@@ -169,6 +169,16 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 
 </details>
 
+
+<details>
+<summary>Workday and AWS Integrations Documentation</summary>
+
+| Feature | 
+| ------- | 
+| [Workday and AWS Integrations Documentation (PDF)](/docs/workday-and-aws-integrations/WorkdayAndAWSIntegrations.pdf) | 
+
+</details>
+
 ## Recently Released to Production :tada:
 
 <details>
