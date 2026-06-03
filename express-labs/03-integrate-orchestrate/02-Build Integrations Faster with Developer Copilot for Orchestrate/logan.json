@@ -1,0 +1,201 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \{\
+   "Report_Entry": [\
+      \{\
+         "Addresses_group": [\
+            \{\
+               "Address_Line_1": "2843 Main Street",\
+               "Postal_Code": "75201",\
+               "Usage_Type": "Business",\
+               "city": "Dallas",\
+               "country": "United States of America"\
+            \},\
+            \{\
+               "Address_Line_1": "72 Maple Lane",\
+               "Postal_Code": "75201",\
+               "Usage_Type": "Home",\
+               "city": "Dallas",\
+               "country": "United States of America"\
+            \}\
+         ],\
+         "Dependents_group": [\
+            \{\
+               "Date_of_Birth": "2008-07-24",\
+               "Legal_Name_-_First_Name": "Corinne",\
+               "Legal_Name_-_Last_Name": "Taylor"\
+            \},\
+            \{\
+               "Date_of_Birth": "2001-06-16",\
+               "Legal_Name_-_First_Name": "Robert",\
+               "Legal_Name_-_Last_Name": "Taylor"\
+            \},\
+            \{\
+               "Date_of_Birth": "2003-02-28",\
+               "Legal_Name_-_First_Name": "Ryan",\
+               "Legal_Name_-_Last_Name": "Taylor"\
+            \},\
+            \{\
+               "Date_of_Birth": "1971-07-07",\
+               "Legal_Name_-_First_Name": "Virginia",\
+               "Legal_Name_-_Last_Name": "Taylor"\
+            \}\
+         ],\
+         "Employee_ID": "21023",\
+         "Organization_Membership_group": [\
+            \{\
+               "Organization_Types": "Cost Center",\
+               "referenceID": "61120_IT_HelpDesk"\
+            \},\
+            \{\
+               "Organization_Types": "Location Hierarchy",\
+               "referenceID": "BUSINESS_SITE_HIERARCHY_Storage_North_America"\
+            \},\
+            \{\
+               "Organization_Types": "Location Hierarchy",\
+               "referenceID": "BUSINESS_SITE_HIERARCHY_USA_Southeast_US"\
+            \},\
+            \{\
+               "Organization_Types": "Company Hierarchy",\
+               "referenceID": "Consolidation_US"\
+            \},\
+            \{\
+               "Organization_Types": "Company Hierarchy",\
+               "referenceID": "Consolidation_US_Tax"\
+            \},\
+            \{\
+               "Organization_Types": "Company",\
+               "referenceID": "Global_Modern_Services_Inc_USA"\
+            \},\
+            \{\
+               "Organization_Types": "Region",\
+               "referenceID": "Headquarters_Corporate"\
+            \},\
+            \{\
+               "Organization_Types": "Cost Center Hierarchy",\
+               "referenceID": "IT_Services"\
+            \},\
+            \{\
+               "Organization_Types": "Location Hierarchy",\
+               "referenceID": "LOCATION_HIERARCHY-16-227"\
+            \},\
+            \{\
+               "Organization_Types": "Company Hierarchy",\
+               "referenceID": "North_America"\
+            \},\
+            \{\
+               "Organization_Types": "Regional Hierarchy",\
+               "referenceID": "Region_Hierarchy"\
+            \},\
+            \{\
+               "Organization_Types": "Supervisory",\
+               "referenceID": "SUPERVISORY_IT_Services_Group"\
+            \},\
+            \{\
+               "Organization_Types": "Pay Group",\
+               "referenceID": "USA_Semi_monthly_Professional_Regional"\
+            \},\
+            \{\
+               "Organization_Types": "Employee Belonging Council",\
+               "referenceID": "Veterans"\
+            \}\
+         ],\
+         "firstName": "Jack",\
+         "lastName": "Taylor"\
+      \}, \
+      \{\
+         "Addresses_group": [\
+            \{\
+               "Address_Line_1": "123 Main Street",\
+               "Postal_Code": "30305",\
+               "Usage_Type": "Work",\
+               "city": "Atlanta",\
+               "country": "United States of America"\
+            \},\
+            \{\
+               "Address_Line_1": "3939 The Embarcadero",\
+               "Postal_Code": "94111",\
+               "Usage_Type": "Business",\
+               "city": "San Francisco",\
+               "country": "United States of America"\
+            \},\
+            \{\
+               "Address_Line_1": "42 Laurel Street",\
+               "Postal_Code": "94118",\
+               "Usage_Type": "Home",\
+               "city": "San Francisco",\
+               "country": "United States of America"\
+            \}\
+         ],\
+         "Dependents_group": [\
+            \{\
+               "Date_of_Birth": "1999-09-10",\
+               "Legal_Name_-_First_Name": "Megan",\
+               "Legal_Name_-_Last_Name": "McNeil"\
+            \},\
+            \{\
+               "Date_of_Birth": "1972-03-18",\
+               "Legal_Name_-_First_Name": "Pat",\
+               "Legal_Name_-_Last_Name": "McNeil"\
+            \}\
+         ],\
+         "Employee_ID": "21001",\
+         "Organization_Membership_group": [\
+            \{\
+               "Organization_Types": "Cost Center",\
+               "referenceID": "41600_HR_Services"\
+            \},\
+            \{\
+               "Organization_Types": "Location Hierarchy",\
+               "referenceID": "BUSINESS_SITE_HIERARCHY_USA_Western_US"\
+            \},\
+            \{\
+               "Organization_Types": "Company Hierarchy",\
+               "referenceID": "Consolidation_US"\
+            \},\
+            \{\
+               "Organization_Types": "Company Hierarchy",\
+               "referenceID": "Consolidation_US_Tax"\
+            \},\
+            \{\
+               "Organization_Types": "Company",\
+               "referenceID": "Global_Modern_Services_Inc_USA"\
+            \},\
+            \{\
+               "Organization_Types": "Region",\
+               "referenceID": "Headquarters_Corporate"\
+            \},\
+            \{\
+               "Organization_Types": "Cost Center Hierarchy",\
+               "referenceID": "HR_Services"\
+            \},\
+            \{\
+               "Organization_Types": "Location Hierarchy",\
+               "referenceID": "LOCATION_HIERARCHY-16-227"\
+            \},\
+            \{\
+               "Organization_Types": "Company Hierarchy",\
+               "referenceID": "North_America"\
+            \},\
+            \{\
+               "Organization_Types": "Regional Hierarchy",\
+               "referenceID": "Region_Hierarchy"\
+            \},\
+            \{\
+               "Organization_Types": "Supervisory",\
+               "referenceID": "SUPERVISORY_Human_Resources"\
+            \},\
+            \{\
+               "Organization_Types": "Pay Group",\
+               "referenceID": "USA_Monthly"\
+            \}\
+         ],\
+         "firstName": "Logan",\
+         "lastName": "McNeil"\
+      \}  ]\
+\}}
