@@ -1,6 +1,6 @@
 Use Workday Data Cloud for bidirectional data exchange between the Workday platform and external enterprise data environments. Its core principle is "zero-copy access," which utilizes open standards like Apache Iceberg and JDBC to allow multiple independent systems to access Workday business objects without requiring physical data extraction, transfer, and loading (ETL) processes. 
 
-For the DevCon 2026 Hackathon, Workday has partnered with Snowflake and Salesforce who have provided tenants for data access out and into Workday. See [Hackathon Tenant Access for Workday Data Cloud](/docs/data-cloud/hackathon-tenant-and-external-partner-access.md).
+For the DevCon 2026 Hackathon, Workday has partnered with Snowflake and Salesforce who have provided tenants for data access out and into Workday. See [Hackathon Tenant Access for Workday Data Cloud](/docs/data-cloud/hackathon-tenant-snowflake-and-salesforce-access.md).
 
 | Data Exchange Direction | Data Cloud Component | Connection | Key Features |
 | :---- | :---- | :---- | :---- |

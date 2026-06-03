@@ -16,7 +16,7 @@ For this hackathon exercise, there will not be any additional refresh cadence fr
 
 Data Lake has been preconfigured in the Snowflake tenants that are available during the Hackathon. 
 
-The only requirement is the Snowflake account for the Snowflake tenant login. See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-and-external-partner-access.md).
+The only requirement is the Snowflake account for the Snowflake tenant login. See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-snowflake-and-salesforce-access.md).
 
 See:
 
@@ -27,7 +27,7 @@ See:
 
 Data Lake has been preconfigured in the Salesforce tenants that are available during the Hackathon. 
 
-The only requirement is the Salesforce account for the Salesforce tenant login. See [Salesforce Tenant Access](/docs/data-cloud/hackathon-tenant-and-external-partner-access.md). 
+The only requirement is the Salesforce account for the Salesforce tenant login. See [Salesforce Tenant Access](/docs/data-cloud/hackathon-tenant-snowflake-and-salesforce-access.md). 
 
 To use Data Lake in Salesforce, create a new Data Stream using Apache Iceberg.
 

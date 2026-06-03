@@ -1,7 +1,7 @@
 # Prerequisites
 
 * [Register API Client in Workday for ISU](/docs/data-cloud/live-data-query/generating-public-and-private-keys.md).
-* Snowflake account with access to a Snowflake tenant. See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-and-external-partner-access.md).
+* Snowflake account with access to a Snowflake tenant. See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-snowflake-and-salesforce-access.md).
 
 # Context
 

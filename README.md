@@ -135,7 +135,7 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 | [Workday Live Data Query](/docs/data-cloud/live-data-query/workday-live-data-query.md) | 
 | [Workday Data Lake](/docs/data-cloud/data-lake/workday-data-lake.md) | 
 | [Data In](/docs/data-cloud/data-in/data-in-prism.md) | 
-| [Hackathon Tenant Access for Workday Data Cloud](/docs/data-cloud/hackathon-tenant-and-external-partner-access.md) | 
+| [Hackathon Tenant Access for Workday Data Cloud](/docs/data-cloud/hackathon-tenant-snowflake-and-salesforce-access.md) | 
 
 </details>
 

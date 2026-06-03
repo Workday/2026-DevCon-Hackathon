@@ -8,7 +8,7 @@
 
 ## Prerequisite
 
-* Snowflake account with access to Snowflake instance. See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-and-external-partner-access.md).
+* Snowflake account with access to Snowflake instance. See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-snowflake-and-salesforce-access.md).
 
 
 ## Context 

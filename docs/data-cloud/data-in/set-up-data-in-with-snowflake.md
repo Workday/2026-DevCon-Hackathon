@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * Workday tenant and credentials provided by the Hackathon facilitators.  
-* Snowflake account with access to a Snowflake tenant.  See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-and-external-partner-access.md).  
+* Snowflake account with access to a Snowflake tenant.  See [Snowflake Tenant Access](/docs/data-cloud/hackathon-tenant-snowflake-and-salesforce-access.md).  
 * [Set Up Workday Security Policies for Data In](/docs/data-cloud/data-in/set-up-workday-security-policies-for-data-in.md)
 
 # Setup Summary
