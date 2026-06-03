@@ -14,7 +14,7 @@ Judges criteria include: **Use of Platform**, **Innovation**, **Business Value**
 
 Submissions this year include: **5-minute verbal presentation to first-round judges. (See details below).** * *We encourage you to take advantage of the Pitch Coaches available at the Experts table to refine your presentation.* *
 
-**Optional**: 5-minute recorded video (submitted in Google Form) within two weeks *after* the event. 
+**Optional --> Community Vote Submission**: 5-minute recorded video (submitted in Google Form and posted to LinkedIn) within two weeks *after* the event. Voting will take place on the Developer Forum the week of June 22.
 
 ## Schedule :calendar:
 
@@ -243,7 +243,20 @@ We cannot be successful without our developer community. We'd love to hear your 
 1. Please submit your project using this [Project Submission Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfmT73tKWR8Ph_9F139FXFDXI_0rxz3hQWSiHr8nFPakcdyrw/viewform?usp=header). This form will open for submissions at 9AM Pacific Thursday June 4, and will close at 1PM.
 2. Prepare a pitch deck for your 5 minute demo. Please use this PPTX template: [Devcon26-Toolbox-Hackathon-Final.pptx](https://github.com/user-attachments/files/28476720/Devcon26-Toolbox-Hackathon-Final.pptx)
 3. You will submit your Team Name and Table Number, the Full App Reference ID of your project, and attach your PPTX as well as your project video in the project submission form.
-4. Optionally: You may submit a video of your project after the event using this [Optional Video Submission Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdPwIWC1frhwZWjrF0VniOLuCYZM7s5qa9gdegGbkq27jveDA/viewform?usp=header). 
+
+## Community Vote Submission (Optional)
+
+You can submit a video of your project and compete for the new Community Vote (any time between now and June 19th)! It's easy-peasy:
+
+1. Submit the video in this [Video Submission Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdPwIWC1frhwZWjrF0VniOLuCYZM7s5qa9gdegGbkq27jveDA/viewform?usp=header)
+2. Post the video to LinkedIn with the hashtag #WDAYDevConHackCommunityVote
+3. Vote for your favorite project on the Developer Forum starting June 22nd 
+
+* Submissions must be received by 5PM Pacific June 19th 
+* Voting will take place on the Developer Forum the week of June 22!
+
+
+
 
 ## Rules :judge:
 
