@@ -4,11 +4,11 @@
 
 You can upload documents to the Workday Chat, and have your agents process them. To upload documents, click on the **Sources** button:  
 
-![][image1]  
+<img width="698" height="212" alt="image1" src="https://github.com/user-attachments/assets/71594711-4bfe-4d95-819a-60b50fffb94a" />
 
 And then just specify your file and ask the agent to process it. You can also ask that it download the file into the agent’s sandbox for further processing. A maximum of 10 file attachments can be included per message. For system file type limits on attachments, you can go to **Edit Tenant Setup \- System**. This setup page will display the maximum attachment size, image size,and allowed file types.
 
-![][image2]
+<img width="2048" height="458" alt="image2" src="https://github.com/user-attachments/assets/b1aadefb-cb69-4dfb-9e0d-abdcc94d151f" />
 
 # 2.0 Gotchas/Manual Configuration
 
