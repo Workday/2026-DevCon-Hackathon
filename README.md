@@ -52,8 +52,6 @@ Submissions this year include: **5-minute verbal presentation to first-round jud
 | Feature | 
 | ------- | 
 | [Developer Agent](/docs/developer-agent/developer-agent.md) | 
-| [Developer Agent in the Developer Site and App Builder](/docs/developer-agent/developer-agent-in-the-developer-site-and-app-builder.md) | 
-| [Developer Agent Extension](/docs/developer-agent/developer-agent-extension.md) | 
 | [Build and Deploy Agents on Workday's AI Platform](/docs/developer-agent/build-and-deploy-agents-on-workdays-ai-platform.md) | 
 | [Read Agent Traces and Preview Agents](/docs/developer-agent/read-agent-traces-and-preview-agents.md) | 
 | [A2UI Pages for Custom Agents](/docs/extend/a2ui/a2ui-pages-for-custom-agents.md) | 
