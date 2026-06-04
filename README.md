@@ -268,10 +268,11 @@ We cannot be successful without our developer community. We'd love to hear your 
 ## Submit Project :memo:
 
 1. Please submit your project using this [Project Submission Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfmT73tKWR8Ph_9F139FXFDXI_0rxz3hQWSiHr8nFPakcdyrw/viewform?usp=header). This form will open for submissions at 9AM Pacific Thursday June 4, and will close at 1PM.
-2. Prepare a pitch deck for your 5 minute demo. Please use this PPTX template: [Devcon26-Toolbox-Hackathon-Final.pptx](https://github.com/user-attachments/files/28476720/Devcon26-Toolbox-Hackathon-Final.pptx)
-3. You will submit your Team Name and Table Number, the Full App Reference ID of your project, and attach your PPTX as well as your project video in the project submission form.
+  - NOTE: Video submission is not required for judging but it is highly recommended that you take screen captures of your project today and submit a video for the Community Vote after the Hackathon.
+3. Prepare a pitch deck for judging. Please use this PPTX template: [Devcon26-Toolbox-Hackathon-Final.pptx](https://github.com/user-attachments/files/28476720/Devcon26-Toolbox-Hackathon-Final.pptx)
+4. You will submit your Team Name and Table Number, the Full App Reference ID of your project, and attach your PPTX in the project submission form.
 
-## Community Vote Submission (Optional) 📹
+## 🤝 Community Vote Submission (Optional) 📹
 
 You can submit a video of your project and compete for the new Community Vote (any time between now and June 19th)! It's easy-peasy:
 
