@@ -67,36 +67,42 @@ You'll paste these into your external platform when you configure it.
 
 The agent card is a JSON document that tells the external platform how to talk to your Workday agent — its endpoints, capabilities, and auth requirements.
 
-## Get a Bearer Token from the Developer Site
+## Get a Bearer Token
 
-The easiest way to get a token for testing is directly from the Workday Developer site:
-1. Go to https://developer.workday.com and open your app in App Builder
-2. Click **Manage Tenant Connections** and connect to your tenant.
-3. After successfully connecting, click the **Copy Token** link that appears next to your tenant
-4. Save this token — you'll use it in the next step
+**Note:** Bearer tokens copied from the Workday Developer site (<https://developer.workday.com>) are **not** supported for the agent card endpoint. Use a token issued by the OAuth client you created in the **Create an A2A OAuth Client in Workday** section instead.
+
+To retrieve a bearer token using that OAuth client, follow the token-retrieval steps in the **A2A Inspector** section below (Authorization Code → **Agent OAuth Token Endpoint URL** → bearer token). Save the resulting token — you'll use it in the next step.
 
 ## Fetch the Agent Card
 
-Use the token from Section 5.1 to call the agent card endpoint:
+Use the OAuth-client token from the previous step to call the agent card endpoint:
 
 ```
-BEARER_TOKEN="<token from step 5.1>"
+BEARER_TOKEN="<token from the OAuth client>"
 
 TENANT_ALIAS="<tenant_alias>" # e.g. hackteam116_wcpdev1
 
-AGENT_NAME="self-service-agent"
+# For the Self-Service Agent use the agent name: self-service-agent
+# For a Custom Agent you MUST use the Agent WID not the name.
+# See "Retrieve Agent Integration ID (Custom Agents only)" below.
+AGENT_WID="self-service-agent"
 
-curl -X GET "https://us.agents.workday.com/v1/a2a/${TENANT_ALIAS}/${AGENT_NAME}/.well-known/agent-card.json" \
-
+curl -X GET "https://us.agent.workday.com/v1/a2a/${TENANT_ALIAS}/${AGENT_WID}/.well-known/agent-card.json" \
 -H "Authorization: Bearer ${BEARER_TOKEN}" \
-
 -H "Accept-Encoding: identity" \
-
 -H "Content-Type: application/json"
-TENANT ALIAS FORMAT 
 ```
+
 **Example**:
-If your tenant URL is https://wcpdev.wd101.myworkday.com/hack116_wcpdev1/d/home.htmld, your alias is hack116_wcpdev1.
+If your tenant URL is <https://wcpdev.wd101.myworkday.com/hack116_wcpdev1/d/home.htmld>, your alias is hack116_wcpdev1.
+
+## Retrieve Agent Integration ID (Custom Agents only)
+
+Custom Agents cannot be addressed by name in the A2A URL — you must use the Agent WID (a UUID with no dashes). To find it:
+
+1. In **Agent Registry**, click **Related Actions** off of your agent
+2. Go to **Integrations → View IDs**
+3. Save the ID — use it in place of the agent name in the agent card URL and the A2A endpoint URLs (e.g. `.../v1/a2a/<tenant-alias>/<agent-wid>`)
 
 Copy the full JSON response. This is your agent card.
 
@@ -114,8 +120,8 @@ OAuth / Authentication settings
 | --- | --- |
 |Client ID|from the **Create an A2A OAuth Client in Workday** section.|
 |Client Secret|from the **Create an A2A OAuth Client in Workday** section.|
-|Auth URL|https://us.agents.workday.com/auth/authorize/<tenant-alias>?response_type=code|
-|Token URL|https://us.agents.workday.com/auth/oauth2/<tenant-alias>/token|
+|Auth URL|<https://us.agent.workday.com/auth/authorize/><tenant-alias>?response_type=code|
+|Token URL|<https://us.agent.workday.com/auth/oauth2/><tenant-alias>/token|
 |Redirect URL|must match what you set on the A2A client in the **Create an A2A OAuth Client in Workday** section.|
 |Scopes|leave empty / allow all|
 
@@ -138,6 +144,7 @@ As an end user (not admin):
 5. Once authorized, your messages will be handled by Self-Service agent.
 
 Example prompts to try:
+
 * What is my time off balance?
 * Show me my payment elections
 * I want to take time off tomorrow
@@ -154,7 +161,7 @@ Example prompts to try:
 5. To grant access: go back to Agents → open the Workday agent → **User permissions** → **Add User** → assign role **Agent User**.
 
 Reference documentation for Google Gemini Enterprise with A2A:
-https://docs.cloud.google.com/gemini/enterprise/docs/register-and-manage-an-a2a-agent
+<https://docs.cloud.google.com/gemini/enterprise/docs/register-and-manage-an-a2a-agent>
 
 ## Microsoft Copilot Studio
 
@@ -162,7 +169,7 @@ https://docs.cloud.google.com/gemini/enterprise/docs/register-and-manage-an-a2a-
 2. Click **Add — Connect to an external agent — Agent2Agent**.
 3. For **Agent endpoint URL**, use:
 
-  a. https://us.agents.workday.com/v1/a2a/<tenant-alias>/self-service-agent
+  a. <https://us.agent.workday.com/v1/a2a/><tenant-alias>/self-service-agent
 
 4. Set **Name** to Workday Self-Service Agent.
 5. Fill in the OAuth fields from Section 6 (no scopes).
@@ -183,14 +190,15 @@ Use the OAuth Client created in Section 4.0 to retrieve a user token
 
 1. Navigate to **View API Clients** task in your Workday environment
   a. Find the Agent OAuth client created
-  b. Edit the redirect URL to a generic accessible site, such as https://www.google.com
+  b. Edit the redirect URL to a generic accessible site, such as <https://www.google.com>
 2. Copy the Authorization Code from the browser URL
-  a. e.g. https://www.google.com/?code=d8234uuu09derdqq04ti49rxl
+  a. e.g. <https://www.google.com/?code=d8234uuu09derdqq04ti49rxl>
 3. Make a request to the **Agent OAuth Token Endpoint URL** to retrieve a bearer token
 4. Navigate to the A2A Inspector
 5. Paste the **Agent OAuth Authorize Endpoint URL** in a browser window
 
   a. You’ll be redirected to Workday to authorize
+
 ```
 TENANT_ALIAS="<tenant_alias>" # e.g. hackteam116_wcpdev1
 
@@ -198,19 +206,21 @@ AUTH_CODE=code retrieved from authorization redirect
 
 CLIENT_ID & CLIENT_SECRET=retrieved from OAuth Client
 
-curl -X POST "https://us.agents.workday.com/auth/oauth2/${TENANT_ALIAS}/token" \
+curl -X POST "https://us.agent.workday.com/auth/oauth2/${TENANT_ALIAS}/token" \
 
 -H "Content-Type: text/plain" \
 
 --data "grant_type=authorization_code&code=${AUTH_CODE}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}"
 ```
+
 Run the A2A Inspector
 
-1. See official docs to run the client: https://github.com/a2aproject/a2a-inspector
+1. See official docs to run the client: <https://github.com/a2aproject/a2a-inspector>
 2. For **Agent Card URL**, use:
-  a. https://us.agents.workday.com/v1/a2a/<tenant-alias>/self-service-agent
+  a. <https://us.agent.workday.com/v1/a2a/><tenant-alias>/self-service-agent
 3. Expand **Authentication & Headers** — select **Bearer Token**.
   a. Paste bearer token retrieved from steps above
 4. Click **Connect**.
 5. If everything was configured correctly, it will say “Agent Card is valid.”
 6. You can now use the chat section to communicate with the agent
+
