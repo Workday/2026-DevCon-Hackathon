@@ -100,7 +100,7 @@ Replace COMPUTE_WH with the warehouse name you plan to use. After the database a
 4. Click **+ Use**r, enter **WORKDAY_LDQ_TEST_USER**, set default role to **WORKDAY_LDQ_TEST_ROLE**, and click **Create User**.
 5. Grant the role to the user and grant account-level privileges as shown in the SQL above.
 
-**Important**: Switch to **WORKDAY_LDQ_TEST_ROLE** for all remaining steps. You no longer need ACCOUNTADMIN.
+**Important:** Log out of the admin user and log in to **WORKDAY_LDQ_TEST_USER** for all remaining steps. You no longer need **ACCOUNTADMIN**.
 
 ## 1.3 Create Database and Schema
 
@@ -154,7 +154,7 @@ CREATE OR REPLACE NETWORK RULE WORKDAY_LDQ_TEST.LIVEDATA.WORKDAY_LDQ_TEST_RULE
 MODE = EGRESS
 TYPE = HOST_PORT
 VALUE_LIST = (
-'impl-services1.wd12.myworkday.com:443',
+'impl-services1.wd101.myworkday.com:443',
 'pypi.org:443',
 'files.pythonhosted.org:443'
 );
@@ -278,7 +278,7 @@ session = get_active_session()
 
 # Replace with the correct wheel filename
 session.file.get(
-"@WORKDAY_LDQ_TEST.LIVEDATA.LDQ_STAGE/ldq_python_client-1.0.3-py3-none-any.whl",
+"@WORKDAY_LDQ_TEST.LIVEDATA.LDQ_STAGE/ldq_python_client-1.0.7-py3-none-any.whl",
 "/tmp"
 )
 
@@ -288,7 +288,7 @@ sys.executable,
 "-m",
 "pip",
 "install",
-"/tmp/ldq_python_client-1.0.3-py3-none-any.whl",
+"/tmp/ldq_python_client-1.0.7-py3-none-any.whl",
 "--quiet"
 ])
 
