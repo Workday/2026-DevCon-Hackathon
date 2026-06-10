@@ -1,8 +1,8 @@
 # Build a Workday Everywhere Plugin
 
 ## Prerequisites
-* Install Cursor or another integrated development environment (IDE).
-* Install `brew.sh`.
+* Cursor or another integrated development environment (IDE).
+* Nodejs (with support for (`npx`).
 * Verify that you have the login credentials as a Workday Implementer, which are provided as part of the DevCon Hackathon.
 
 ## Context
@@ -11,9 +11,17 @@ You can use these steps to set up your development machine, configure local proj
 ## Steps
 
 ### 1. Setup
+
+#### macOS
 1. From the terminal, run brew update.
 2. Install NPM through the terminal.
 3. From the terminal, run `brew install node`.
+4. Confirm that the `npx` command is available in your terminal.
+
+#### Windows
+1. Download the Nodejs installer from the [official page](https://nodejs.org/en/download).
+2. Run the installer, using the defaults.
+3. Confirm that the `npx` command is available in your terminal.
 
 ### 2. Configure local project
 1. Setup your local project through the terminal. From the terminal, run `mkdir my-plugin && cd my-plugin`. See [Workday/Everywhere.](https://github.com/Workday/everywhere)
